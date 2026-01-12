@@ -415,12 +415,6 @@
             "url": "http://96.44.160.246:9999/smt.php"
         },
         {
-            "name": "🐙港台大陆频道",
-            "type": 0,
-            "ua": "okhttp/5.3.2",
-            "url": "https://ghfast.top/https://raw.githubusercontent.com/FGBLH/FG/refs/heads/main/港台大陆频道"
-        },
-        {
             "name": "🐙港台大陆频道无18",
             "type": 0,
             "ua": "okhttp/5.3.2",
