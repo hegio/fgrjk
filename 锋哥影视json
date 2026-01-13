@@ -152,7 +152,7 @@
 {"name":"🐙厂长🏭｜追剧","key":"厂长丨影视","type":3,"api":"csp_CzzyAmns","searchable":1,"filterable":1,"quickSearch":1,"changeable":1,"jar":"https://jihulab.com/yoursmile2/TVBox/-/raw/main/custom_spider.jar"},
 		{
 			"key": "muou",
-			"name": "🐙木偶 | 4K",
+			"name": "🐙木偶4K|追剧",
 			"type": 4,
 			"api": "http://8088880.xyz:8080/video/muou?token=698d04ebe00a6369",
 			"searchable": 1,
@@ -163,7 +163,7 @@
 		},
 		{
 			"key": "labi",
-			"name": "🐙蜡笔 | 4K",
+			"name": "🐙蜡笔4K|追剧",
 			"type": 4,
 			"api": "http://8088880.xyz:8080/video/labi?token=698d04ebe00a6369",
 			"searchable": 1,
@@ -173,7 +173,7 @@
 		},
 		{
 			"key": "huban",
-			"name": "🐙虎斑 | 4K",
+			"name": "🐙虎斑4K|追剧",
 			"type": 4,
 			"api": "http://8088880.xyz:8080/video/hb?token=698d04ebe00a6369",
 			"searchable": 1,
@@ -183,7 +183,7 @@
 		},
 		{
 			"key": "xbky",
-			"name": "🐙快映 | 4K",
+			"name": "🐙快映4K|追剧",
 			"type": 4,
 			"api": "http://8088880.xyz:8080/video/xbky?token=698d04ebe00a6369",
 			"searchable": 1,
@@ -193,7 +193,7 @@
 		},
 		{
 			"key": "ouge",
-			"name": "🐙讴歌 | 4K",
+			"name": "🐙讴歌4K|追剧",
 			"type": 4,
 			"api": "http://8088880.xyz:8080/video/ouge?token=698d04ebe00a6369",
 			"searchable": 1,
@@ -203,7 +203,7 @@
 		},
 		{
 			"key": "libo",
-			"name": "🐙立播 | 4K",
+			"name": "🐙立播4K|追剧",
 			"type": 4,
 			"api": "http://8088880.xyz:8080/video/libo?token=698d04ebe00a6369",
 			"searchable": 1,
