@@ -271,6 +271,12 @@
 			"changeable": 0,
 			"ext": "https://down.nigx.cn/raw.githubusercontent.com/ediart/tvbox/refs/heads/main/lz/market.json",
 			"jar": "https://down.nigx.cn/raw.githubusercontent.com/ediart/tvbox/refs/heads/main/lz/fm.jar"
+		},
+        {
+			"api": "https://learnpython.ggff.net/HLBTY",
+			"key": "HLBTY",
+			"name": "🔞黑料不打烊",
+			"type": 4
 		}
         ],
     "parses": [
