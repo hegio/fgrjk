@@ -1,3 +1,4 @@
+
 {
     "spider": "./tvbox.jar",
     "logo": "https://photo.16pic.com/00/31/77/16pic_3177186_b.jpg",
@@ -294,6 +295,32 @@
             "searchable": 1,
             "filterable": 0
         },
+          {"key": "91视频","name": "91视频🎦影院",
+      "type": 3,"api": "csp_XBPQ",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "ext": {
+       "数组":"<section class=\"item-box\">&&</a>",
+       "图片":"src=\"&&\"",
+       "链接": "href=\"&&\"",
+       "标题": "title=\"&&\"",
+	   "副标题": "<small>&&</small>",
+	    "简介": "★本站公告★：合理安排时间看片，享受健康生活。撸一撸  注意身体",
+	   "播放数组":"<div class=\"v_con_box\">&&</div>",
+	    "播放列表": "<a&&a>",
+	    "播放标题": ">&&</",
+	   "播放链接": "href=\"&&\"",
+	
+        "搜索url":"https://www.15av.me/vodsearch/{wd}/page/{pg}.html",
+		 "搜索链接前缀":"https://www.15av.me/vodplay/",
+       "搜索链接后缀":"-1-1.html",
+       "分类url": "https://www.15av.me/vodtype/{cateId}-{catePg}.html",
+    
+	   "分类数组": "<li class=\"col-3 col-m-6 mb15\">&&</li>",
+       "分类标题": "<p>&&</p>",
+       "分类ID": "/vodtype/&&.html"
+      }},
         {
             "key": "91",
             "name": "🐙91麻豆｜🔞(梯子)",
@@ -416,66 +443,11 @@
             "type": 1,
             "url": "https://jx.jsonplayer.com/player/?url="
         },
-        {
-            "name": "线路7",
-            "type": 1,
-            "url": "https://okjx.cc/?url="
-        },
-        {
-            "name": "线路8",
-            "type": 1,
-            "url": "https://jx.xyflv.com/?url="
-        },
-        {
-            "name": "线路9",
-            "type": 1,
-            "url": "https://jx.ppflv.com/?url="
-        },
-        {
-            "name": "线路10-1",
-            "type": 1,
-            "url": "https://im1907.top/?jx="
-        },
-        {
-            "name": "线路11-1",
-            "type": 1,
-            "url": "https://jx.playerjy.com/?url="
-        },
-        {
-            "name": "线路12-1",
-            "type": 1,
-            "url": "https://jx.aidouer.net/?url="
-        },
-        {
-            "name": "解析9",
-            "type": 1,
-            "url": "https://jx.jsonplayer.com/player/?url="
-        },
-        {
-            "name": "解析10",
-            "type": 1,
-            "url": "https://im1907.top/?jx="
-        },
-        {
-            "name": "解析11",
-            "type": 1,
-            "url": "https://api.okjx.cc:3389/jx.php?url="
-        },
-        {
-            "name": "解析12",
-            "type": 1,
-            "url": "https://okjx.cc/?url="
-        },
-        {
-            "name": "解析13",
-            "type": 1,
-            "url": "https://jx.yangtu.top/?url="
-        },
-        {
-            "name": "解析01",
-            "type": 1,
-            "url": "https://jx.2s0.cn/player/?url="
-        },
+        {"name": "云you解析①","type": 1,"url": "http://chaloli.cn/home/api?type=ys&uid=1&key=dfgilnotuyDGHMQW34&url"}, 
+{"name": "解析01","type": 1,"url": "https://svip.znjson.com/api/?key=gX8j9IPvoQ5mFmlIzu&url="},	
+{"name": "解析02","type": 1,"url": "https://hc.izny.cn/json.php?url="},		
+{"name": "解析03","type": 1,"url": "https://sljxsl.com/?url="},		
+{"name": "解析04","type": 1,"url": "https://yutujx.com/?url="},
        {
       "group": "软解码",
       "options": [
