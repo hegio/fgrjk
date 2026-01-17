@@ -616,6 +616,12 @@
             "url": "http://ezc.xtvantsc.xyz/litv.php"
         },
         {
+            "name": "🐙jackTV",
+            "type": 0,
+            "ua": "okhttp/5.3.2",
+            "url": "https://php.946985.filegear-sg.me/jackTV.m3u"
+        },
+        {
             "name": "🐙港台大陆频道",
             "type": 0,
             "ua": "okhttp/5.3.2",
