@@ -61,7 +61,7 @@
          {
             "key": "labi",
             "name": "🐙蜡笔4K｜追剧",
-            "type": 4,
+            "type": 3,
             "api": "http://8088880.xyz:8080/video/labi?token=6d75b78a7fc4930b",
             "searchable": 1,
             "quickSearch": 1,
