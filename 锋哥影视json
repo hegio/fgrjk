@@ -308,6 +308,15 @@
             "filterable": 0
         },
         {
+            "key": "lsb资源|AV",
+            "name": "🐙lsb资源｜🔞",
+            "type": 1,
+            "api": "https://apilsbzy1.com/api.php/provide/vod/",
+            "quickSearch": 1,
+            "searchable": 1,
+            "filterable": 0
+        },
+        {
             "key": "91",
             "name": "🐙91麻豆｜🔞(梯子)",
             "type": 1,
