@@ -688,12 +688,18 @@
             "url": "https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt"
         }, 
          {
-            "name": "🐙斯玛特",
+            "name": "🐙anboxtv斯玛特",
             "type": 0,
-            "ua": "okhttp/5.3.2",
+            "ua": "okhttp",
             "url": "https://tv.anboxtv.online/tv"
-        }, 
+        },
          {
+            "name": "🐙catvod斯玛特",
+            "type": 0,
+            "ua": "okhttp",
+            "url": "http://live.catvod.com/tv.m3u"
+        },
+        {
             "name": "🐙易佬直播源",
             "type": 0,
             "ua": "okhttp/5.3.2",
