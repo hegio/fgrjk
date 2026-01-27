@@ -697,13 +697,13 @@
         {
             "name": "🐙anboxtv斯玛特",
             "type": 0,
-            "ua": "okhttp",
+            "ua": "okhttp/5.3.2",
             "url": "https://tv.anboxtv.online/tv"
         },
          {
             "name": "🐙catvod斯玛特",
             "type": 0,
-            "ua": "okhttp",
+            "ua": "okhttp/5.3.2",
             "url": "http://live.catvod.com/tv.m3u"
         },
         {
