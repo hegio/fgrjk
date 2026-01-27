@@ -1,3 +1,4 @@
+
 {
     "spider": "./tvbox.jar",
     "logo": "https://photo.16pic.com/00/31/77/16pic_3177186_b.jpg",
@@ -318,6 +319,12 @@
 			"key": "XHSM",
 			"name": "🐙瑟佬传媒系列｜🔞",
             "type": 4
+		},
+        {
+			"api": "http://api1.feylen6.top",
+			"key": "禁漫天堂",
+			"name": "🐙禁漫天堂｜🔞",
+			"type": 4
 		},
          {
             "key": "黄色仓库|AV",
