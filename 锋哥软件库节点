@@ -81,3 +81,8 @@ vless://3e7f67de-648e-4871-b51a-a225214d41ee@47.80.12.87:443?encryption=none&sec
 vless://3e7f67de-648e-4871-b51a-a225214d41ee@47.80.13.85:443?encryption=none&security=reality&sni=api.company-target.com&fp=chrome&pbk=TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw&type=tcp&headerType=none&host=api.company-target.com#47.80.13.85
 vless://3e7f67de-648e-4871-b51a-a225214d41ee@47.80.11.87:443?encryption=none&security=reality&sni=api.company-target.com&fp=chrome&pbk=TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw&type=tcp&headerType=none&host=api.company-target.com#47.80.11.87
 vless://5c183802-747d-4d2f-a6f1-aff2d5d78401@47.89.164.60:443?encryption=none&security=reality&sni=cdn.userway.org&fp=chrome&pbk=DNdTBHyztOVJOBJQX91YXEhNkWbSAntqUoTFBHc6Clw&sid=6ba85179e30d4fc2&type=tcp&headerType=none&host=cdn.userway.org#47.89.164.60
+ss://YWVzLTEyOC1nY206Wm1FMVlqVTNaV0psT0RKaVlqSm1NRE13TURObU4yRTNaakJqWkRVeE0yWT0@cdn.de1.cocoduck.org:17890?#%E5%BE%B7%E5%9B%BD
+ss://YWVzLTEyOC1nY206Wm1FMVlqVTNaV0psT0RKaVlqSm1NRE13TURObU4yRTNaakJqWkRVeE0yWT0@cdn.fr1.cocoduck.org:45080?#%E6%B3%95%E5%9B%BD
+ss://YWVzLTEyOC1nY206Wm1FMVlqVTNaV0psT0RKaVlqSm1NRE13TURObU4yRTNaakJqWkRVeE0yWT0@cdn.nl1.cocoduck.org:21958?#%E8%8D%B7%E5%85%B0
+ss://YWVzLTEyOC1nY206Wm1FMVlqVTNaV0psT0RKaVlqSm1NRE13TURObU4yRTNaakJqWkRVeE0yWT0@cdn.in1.cocoduck.org:36828?#%E5%8D%B0%E5%BA%A6%2B1
+ss://YWVzLTEyOC1nY206Wm1FMVlqVTNaV0psT0RKaVlqSm1NRE13TURObU4yRTNaakJqWkRVeE0yWT0@cdn.in2.cocoduck.org:36827?#%E5%8D%B0%E5%BA%A6%2B2
