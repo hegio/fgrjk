@@ -719,6 +719,18 @@
             "url": "http://tv.anbox.ip-ddns.com/live"
         },
          {
+            "name": "🐙litv直播",
+            "type": 0,
+            "ua": "okhttp",
+            "url": "http://github.com/cm851228/2025jar/raw/refs/heads/main/litv.txt"
+        },
+        {
+            "name": "🐙iptvpro直播",
+            "type": 0,
+            "ua": "okhttp",
+            "url": "http://hufa.zabc.net:8080/iptvpro.txt"
+        },
+        {
             "name": "🐙jackTV(梯子)",
             "type": 0,
             "ua": "okhttp/5.3.2",
