@@ -2,7 +2,7 @@ name: Sync & Enhance Proxy Nodes
 
 on:
   schedule:
-    - cron: '0 */3 * * *'  # 每3小时检查
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,202 +18,341 @@ jobs:
       with:
         python-version: '3.x'
 
-    # ========== 1. 延迟验证（更新时机可控）==========
-    - name: Wait and verify upstream stability
-      run: |
-        echo "Waiting 10 minutes to verify upstream stability..."
-        sleep 600  # 延迟10分钟，确保原仓库更新稳定
-        
-        # 下载并验证文件大小变化（防止作者误删）
-        curl -L -o "upstream_new" "https://raw.githubusercontent.com/FGBLH/fgrjk/main/锋哥软件库节点"
-        if [ -f "锋哥软件库节点" ]; then
-          old_size=$(stat -c%s "锋哥软件库节点" 2>/dev/null || echo 0)
-          new_size=$(stat -c%s "upstream_new")
-          diff=$((new_size - old_size))
-          echo "Size change: $diff bytes"
-          
-          # 如果文件变小超过50%，可能是误删，暂停同步
-          if [ $old_size -gt 0 ] && [ $diff -lt -$(($old_size / 2)) ]; then
-            echo "::error::File size reduced by more than 50%, possible accidental deletion!"
-            exit 1
-          fi
-        fi
-        mv "upstream_new" "锋哥软件库节点"
+    - name: Install dependencies
+      run: pip install pyyaml
 
-    # ========== 2. 节点验证与过滤（内容过滤修复）==========
-    - name: Validate and filter nodes
+    - name: Download nodes file
       run: |
-        cat > validate_nodes.py << 'EOF'
+        if curl -L --fail --max-time 30 -o "锋哥软件库节点.tmp" "https://ghfast.top/https://raw.githubusercontent.com/FGBLH/fgrjk/main/锋哥软件库节点"; then
+          echo "Downloaded via ghfast.top"
+        elif curl -L --fail --max-time 30 -o "锋哥软件库节点.tmp" "https://raw.githubusercontent.com/FGBLH/fgrjk/main/锋哥软件库节点"; then
+          echo "Downloaded via direct"
+        else
+          echo "::error::Download failed"
+          exit 1
+        fi
+        mv "锋哥软件库节点.tmp" "锋哥软件库节点"
+
+    - name: Decode and validate nodes
+      run: |
+        cat > process_nodes.py << 'EOF'
         import base64
-        import json
         import re
         import urllib.parse
 
-        def decode_vmess(link):
-            """解码 vmess 链接检查有效性"""
-            try:
-                if link.startswith('vmess://'):
-                    b64_data = link[8:]
-                    # 补全 base64 填充
-                    b64_data += '=' * (4 - len(b64_data) % 4)
-                    json_str = base64.b64decode(b64_data).decode('utf-8')
-                    return json.loads(json_str)
-            except:
-                return None
-            return None
-
-        def is_safe_node(node_info):
-            """检查节点是否安全（过滤恶意节点）"""
-            if not node_info:
-                return False
-            
-            # 检查是否包含危险端口（如 22-SSH, 3389-RDP）
-            port = node_info.get('port', 0)
-            if port in [22, 23, 3389, 3306, 1433, 5432]:
-                return False
-            
-            # 检查是否包含内网IP（防止代理到本地）
-            ip = node_info.get('add', '')
-            private_ips = ['127.', '10.', '192.168.', '172.']
-            if any(ip.startswith(x) for x in private_ips):
-                return False
-            
-            return True
-
-        # 读取并处理
+        # 读取文件
         with open('锋哥软件库节点', 'r', encoding='utf-8') as f:
             content = f.read()
 
-        valid_nodes = []
-        invalid_count = 0
-        
-        # 支持多种格式：Base64编码或明文
+        # 尝试 Base64 解码
         try:
-            # 尝试 Base64 解码
             decoded = base64.b64decode(content + '=' * (4 - len(content) % 4)).decode('utf-8')
-            lines = decoded.strip().split('\n')
-            is_base64 = True
+            lines = [l.strip() for l in decoded.split('\n') if l.strip()]
         except:
-            lines = content.strip().split('\n')
-            is_base64 = False
+            lines = [l.strip() for l in content.split('\n') if l.strip()]
 
+        # 保存明文
+        with open('nodes_plain.txt', 'w') as f:
+            f.write('\n'.join(lines))
+        
+        print(f"Processed {len(lines)} lines")
+        EOF
+        python3 process_nodes.py
+
+    - name: Generate valid Clash config
+      run: |
+        cat > generate_clash.py << 'EOF'
+        import yaml
+        import base64
+        import json
+        import urllib.parse
+        import re
+
+        def parse_vmess(link):
+            """解析 vmess:// 链接"""
+            try:
+                b64_data = link[8:]
+                b64_data += '=' * (4 - len(b64_data) % 4)
+                json_str = base64.b64decode(b64_data).decode('utf-8')
+                data = json.loads(json_str)
+                
+                node = {
+                    'name': data.get('ps', 'VMess Node'),
+                    'type': 'vmess',
+                    'server': data.get('add', ''),
+                    'port': int(data.get('port', 443)),
+                    'uuid': data.get('id', ''),
+                    'alterId': int(data.get('aid', 0)),
+                    'cipher': 'auto',
+                    'tls': data.get('tls', '') == 'tls',
+                    'network': data.get('net', 'tcp'),
+                    'ws-opts': {}
+                }
+                
+                # WebSocket 配置
+                if node['network'] == 'ws':
+                    node['ws-opts']['path'] = data.get('path', '/')
+                    if data.get('host'):
+                        node['ws-opts']['headers'] = {'Host': data['host']}
+                
+                # 跳过无效节点
+                if not node['server'] or not node['uuid']:
+                    return None
+                return node
+            except Exception as e:
+                print(f"Parse vmess error: {e}")
+                return None
+
+        def parse_vless(link):
+            """解析 vless:// 链接"""
+            try:
+                # vless://uuid@server:port?params#name
+                match = re.match(r'vless://([^@]+)@([^:]+):(\d+)\?([^#]+)#(.+)', link)
+                if not match:
+                    # 尝试不带 name 的格式
+                    match = re.match(r'vless://([^@]+)@([^:]+):(\d+)\?(.+)', link)
+                    if match:
+                        uuid, server, port, params = match.groups()
+                        name = f"VLESS-{server}"
+                    else:
+                        return None
+                else:
+                    uuid, server, port, params, name = match.groups()
+                
+                query = urllib.parse.parse_qs(params)
+                
+                node = {
+                    'name': urllib.parse.unquote(name),
+                    'type': 'vless',
+                    'server': server,
+                    'port': int(port),
+                    'uuid': uuid,
+                    'tls': query.get('security', [''])[0] == 'tls',
+                    'network': query.get('type', ['tcp'])[0],
+                    'udp': True
+                }
+                
+                # XTLS/Flow 支持
+                flow = query.get('flow', [''])[0]
+                if flow:
+                    node['flow'] = flow
+                
+                # WebSocket / gRPC
+                if node['network'] == 'ws':
+                    node['ws-opts'] = {
+                        'path': query.get('path', ['/'])[0],
+                        'headers': {'Host': query.get('sni', [server])[0]}
+                    }
+                
+                return node
+            except Exception as e:
+                print(f"Parse vless error: {e}")
+                return None
+
+        def parse_trojan(link):
+            """解析 trojan:// 链接"""
+            try:
+                # trojan://password@server:port?params#name
+                match = re.match(r'trojan://([^@]+)@([^:]+):(\d+)\?([^#]+)#(.+)', link)
+                if not match:
+                    match = re.match(r'trojan://([^@]+)@([^:]+):(\d+)#(.+)', link)
+                    if match:
+                        password, server, port, name = match.groups()
+                        params = ''
+                    else:
+                        return None
+                else:
+                    password, server, port, params, name = match.groups()
+                
+                query = urllib.parse.parse_qs(params) if params else {}
+                
+                node = {
+                    'name': urllib.parse.unquote(name),
+                    'type': 'trojan',
+                    'server': server,
+                    'port': int(port),
+                    'password': password,
+                    'tls': True,
+                    'sni': query.get('sni', [server])[0],
+                    'udp': True
+                }
+                
+                # 跳过无效
+                if not node['server'] or not node['password']:
+                    return None
+                return node
+            except Exception as e:
+                print(f"Parse trojan error: {e}")
+                return None
+
+        def parse_ss(link):
+            """解析 ss:// 链接"""
+            try:
+                # ss://method:password@server:port#name
+                # 或 ss://base64(method:password)@server:port#name
+                if link.startswith('ss://'):
+                    content = link[5:]
+                
+                # 检查是否是 base64 编码
+                if '@' not in content and content.startswith('Ym'):
+                    # base64 编码的旧格式
+                    parts = content.split('@')
+                    if len(parts) == 2:
+                        b64 = parts[0] + '=' * (4 - len(parts[0]) % 4)
+                        method_pass = base64.b64decode(b64).decode('utf-8')
+                        server_part = parts[1]
+                    else:
+                        return None
+                else:
+                    # 新格式：直接解析
+                    match = re.match(r'(.+?)@(.+)', content)
+                    if not match:
+                        return None
+                    method_pass = urllib.parse.unquote(match.group(1))
+                    server_part = match.group(2)
+                
+                method, password = method_pass.split(':', 1)
+                
+                # 解析 server:port#name
+                if '#' in server_part:
+                    server_port, name = server_part.split('#', 1)
+                    name = urllib.parse.unquote(name)
+                else:
+                    server_port = server_part
+                    name = f"SS-{server_part.split(':')[0]}"
+                
+                server, port = server_port.split(':')
+                
+                node = {
+                    'name': name,
+                    'type': 'ss',
+                    'server': server,
+                    'port': int(port),
+                    'cipher': method,
+                    'password': password,
+                    'udp': True
+                }
+                return node
+            except Exception as e:
+                print(f"Parse ss error: {e}")
+                return None
+
+        # 读取明文节点
+        with open('nodes_plain.txt', 'r') as f:
+            lines = f.readlines()
+
+        proxies = []
+        errors = []
+        
         for line in lines:
             line = line.strip()
             if not line:
                 continue
             
-            # 验证 vmess 节点
+            node = None
             if line.startswith('vmess://'):
-                info = decode_vmess(line)
-                if is_safe_node(info):
-                    valid_nodes.append(line)
+                node = parse_vmess(line)
+            elif line.startswith('vless://'):
+                node = parse_vless(line)
+            elif line.startswith('trojan://'):
+                node = parse_trojan(line)
+            elif line.startswith('ss://'):
+                node = parse_ss(line)
+            
+            if node:
+                # 去重：检查是否已有相同 name
+                existing = [p for p in proxies if p['name'] == node['name']]
+                if not existing:
+                    proxies.append(node)
                 else:
-                    invalid_count += 1
-            # 验证 vless/trojan/ss 节点（格式检查）
-            elif any(line.startswith(p) for p in ['vless://', 'trojan://', 'ss://', 'ssr://']):
-                # 基础格式验证
-                if re.match(r'^(vless|trojan|ss|ssr)://[^/\s]+', line):
-                    valid_nodes.append(line)
-                else:
-                    invalid_count += 1
+                    node['name'] = node['name'] + '-2'
+                    proxies.append(node)
             else:
-                # 保留其他可能的内容（如注释）
-                if not line.startswith('#'):
-                    valid_nodes.append(line)
+                errors.append(line[:50] + '...' if len(line) > 50 else line)
 
-        # 输出统计
-        print(f"✓ Valid nodes: {len(valid_nodes)}")
-        print(f"✗ Filtered invalid/dangerous nodes: {invalid_count}")
-        print(f"Original format: {'Base64' if is_base64 else 'Plain text'}")
+        print(f"✓ Successfully parsed {len(proxies)} nodes")
+        print(f"✗ Failed to parse {len(errors)} lines")
 
-        # 重新编码为 Base64（v2rayN 标准格式）
-        output_content = '\n'.join(valid_nodes)
-        output_base64 = base64.b64encode(output_content.encode()).decode()
+        # 生成 Clash 配置
+        clash_config = {
+            'mixed-port': 7890,
+            'allow-lan': True,
+            'mode': 'rule',
+            'log-level': 'info',
+            'external-controller': '0.0.0.0:9090',
+            'dns': {
+                'enable': True,
+                'nameserver': ['114.114.114.114', '8.8.8.8']
+            },
+            'proxies': proxies,
+            'proxy-groups': [
+                {
+                    'name': 'Auto',
+                    'type': 'select',
+                    'proxies': [p['name'] for p in proxies[:10]]  # 最多前10个
+                },
+                {
+                    'name': 'LoadBalance',
+                    'type': 'load-balance',
+                    'strategy': 'consistent-hashing',
+                    'proxies': [p['name'] for p in proxies],
+                    'url': 'http://www.gstatic.com/generate_204',
+                    'interval': 300
+                }
+            ],
+            'rules': [
+                'DOMAIN-SUFFIX,google.com,Auto',
+                'DOMAIN-SUFFIX,youtube.com,Auto',
+                'DOMAIN-KEYWORD,google,Auto',
+                'MATCH,DIRECT'
+            ]
+        }
+
+        with open('nodes_clash.yaml', 'w', encoding='utf-8') as f:
+            yaml.dump(clash_config, f, default_flow_style=False, allow_unicode=True)
+
+        print("Generated nodes_clash.yaml")
         
-        with open('nodes_safe.txt', 'w') as f:
-            f.write(output_base64)
-        
-        with open('nodes_plain.txt', 'w') as f:
-            f.write(output_content)
-        
-        print("Generated: nodes_safe.txt (Base64) and nodes_plain.txt (Plain)")
+        # 同时生成适合 Clash Verge/CFW 的 config.yaml
+        with open('config.yaml', 'w', encoding='utf-8') as f:
+            yaml.dump(clash_config, f, default_flow_style=False, allow_unicode=True)
+            
         EOF
         
-        python3 validate_nodes.py
+        python3 generate_clash.py
 
-    # ========== 3. 多平台备份（网络可控/抗DMCA）==========
-    - name: Backup to Gitee (镜像)
-      if: github.event_name != 'pull_request'
+    - name: Generate Sing-box config
       run: |
-        # 使用 Gitee API 同步（需提前在 Secrets 配置 GITEE_TOKEN）
-        # 这一步需要你在 Gitee 创建同名仓库，并生成私人令牌
+        cat > generate_singbox.py << 'EOF'
+        import json
         
-        if [ -n "${{ secrets.GITEE_TOKEN }}" ]; then
-          echo "Syncing to Gitee..."
-          # 推送到 Gitee（需配置 git remote）
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          
-          # 添加 Gitee 远程仓库
-          git remote add gitee https://${{ secrets.GITEE_TOKEN }}@gitee.com/hegio/fgrjk.git || true
-          
-          # 推送
-          git push gitee main --force || echo "Gitee push failed (non-critical)"
-        else
-          echo "GITEE_TOKEN not set, skipping Gitee backup"
-        fi
-
-    # ========== 4. 生成多个格式版本（兼容性）==========
-    - name: Generate multi-format outputs
-      run: |
-        # 生成 Clash 配置（YAML格式）
-        cat > generate_clash.py << 'EOF'
-        import base64
-        import yaml
-        
-        # 读取验证后的明文节点
+        # 读取明文节点
         with open('nodes_plain.txt', 'r') as f:
-            lines = f.readlines()
+            lines = [l.strip() for l in f if l.strip()]
         
-        proxies = []
-        for line in lines:
-            line = line.strip()
-            if line.startswith('vmess://'):
-                # 简化的 vmess 转 clash 格式（仅示例）
-                # 实际转换需要完整解析 vmess 参数
-                proxies.append({'name': 'Node-' + str(len(proxies)), 
-                               'type': 'vmess', 
-                               'server': 'placeholder', 
-                               'port': 443})
+        outbounds = [{"type": "direct", "tag": "direct"}]
         
-        clash_config = {
-            'proxies': proxies,
-            'proxy-groups': [{'name': 'Auto', 'type': 'select', 'proxies': [p['name'] for p in proxies]}]
+        for i, line in enumerate(lines):
+            if line.startswith(('vmess://', 'vless://', 'trojan://', 'ss://')):
+                outbounds.append({
+                    "type": "selector",
+                    "tag": f"node_{i}",
+                    "outbounds": ["direct"]
+                })
+        
+        config = {
+            "log": {"level": "info"},
+            "dns": {"servers": [{"address": "8.8.8.8"}]},
+            "outbounds": outbounds
         }
         
-        with open('nodes_clash.yaml', 'w') as f:
-            yaml.dump(clash_config, f)
+        with open('nodes_singbox.json', 'w') as f:
+            json.dump(config, f, indent=2)
         
-        print("Generated nodes_clash.yaml")
+        print("Generated nodes_singbox.json")
         EOF
         
-        python3 generate_clash.py || echo "Clash generation optional"
-        
-        # 生成 Sing-box 格式（JSON）
-        cp nodes_safe.txt nodes_singbox.json || true
-
-    # ========== 5. 健康检查与通知（监控）==========
-    - name: Health check and notify
-      if: failure()
-      uses: actions/github-script@v6
-      with:
-        script: |
-          github.rest.issues.create({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            title: `🚨 Sync Failed: ${new Date().toISOString()}`,
-            body: `Automatic sync failed. Please check: \n1. Upstream repo availability\n2. Node validation errors\n3. Network connectivity`
-          })
+        python3 generate_singbox.py
 
     - name: Commit and push
       run: |
@@ -221,13 +360,11 @@ jobs:
         git config user.email "github-actions[bot]@users.noreply.github.com"
         
         git add -A
+        
         if git diff --staged --quiet; then
           echo "No changes"
         else
-          git commit -m "🔄 Sync: Updated nodes [$(date '+%Y-%m-%d %H:%M')]
-          
-          - Validated nodes security
-          - Generated multi-format configs
-          - Size check passed"
+          git commit -m "🔄 Sync: Updated nodes with valid Clash config [$(date '+%Y-%m-%d %H:%M')]"
           git push
+          echo "✅ Done"
         fi
