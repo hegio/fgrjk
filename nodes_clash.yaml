@@ -1,0 +1,308 @@
+allow-lan: true
+dns:
+  enable: true
+  nameserver:
+  - 114.114.114.114
+  - 8.8.8.8
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
+proxies:
+- alterId: 0
+  cipher: auto
+  name: HK1
+  network: tcp
+  port: 39287
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: HK2
+  network: tcp
+  port: 17433
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: HK3
+  network: tcp
+  port: 22398
+  server: cn02.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: HK4
+  network: tcp
+  port: 11090
+  server: cn02.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: JP1
+  network: tcp
+  port: 48445
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: JP2
+  network: tcp
+  port: 18693
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: JP3
+  network: tcp
+  port: 22367
+  server: cn02.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: SG1
+  network: tcp
+  port: 37797
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: SG2
+  network: tcp
+  port: 36585
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: SG3
+  network: tcp
+  port: 50940
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: TW1
+  network: tcp
+  port: 18565
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: TW2
+  network: tcp
+  port: 18368
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: KR1
+  network: tcp
+  port: 25283
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: US1
+  network: tcp
+  port: 25507
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: US2
+  network: tcp
+  port: 35510
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: US3
+  network: tcp
+  port: 56806
+  server: cn02.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: efad896c-5407-4227-b922-6b886456b612
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: 🇭🇰 香港_03
+  network: ws
+  port: 44552
+  server: hk03.stimaysmhy8.com
+  tls: false
+  type: vmess
+  uuid: 47076488-01a3-4b5e-a068-ada3c0a2e13f
+  ws-opts:
+    path: ''
+- alterId: 0
+  cipher: auto
+  name: 🇭🇰 香港_09
+  network: ws
+  port: 51254
+  server: hk18.stimaysmhy8.com
+  tls: false
+  type: vmess
+  uuid: 47076488-01a3-4b5e-a068-ada3c0a2e13f
+  ws-opts:
+    path: ''
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸 美国-08
+  network: ws
+  port: 40601
+  server: us05.stimaysmhy8.com
+  tls: false
+  type: vmess
+  uuid: 47076488-01a3-4b5e-a068-ada3c0a2e13f
+  ws-opts:
+    path: ''
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸 美国-09
+  network: ws
+  port: 40706
+  server: us09.stimaysmhy8.com
+  tls: false
+  type: vmess
+  uuid: 47076488-01a3-4b5e-a068-ada3c0a2e13f
+  ws-opts:
+    path: ''
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸 美国-10
+  network: ws
+  port: 40707
+  server: us10.jsyjiedian8.com
+  tls: false
+  type: vmess
+  uuid: 47076488-01a3-4b5e-a068-ada3c0a2e13f
+  ws-opts:
+    path: ''
+- alterId: 0
+  cipher: auto
+  name: 🇨🇦 加拿大
+  network: ws
+  port: 40717
+  server: ca01.jsylianjie5.com
+  tls: false
+  type: vmess
+  uuid: 47076488-01a3-4b5e-a068-ada3c0a2e13f
+  ws-opts:
+    path: ''
+- alterId: 0
+  cipher: auto
+  name: 🇧🇷 巴西
+  network: ws
+  port: 18132
+  server: br01.jsylianjie5.com
+  tls: false
+  type: vmess
+  uuid: 47076488-01a3-4b5e-a068-ada3c0a2e13f
+  ws-opts:
+    path: ''
+- alterId: 0
+  cipher: auto
+  name: 🇬🇧 英国
+  network: ws
+  port: 45712
+  server: gb01.jsylianjie5.com
+  tls: false
+  type: vmess
+  uuid: 47076488-01a3-4b5e-a068-ada3c0a2e13f
+  ws-opts:
+    path: ''
+proxy-groups:
+- name: Auto
+  proxies:
+  - HK1
+  - HK2
+  - HK3
+  - HK4
+  - JP1
+  - JP2
+  - JP3
+  - SG1
+  - SG2
+  - SG3
+  type: select
+- interval: 300
+  name: LoadBalance
+  proxies:
+  - HK1
+  - HK2
+  - HK3
+  - HK4
+  - JP1
+  - JP2
+  - JP3
+  - SG1
+  - SG2
+  - SG3
+  - TW1
+  - TW2
+  - KR1
+  - US1
+  - US2
+  - US3
+  - 🇭🇰 香港_03
+  - 🇭🇰 香港_09
+  - 🇺🇸 美国-08
+  - 🇺🇸 美国-09
+  - 🇺🇸 美国-10
+  - 🇨🇦 加拿大
+  - 🇧🇷 巴西
+  - 🇬🇧 英国
+  strategy: consistent-hashing
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+rules:
+- DOMAIN-SUFFIX,google.com,Auto
+- DOMAIN-SUFFIX,youtube.com,Auto
+- DOMAIN-KEYWORD,google,Auto
+- MATCH,DIRECT
