@@ -17,7 +17,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -27,7 +27,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -37,7 +37,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -47,7 +47,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -57,7 +57,7 @@ proxies:
   server: cn02.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -97,7 +97,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -107,7 +107,17 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: JP3
+  network: tcp
+  port: 22367
+  server: cn02.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - name: 🇯🇵+日本-13
   password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
@@ -141,7 +151,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -151,7 +161,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -161,7 +171,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - name: 🇸🇬+新加坡-13
   password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
@@ -187,6 +197,48 @@ proxies:
   tls: true
   type: trojan
   udp: true
+- name: 🇰🇷[KR]韩国-Seoul
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11029
+  server: kr1.t11-a.app
+  sni: kr011t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: KR1
+  network: tcp
+  port: 25283
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
+  ws-opts: {}
+- name: 🇰🇷+韩国-01
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 48705
+  server: kr01.jsylianjie6.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇰🇷+韩国-02
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 48702
+  server: kr02.jsylianjie6.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇰🇷+韩国-03
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 48505
+  server: kr03.jsylianjie6.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
 - alterId: 0
   cipher: auto
   name: US1
@@ -195,7 +247,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -205,7 +257,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -215,7 +267,7 @@ proxies:
   server: cn01.gene.7xn.cn
   tls: false
   type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
+  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
   ws-opts: {}
 - alterId: 0
   cipher: auto
@@ -250,48 +302,6 @@ proxies:
   uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
   ws-opts:
     path: ''
-- name: 🇰🇷+韩国-01
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 48705
-  server: kr01.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇰🇷+韩国-02
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 48702
-  server: kr02.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇰🇷+韩国-03
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 48505
-  server: kr03.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇰🇷[KR]韩国-Seoul
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11029
-  server: kr1.t11-a.app
-  sni: kr011t.goodyun.buzz
-  tls: true
-  type: trojan
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: KR1
-  network: tcp
-  port: 25283
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: 0c1cdf50-3a99-4f7f-a464-05c76d027eb3
-  ws-opts: {}
 - name: 🇫🇷[FR]法国-Paris01
   password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
   port: 11001
@@ -484,14 +494,6 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇦🇪+迪拜
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 40708
-  server: ae01.jsylianjie5.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
 - name: 🇩🇪+德国
   password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
   port: 34177
@@ -616,6 +618,7 @@ proxy-groups:
   - 🇭🇰 香港_09
   - JP1
   - JP2
+  - JP3
   - 🇯🇵+日本-13
   - 🇯🇵+日本-14
   - 🇯🇵+日本-15
@@ -625,17 +628,17 @@ proxy-groups:
   - 🇸🇬+新加坡-13
   - 🇸🇬+新加坡-14
   - 🇸🇬+新加坡-15
+  - 🇰🇷[KR]韩国-Seoul
+  - KR1
+  - 🇰🇷+韩国-01
+  - 🇰🇷+韩国-02
+  - 🇰🇷+韩国-03
   - US1
   - US2
   - US3
   - 🇺🇸 美国-08
   - 🇺🇸 美国-09
   - 🇺🇸 美国-10
-  - 🇰🇷+韩国-01
-  - 🇰🇷+韩国-02
-  - 🇰🇷+韩国-03
-  - 🇰🇷[KR]韩国-Seoul
-  - KR1
   - 🇫🇷[FR]法国-Paris01
   - 🇫🇷[FR]法国-Paris02
   - 🇬🇧[UK]英国Coventry01-BBC优化
@@ -660,7 +663,6 @@ proxy-groups:
   - 🇹🇭+泰国
   - 🇹🇷+土耳其
   - 🇻🇳+越南
-  - 🇦🇪+迪拜
   - 🇩🇪+德国
   - 🇲🇾+马来西亚
   - 🇫🇷+法国

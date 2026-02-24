@@ -888,6 +888,13 @@
       "outbounds": [
         "direct"
       ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_125",
+      "outbounds": [
+        "direct"
+      ]
     }
   ]
 }
