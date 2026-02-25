@@ -881,20 +881,6 @@
       "outbounds": [
         "direct"
       ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_124",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_125",
-      "outbounds": [
-        "direct"
-      ]
     }
   ]
 }

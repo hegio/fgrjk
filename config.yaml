@@ -9,299 +9,6 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- alterId: 0
-  cipher: auto
-  name: TW1
-  network: tcp
-  port: 18565
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: TW2
-  network: tcp
-  port: 18368
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: HK1
-  network: tcp
-  port: 39287
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: HK2
-  network: tcp
-  port: 17433
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: HK3
-  network: tcp
-  port: 11090
-  server: cn02.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: 🇭🇰 香港_03
-  network: ws
-  port: 44552
-  server: hk03.stimaysmhy8.com
-  tls: false
-  type: vmess
-  uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  ws-opts:
-    path: ''
-- name: 🇭🇰+香港-07
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 44302
-  server: hk07.jsytongxin.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 🇭🇰 香港_09
-  network: ws
-  port: 51254
-  server: hk18.stimaysmhy8.com
-  tls: false
-  type: vmess
-  uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  ws-opts:
-    path: ''
-- alterId: 0
-  cipher: auto
-  name: JP1
-  network: tcp
-  port: 48445
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: JP2
-  network: tcp
-  port: 18693
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: JP3
-  network: tcp
-  port: 22367
-  server: cn02.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- name: 🇯🇵+日本-13
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 30502
-  server: jp13.stimaysmhy8.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇯🇵+日本-14
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 39204
-  server: jp14.jsyjiedian8.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇯🇵+日本-15
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 39555
-  server: jp15.stimaysmhy8.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: SG1
-  network: tcp
-  port: 37797
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: SG2
-  network: tcp
-  port: 36585
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: SG3
-  network: tcp
-  port: 50940
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- name: 🇸🇬+新加坡-13
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 45177
-  server: sg13.stimaysmhy8.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇸🇬+新加坡-14
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 45078
-  server: sg14.jsyjiedian8.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇸🇬+新加坡-15
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 45179
-  server: sg15.stimaysmhy8.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇰🇷[KR]韩国-Seoul
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11029
-  server: kr1.t11-a.app
-  sni: kr011t.goodyun.buzz
-  tls: true
-  type: trojan
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: KR1
-  network: tcp
-  port: 25283
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- name: 🇰🇷+韩国-01
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 48705
-  server: kr01.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇰🇷+韩国-02
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 48702
-  server: kr02.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇰🇷+韩国-03
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 48505
-  server: kr03.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: US1
-  network: tcp
-  port: 25507
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: US2
-  network: tcp
-  port: 35510
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: US3
-  network: tcp
-  port: 38733
-  server: cn01.gene.7xn.cn
-  tls: false
-  type: vmess
-  uuid: cf7b02a2-34ba-43f2-b00c-c2795bc15c87
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸 美国-08
-  network: ws
-  port: 40601
-  server: us05.stimaysmhy8.com
-  tls: false
-  type: vmess
-  uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  ws-opts:
-    path: ''
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸 美国-09
-  network: ws
-  port: 40706
-  server: us09.stimaysmhy8.com
-  tls: false
-  type: vmess
-  uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  ws-opts:
-    path: ''
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸 美国-10
-  network: ws
-  port: 40707
-  server: us10.jsyjiedian8.com
-  tls: false
-  type: vmess
-  uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  ws-opts:
-    path: ''
 - name: 🇫🇷[FR]法国-Paris01
   password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
   port: 11001
@@ -390,6 +97,14 @@ proxies:
   tls: true
   type: trojan
   udp: true
+- name: 🇰🇷[KR]韩国-Seoul
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11029
+  server: kr1.t11-a.app
+  sni: kr011t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇻🇳[VN]越南-HoChiMinh
   password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
   port: 11015
@@ -419,6 +134,291 @@ proxies:
   port: 11018
   server: ar1.t11-a.app
   sni: ar01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: HK1
+  network: tcp
+  port: 39287
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: HK2
+  network: tcp
+  port: 28373
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: HK3
+  network: tcp
+  port: 11090
+  server: cn02.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: JP1
+  network: tcp
+  port: 48445
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: JP2
+  network: tcp
+  port: 18693
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: JP3
+  network: tcp
+  port: 22367
+  server: cn02.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: SG1
+  network: tcp
+  port: 37797
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: SG2
+  network: tcp
+  port: 36585
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: SG3
+  network: tcp
+  port: 50940
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: TW1
+  network: tcp
+  port: 18565
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: TW2
+  network: tcp
+  port: 18368
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: KR1
+  network: tcp
+  port: 25283
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: US1
+  network: tcp
+  port: 25507
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: US2
+  network: tcp
+  port: 35510
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: US3
+  network: tcp
+  port: 38733
+  server: cn01.gene.7xn.cn
+  tls: false
+  type: vmess
+  uuid: 82603e44-061f-4564-92d1-04dc3942afbb
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: 🇭🇰 香港_03
+  network: ws
+  port: 44552
+  server: hk03.stimaysmhy8.com
+  tls: false
+  type: vmess
+  uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  ws-opts:
+    path: ''
+- name: 🇭🇰+香港-07
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 44302
+  server: hk07.jsytongxin.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 🇭🇰 香港_09
+  network: ws
+  port: 51254
+  server: hk18.stimaysmhy8.com
+  tls: false
+  type: vmess
+  uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  ws-opts:
+    path: ''
+- name: 🇯🇵+日本-13
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 30502
+  server: jp13.stimaysmhy8.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇯🇵+日本-14
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 39204
+  server: jp14.jsyjiedian8.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇯🇵+日本-15
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 39555
+  server: jp15.stimaysmhy8.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇸🇬+新加坡-13
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 45177
+  server: sg13.stimaysmhy8.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇸🇬+新加坡-14
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 45078
+  server: sg14.jsyjiedian8.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇸🇬+新加坡-15
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 45179
+  server: sg15.stimaysmhy8.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸 美国-08
+  network: ws
+  port: 40601
+  server: us05.stimaysmhy8.com
+  tls: false
+  type: vmess
+  uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  ws-opts:
+    path: ''
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸 美国-09
+  network: ws
+  port: 40706
+  server: us09.stimaysmhy8.com
+  tls: false
+  type: vmess
+  uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  ws-opts:
+    path: ''
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸 美国-10
+  network: ws
+  port: 40707
+  server: us10.jsyjiedian8.com
+  tls: false
+  type: vmess
+  uuid: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  ws-opts:
+    path: ''
+- name: 🇰🇷+韩国-01
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 48705
+  server: kr01.jsylianjie6.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇰🇷+韩国-02
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 48702
+  server: kr02.jsylianjie6.com
+  sni: jsygouer.weixin-baidu-qq.com
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇰🇷+韩国-03
+  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
+  port: 48505
+  server: kr03.jsylianjie6.com
+  sni: jsygouer.weixin-baidu-qq.com
   tls: true
   type: trojan
   udp: true
@@ -470,14 +470,6 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇹🇭+泰国
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 45709
-  server: th01.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
 - name: 🇹🇷+土耳其
   password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
   port: 43719
@@ -494,10 +486,10 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇩🇪+德国
+- name: 🇦🇪+迪拜
   password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 34177
-  server: de01.jsylianjie5.com
+  port: 40708
+  server: ae01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
   tls: true
   type: trojan
@@ -522,14 +514,6 @@ proxies:
   password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
   port: 35303
   server: au01.jsylianjie5.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇮🇩+印度尼西亚
-  password: 7bcc439b-e4e3-4616-b923-07f83b08e09d
-  port: 40710
-  server: id01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
   tls: true
   type: trojan
@@ -594,51 +578,20 @@ proxies:
 proxy-groups:
 - name: Auto
   proxies:
-  - TW1
-  - TW2
-  - HK1
-  - HK2
-  - HK3
-  - 🇭🇰 香港_03
-  - 🇭🇰+香港-07
-  - 🇭🇰 香港_09
-  - JP1
-  - JP2
+  - 🇫🇷[FR]法国-Paris01
+  - 🇫🇷[FR]法国-Paris02
+  - 🇬🇧[UK]英国Coventry01-BBC优化
+  - 🇬🇧[UK]英国Coventry02-BBC优化
+  - 🇩🇪[DE]德国-Frankfurt01
+  - 🇩🇪[DE]德国-Frankfurt02
+  - 🇨🇦[CA]加拿大-Toronto
+  - 🇳🇱[NL]荷兰-Amsterdam
+  - 🇷🇺[RU]俄罗斯-Moscow
+  - 🇹🇷[TR]土耳其-Istanbul
   type: select
 - interval: 300
   name: LoadBalance
   proxies:
-  - TW1
-  - TW2
-  - HK1
-  - HK2
-  - HK3
-  - 🇭🇰 香港_03
-  - 🇭🇰+香港-07
-  - 🇭🇰 香港_09
-  - JP1
-  - JP2
-  - JP3
-  - 🇯🇵+日本-13
-  - 🇯🇵+日本-14
-  - 🇯🇵+日本-15
-  - SG1
-  - SG2
-  - SG3
-  - 🇸🇬+新加坡-13
-  - 🇸🇬+新加坡-14
-  - 🇸🇬+新加坡-15
-  - 🇰🇷[KR]韩国-Seoul
-  - KR1
-  - 🇰🇷+韩国-01
-  - 🇰🇷+韩国-02
-  - 🇰🇷+韩国-03
-  - US1
-  - US2
-  - US3
-  - 🇺🇸 美国-08
-  - 🇺🇸 美国-09
-  - 🇺🇸 美国-10
   - 🇫🇷[FR]法国-Paris01
   - 🇫🇷[FR]法国-Paris02
   - 🇬🇧[UK]英国Coventry01-BBC优化
@@ -650,24 +603,53 @@ proxy-groups:
   - 🇷🇺[RU]俄罗斯-Moscow
   - 🇹🇷[TR]土耳其-Istanbul
   - 🇮🇳[IN]印度-bangalore
+  - 🇰🇷[KR]韩国-Seoul
   - 🇻🇳[VN]越南-HoChiMinh
   - 🇦🇺[AU]澳大利亚-Sydney
   - 🇳🇬[NG]尼日利亚-Lagos
   - 🇦🇷[AR]阿根廷-BuenosAires
+  - HK1
+  - HK2
+  - HK3
+  - JP1
+  - JP2
+  - JP3
+  - SG1
+  - SG2
+  - SG3
+  - TW1
+  - TW2
+  - KR1
+  - US1
+  - US2
+  - US3
+  - 🇭🇰 香港_03
+  - 🇭🇰+香港-07
+  - 🇭🇰 香港_09
+  - 🇯🇵+日本-13
+  - 🇯🇵+日本-14
+  - 🇯🇵+日本-15
+  - 🇸🇬+新加坡-13
+  - 🇸🇬+新加坡-14
+  - 🇸🇬+新加坡-15
+  - 🇺🇸 美国-08
+  - 🇺🇸 美国-09
+  - 🇺🇸 美国-10
+  - 🇰🇷+韩国-01
+  - 🇰🇷+韩国-02
+  - 🇰🇷+韩国-03
   - 🇮🇳+印度-1
   - 🇮🇳+印度-2
   - 🇳🇱+荷兰
   - 🇵🇭+菲律宾
   - 🇦🇷+阿根廷
   - 🇮🇹+意大利
-  - 🇹🇭+泰国
   - 🇹🇷+土耳其
   - 🇻🇳+越南
-  - 🇩🇪+德国
+  - 🇦🇪+迪拜
   - 🇲🇾+马来西亚
   - 🇫🇷+法国
   - 🇦🇺+澳大利亚
-  - 🇮🇩+印度尼西亚
   - 🇪🇸+西班牙
   - 🇲🇽+墨西哥
   - 🇷🇺+俄罗斯
