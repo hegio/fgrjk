@@ -853,41 +853,6 @@
       "outbounds": [
         "direct"
       ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_120",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_121",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_122",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_123",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_124",
-      "outbounds": [
-        "direct"
-      ]
     }
   ]
 }
