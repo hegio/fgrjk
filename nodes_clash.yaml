@@ -9,134 +9,186 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- name: 🇫🇷[FR]法国-Paris01
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11001
-  server: fr1.t11-a.app
-  sni: fr01t.goodyun.buzz
-  tls: true
-  type: trojan
+- name: 🇹🇼台湾+01 TG@usfgrjk
+  network: ws
+  port: 80
+  server: qsybgp1-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇫🇷[FR]法国-Paris02
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11002
-  server: fr2.t11-a.app
-  sni: fr02t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp1-1000ws.1000ws.top
+    path: /grpchongkong1/
+- name: 🇹🇼台湾+02 TG@usfgrjk
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇬🇧[UK]英国Coventry01-BBC优化
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11003
-  server: uk1.t11-a.app
-  sni: uk01t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpchongkong1/
+- name: 🇹🇼台湾+03 TG@usfgrjk
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇬🇧[UK]英国Coventry02-BBC优化
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11005
-  server: uk2.t11-a.app
-  sni: uk02t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpchongkong1/
+- name: 🇭🇰香港+06 TG@usfgrjk
+  network: ws
+  port: 80
+  server: qsybgp1-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇩🇪[DE]德国-Frankfurt01
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11006
-  server: de1.t11-a.app
-  sni: de01t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp1-1000ws.1000ws.top
+    path: /grpcsg2/
+- name: 🇭🇰香港+07 TG@usfgrjk
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇩🇪[DE]德国-Frankfurt02
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11007
-  server: de2.t11-a.app
-  sni: d2.t11-a2.click
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpcsg2/
+- name: 🇭🇰香港+08
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇨🇦[CA]加拿大-Toronto
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11008
-  server: ca1.t11-a.app
-  sni: ca01t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcsg2/?ed=2560
+- name: 🇯🇵日本+01
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇳🇱[NL]荷兰-Amsterdam
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11009
-  server: nl1.t11-a.app
-  sni: nl01t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcjapan1/?ed=2560
+- name: 🇯🇵日本+03
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇷🇺[RU]俄罗斯-Moscow
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11010
-  server: ru1.t11-a.app
-  sni: ru01t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcjapan2/?ed=2560
+- name: 🇯🇵日本+04
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇹🇷[TR]土耳其-Istanbul
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11051
-  server: tr1.t11-a.app
-  sni: tr01t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpcjapan2/?ed=2560
+- name: 🇸🇬新加坡+01
+  network: ws
+  port: 80
+  server: qsybgp1-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇮🇳[IN]印度-bangalore
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11033
-  server: in1.t11-a.app
-  sni: in01tt.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp1-1000ws.1000ws.top
+    path: /grpcsg1/
+- name: 🇸🇬新加坡+02
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇰🇷[KR]韩国-Seoul
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11029
-  server: kr1.t11-a.app
-  sni: kr011t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpcsg1/
+- name: 🇸🇬新加坡+03
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇻🇳[VN]越南-HoChiMinh
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11015
-  server: vn1.t11-a.app
-  sni: vn01t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcsg1/
+- name: 🇺🇸美国+01
+  network: ws
+  port: 80
+  server: qsybgp1-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇦🇺[AU]澳大利亚-Sydney
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11016
-  server: au1.t11-a.app
-  sni: au01t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp1-1000ws.1000ws.top
+    path: /grpcus1/
+- name: 🇺🇸美国+02
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇳🇬[NG]尼日利亚-Lagos
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11017
-  server: ng1.t11-a.app
-  sni: ng01t.goodyun.buzz
-  tls: true
-  type: trojan
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpcus1/
+- name: 🇺🇸美国+03
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
   udp: true
-- name: 🇦🇷[AR]阿根廷-BuenosAires
-  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
-  port: 11018
-  server: ar1.t11-a.app
-  sni: ar01t.goodyun.buzz
-  tls: true
-  type: trojan
-  udp: true
+  uuid: b7800da4-947a-4814-8d46-fe14f99aa3cd
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcus1/
 - alterId: 0
   cipher: auto
   name: 🇭🇰 香港_03
@@ -191,7 +243,7 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇸🇬+新加坡-13
+- name: 🇸🇬+新加坡-13 家宽
   password: aa756ec4-a2e3-478b-89f7-9107de68e076
   port: 45177
   server: sg13.stimaysmhy8.com
@@ -199,7 +251,7 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇸🇬+新加坡-14
+- name: 🇸🇬+新加坡-14 家宽
   password: aa756ec4-a2e3-478b-89f7-9107de68e076
   port: 45078
   server: sg14.jsyjiedian8.com
@@ -207,7 +259,7 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇸🇬+新加坡-15
+- name: 🇸🇬+新加坡-15 家宽
   password: aa756ec4-a2e3-478b-89f7-9107de68e076
   port: 45179
   server: sg15.stimaysmhy8.com
@@ -444,31 +496,30 @@ proxies:
 proxy-groups:
 - name: Auto
   proxies:
-  - 🇫🇷[FR]法国-Paris01
-  - 🇫🇷[FR]法国-Paris02
-  - 🇬🇧[UK]英国Coventry01-BBC优化
-  - 🇬🇧[UK]英国Coventry02-BBC优化
-  - 🇩🇪[DE]德国-Frankfurt01
-  - 🇩🇪[DE]德国-Frankfurt02
-  - 🇨🇦[CA]加拿大-Toronto
-  - 🇳🇱[NL]荷兰-Amsterdam
-  - 🇷🇺[RU]俄罗斯-Moscow
-  - 🇹🇷[TR]土耳其-Istanbul
-  - 🇮🇳[IN]印度-bangalore
-  - 🇰🇷[KR]韩国-Seoul
-  - 🇻🇳[VN]越南-HoChiMinh
-  - 🇦🇺[AU]澳大利亚-Sydney
-  - 🇳🇬[NG]尼日利亚-Lagos
-  - 🇦🇷[AR]阿根廷-BuenosAires
+  - 🇹🇼台湾+01 TG@usfgrjk
+  - 🇹🇼台湾+02 TG@usfgrjk
+  - 🇹🇼台湾+03 TG@usfgrjk
+  - 🇭🇰香港+06 TG@usfgrjk
+  - 🇭🇰香港+07 TG@usfgrjk
+  - 🇭🇰香港+08
+  - 🇯🇵日本+01
+  - 🇯🇵日本+03
+  - 🇯🇵日本+04
+  - 🇸🇬新加坡+01
+  - 🇸🇬新加坡+02
+  - 🇸🇬新加坡+03
+  - 🇺🇸美国+01
+  - 🇺🇸美国+02
+  - 🇺🇸美国+03
   - 🇭🇰 香港_03
   - 🇭🇰+香港-07
   - 🇭🇰 香港_09
   - 🇯🇵+日本-13
   - 🇯🇵+日本-14
   - 🇯🇵+日本-15
-  - 🇸🇬+新加坡-13
-  - 🇸🇬+新加坡-14
-  - 🇸🇬+新加坡-15
+  - 🇸🇬+新加坡-13 家宽
+  - 🇸🇬+新加坡-14 家宽
+  - 🇸🇬+新加坡-15 家宽
   - 🇺🇸 美国-08
   - 🇺🇸 美国-09
   - 🇺🇸 美国-10
@@ -494,35 +545,35 @@ proxy-groups:
   - 🇷🇺+俄罗斯
   - 🇨🇦 加拿大
   - 🇧🇷 巴西
+  - 🇬🇧 英国
   type: select
 - interval: 300
   name: LoadBalance
   proxies:
-  - 🇫🇷[FR]法国-Paris01
-  - 🇫🇷[FR]法国-Paris02
-  - 🇬🇧[UK]英国Coventry01-BBC优化
-  - 🇬🇧[UK]英国Coventry02-BBC优化
-  - 🇩🇪[DE]德国-Frankfurt01
-  - 🇩🇪[DE]德国-Frankfurt02
-  - 🇨🇦[CA]加拿大-Toronto
-  - 🇳🇱[NL]荷兰-Amsterdam
-  - 🇷🇺[RU]俄罗斯-Moscow
-  - 🇹🇷[TR]土耳其-Istanbul
-  - 🇮🇳[IN]印度-bangalore
-  - 🇰🇷[KR]韩国-Seoul
-  - 🇻🇳[VN]越南-HoChiMinh
-  - 🇦🇺[AU]澳大利亚-Sydney
-  - 🇳🇬[NG]尼日利亚-Lagos
-  - 🇦🇷[AR]阿根廷-BuenosAires
+  - 🇹🇼台湾+01 TG@usfgrjk
+  - 🇹🇼台湾+02 TG@usfgrjk
+  - 🇹🇼台湾+03 TG@usfgrjk
+  - 🇭🇰香港+06 TG@usfgrjk
+  - 🇭🇰香港+07 TG@usfgrjk
+  - 🇭🇰香港+08
+  - 🇯🇵日本+01
+  - 🇯🇵日本+03
+  - 🇯🇵日本+04
+  - 🇸🇬新加坡+01
+  - 🇸🇬新加坡+02
+  - 🇸🇬新加坡+03
+  - 🇺🇸美国+01
+  - 🇺🇸美国+02
+  - 🇺🇸美国+03
   - 🇭🇰 香港_03
   - 🇭🇰+香港-07
   - 🇭🇰 香港_09
   - 🇯🇵+日本-13
   - 🇯🇵+日本-14
   - 🇯🇵+日本-15
-  - 🇸🇬+新加坡-13
-  - 🇸🇬+新加坡-14
-  - 🇸🇬+新加坡-15
+  - 🇸🇬+新加坡-13 家宽
+  - 🇸🇬+新加坡-14 家宽
+  - 🇸🇬+新加坡-15 家宽
   - 🇺🇸 美国-08
   - 🇺🇸 美国-09
   - 🇺🇸 美国-10
