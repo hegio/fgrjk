@@ -755,13 +755,6 @@
       "outbounds": [
         "direct"
       ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_106",
-      "outbounds": [
-        "direct"
-      ]
     }
   ]
 }
