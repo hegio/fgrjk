@@ -9,6 +9,266 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
+- name: 🇫🇷[FR]法国-Paris01
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11001
+  server: fr1.t11-a.app
+  sni: fr01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇫🇷[FR]法国-Paris02
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11002
+  server: fr2.t11-a.app
+  sni: fr02t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇬🇧[UK]英国Coventry01-BBC优化
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11003
+  server: uk1.t11-a.app
+  sni: uk01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇬🇧[UK]英国Coventry02-BBC优化
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11005
+  server: uk2.t11-a.app
+  sni: uk02t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇩🇪[DE]德国-Frankfurt01
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11006
+  server: de1.t11-a.app
+  sni: de01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇩🇪[DE]德国-Frankfurt02
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11007
+  server: de2.t11-a.app
+  sni: d2.t11-a2.click
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇨🇦[CA]加拿大-Toronto
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11008
+  server: ca1.t11-a.app
+  sni: ca01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇳🇱[NL]荷兰-Amsterdam
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11009
+  server: nl1.t11-a.app
+  sni: nl01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇷🇺[RU]俄罗斯-Moscow
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11010
+  server: ru1.t11-a.app
+  sni: ru01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇹🇷[TR]土耳其-Istanbul
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11051
+  server: tr1.t11-a.app
+  sni: tr01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇮🇳[IN]印度-bangalore
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11033
+  server: in1.t11-a.app
+  sni: in01tt.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇰🇷[KR]韩国-Seoul
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11029
+  server: kr1.t11-a.app
+  sni: kr011t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇻🇳[VN]越南-HoChiMinh
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11015
+  server: vn1.t11-a.app
+  sni: vn01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇦🇺[AU]澳大利亚-Sydney
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11016
+  server: au1.t11-a.app
+  sni: au01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇳🇬[NG]尼日利亚-Lagos
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11017
+  server: ng1.t11-a.app
+  sni: ng01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇦🇷[AR]阿根廷-BuenosAires
+  password: 4a2ed7af-d29a-4d89-a077-dfd2956afba0
+  port: 11018
+  server: ar1.t11-a.app
+  sni: ar01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: HK1
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpchongkong2/
+- name: HK2
+  network: ws
+  port: 80
+  server: qsybgp1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsybgp1-1000ws.1000ws.top
+    path: /grpcsg2/
+- name: HK4
+  network: ws
+  port: 80
+  server: qsynode-01.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsynode-01.1000ws.top
+    path: /grpchongkong3/
+- name: JP1
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcjapan1/?ed=2560
+- name: JP2
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpcjapan1/?ed=2560
+- name: TW1
+  network: ws
+  port: 80
+  server: qsybgp1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsybgp1-1000ws.1000ws.top
+    path: /grpchongkong1/
+- name: TW2
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpchongkong1/
+- name: SG1
+  network: ws
+  port: 80
+  server: qsybgp1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsybgp1-1000ws.1000ws.top
+    path: /grpcsg1/
+- name: SG2
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpcsg1/
+- name: US1
+  network: ws
+  port: 80
+  server: qsybgp1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsybgp1-1000ws.1000ws.top
+    path: /grpcus1/
+- name: US2
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpcus1/
 - alterId: 0
   cipher: auto
   name: 🇭🇰 香港_03
@@ -17,11 +277,11 @@ proxies:
   server: hk03.stimaysmhy8.com
   tls: false
   type: vmess
-  uuid: 71165393-5252-4fea-ac96-c36b508720c8
+  uuid: 03352677-995b-46b6-897f-ad8434cd9532
   ws-opts:
     path: ''
 - name: 🇭🇰+香港-07
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 44302
   server: hk07.jsytongxin.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -36,11 +296,11 @@ proxies:
   server: hk18.stimaysmhy8.com
   tls: false
   type: vmess
-  uuid: 71165393-5252-4fea-ac96-c36b508720c8
+  uuid: 03352677-995b-46b6-897f-ad8434cd9532
   ws-opts:
     path: ''
 - name: 🇯🇵+日本-13
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 30502
   server: jp13.stimaysmhy8.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -48,7 +308,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇯🇵+日本-14
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 39204
   server: jp14.jsyjiedian8.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -56,7 +316,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇯🇵+日本-15
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 39555
   server: jp15.stimaysmhy8.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -64,7 +324,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇸🇬+新加坡-13
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 45177
   server: sg13.stimaysmhy8.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -72,7 +332,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇸🇬+新加坡-14
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 45078
   server: sg14.jsyjiedian8.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -80,7 +340,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇸🇬+新加坡-15
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 45179
   server: sg15.stimaysmhy8.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -95,7 +355,7 @@ proxies:
   server: us05.stimaysmhy8.com
   tls: false
   type: vmess
-  uuid: 71165393-5252-4fea-ac96-c36b508720c8
+  uuid: 03352677-995b-46b6-897f-ad8434cd9532
   ws-opts:
     path: ''
 - alterId: 0
@@ -106,7 +366,7 @@ proxies:
   server: us09.stimaysmhy8.com
   tls: false
   type: vmess
-  uuid: 71165393-5252-4fea-ac96-c36b508720c8
+  uuid: 03352677-995b-46b6-897f-ad8434cd9532
   ws-opts:
     path: ''
 - alterId: 0
@@ -117,11 +377,11 @@ proxies:
   server: us10.jsyjiedian8.com
   tls: false
   type: vmess
-  uuid: 71165393-5252-4fea-ac96-c36b508720c8
+  uuid: 03352677-995b-46b6-897f-ad8434cd9532
   ws-opts:
     path: ''
 - name: 🇰🇷+韩国-01
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 48705
   server: kr01.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -129,7 +389,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇰🇷+韩国-02
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 48702
   server: kr02.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -137,7 +397,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇰🇷+韩国-03
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 48505
   server: kr03.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -145,7 +405,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇮🇳+印度-1
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 25538
   server: in01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -153,7 +413,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇮🇳+印度-2
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 44856
   server: in02.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -161,7 +421,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇳🇱+荷兰
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 30012
   server: nl01.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -169,7 +429,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇵🇭+菲律宾
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 19190
   server: ph01.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -177,7 +437,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇦🇷+阿根廷
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 45715
   server: ar01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -185,7 +445,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇮🇹+意大利
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 15004
   server: it01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -193,7 +453,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇹🇭+泰国
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 45709
   server: th01.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -201,7 +461,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇹🇷+土耳其
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 43719
   server: tr01.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -209,7 +469,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇻🇳+越南
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 40511
   server: vn01.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -217,7 +477,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇦🇪+迪拜
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 40708
   server: ae01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -225,7 +485,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇩🇪+德国
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 34177
   server: de01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -233,7 +493,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇲🇾+马来西亚
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 45720
   server: my01.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -241,7 +501,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇫🇷+法国
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 15713
   server: fr01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -249,7 +509,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇮🇩+印度尼西亚
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 40710
   server: id01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -257,7 +517,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇪🇸+西班牙
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 40523
   server: es01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -265,7 +525,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇲🇽+墨西哥
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 35661
   server: mx01.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -273,7 +533,7 @@ proxies:
   type: trojan
   udp: true
 - name: 🇷🇺+俄罗斯
-  password: 71165393-5252-4fea-ac96-c36b508720c8
+  password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 42721
   server: ru01.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
@@ -288,7 +548,7 @@ proxies:
   server: ca01.jsylianjie5.com
   tls: false
   type: vmess
-  uuid: 71165393-5252-4fea-ac96-c36b508720c8
+  uuid: 03352677-995b-46b6-897f-ad8434cd9532
   ws-opts:
     path: ''
 - alterId: 0
@@ -299,7 +559,7 @@ proxies:
   server: br01.jsylianjie5.com
   tls: false
   type: vmess
-  uuid: 71165393-5252-4fea-ac96-c36b508720c8
+  uuid: 03352677-995b-46b6-897f-ad8434cd9532
   ws-opts:
     path: ''
 - alterId: 0
@@ -310,12 +570,39 @@ proxies:
   server: gb01.jsylianjie5.com
   tls: false
   type: vmess
-  uuid: 71165393-5252-4fea-ac96-c36b508720c8
+  uuid: 03352677-995b-46b6-897f-ad8434cd9532
   ws-opts:
     path: ''
 proxy-groups:
 - name: Auto
   proxies:
+  - 🇫🇷[FR]法国-Paris01
+  - 🇫🇷[FR]法国-Paris02
+  - 🇬🇧[UK]英国Coventry01-BBC优化
+  - 🇬🇧[UK]英国Coventry02-BBC优化
+  - 🇩🇪[DE]德国-Frankfurt01
+  - 🇩🇪[DE]德国-Frankfurt02
+  - 🇨🇦[CA]加拿大-Toronto
+  - 🇳🇱[NL]荷兰-Amsterdam
+  - 🇷🇺[RU]俄罗斯-Moscow
+  - 🇹🇷[TR]土耳其-Istanbul
+  - 🇮🇳[IN]印度-bangalore
+  - 🇰🇷[KR]韩国-Seoul
+  - 🇻🇳[VN]越南-HoChiMinh
+  - 🇦🇺[AU]澳大利亚-Sydney
+  - 🇳🇬[NG]尼日利亚-Lagos
+  - 🇦🇷[AR]阿根廷-BuenosAires
+  - HK1
+  - HK2
+  - HK4
+  - JP1
+  - JP2
+  - TW1
+  - TW2
+  - SG1
+  - SG2
+  - US1
+  - US2
   - 🇭🇰 香港_03
   - 🇭🇰+香港-07
   - 🇭🇰 香港_09
@@ -339,22 +626,37 @@ proxy-groups:
   - 🇮🇹+意大利
   - 🇹🇭+泰国
   - 🇹🇷+土耳其
-  - 🇻🇳+越南
-  - 🇦🇪+迪拜
-  - 🇩🇪+德国
-  - 🇲🇾+马来西亚
-  - 🇫🇷+法国
-  - 🇮🇩+印度尼西亚
-  - 🇪🇸+西班牙
-  - 🇲🇽+墨西哥
-  - 🇷🇺+俄罗斯
-  - 🇨🇦 加拿大
-  - 🇧🇷 巴西
-  - 🇬🇧 英国
   type: select
 - interval: 300
   name: LoadBalance
   proxies:
+  - 🇫🇷[FR]法国-Paris01
+  - 🇫🇷[FR]法国-Paris02
+  - 🇬🇧[UK]英国Coventry01-BBC优化
+  - 🇬🇧[UK]英国Coventry02-BBC优化
+  - 🇩🇪[DE]德国-Frankfurt01
+  - 🇩🇪[DE]德国-Frankfurt02
+  - 🇨🇦[CA]加拿大-Toronto
+  - 🇳🇱[NL]荷兰-Amsterdam
+  - 🇷🇺[RU]俄罗斯-Moscow
+  - 🇹🇷[TR]土耳其-Istanbul
+  - 🇮🇳[IN]印度-bangalore
+  - 🇰🇷[KR]韩国-Seoul
+  - 🇻🇳[VN]越南-HoChiMinh
+  - 🇦🇺[AU]澳大利亚-Sydney
+  - 🇳🇬[NG]尼日利亚-Lagos
+  - 🇦🇷[AR]阿根廷-BuenosAires
+  - HK1
+  - HK2
+  - HK4
+  - JP1
+  - JP2
+  - TW1
+  - TW2
+  - SG1
+  - SG2
+  - US1
+  - US2
   - 🇭🇰 香港_03
   - 🇭🇰+香港-07
   - 🇭🇰 香港_09
