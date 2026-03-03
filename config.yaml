@@ -140,15 +140,15 @@ proxies:
 - name: HK1
   network: ws
   port: 80
-  server: qsybgp3-1000ws.1000ws.top
+  server: qsynode-01.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
-      Host: qsybgp3-1000ws.1000ws.top
-    path: /grpchongkong2/
+      Host: qsynode-01.1000ws.top
+    path: /grpchongkong3/
 - name: HK2
   network: ws
   port: 80
@@ -156,23 +156,23 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
       Host: qsybgp1-1000ws.1000ws.top
     path: /grpcsg2/
-- name: HK4
+- name: HK3
   network: ws
   port: 80
-  server: qsynode-01.1000ws.top
+  server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
-      Host: qsynode-01.1000ws.top
-    path: /grpchongkong3/
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcsg2/?ed=2560
 - name: JP1
   network: ws
   port: 80
@@ -180,7 +180,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -192,11 +192,23 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
       Host: qsybgp2-1000ws.1000ws.top
     path: /grpcjapan1/?ed=2560
+- name: JP3
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcjapan2/?ed=2560
 - name: TW1
   network: ws
   port: 80
@@ -204,7 +216,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
       Host: qsybgp1-1000ws.1000ws.top
@@ -216,7 +228,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
       Host: qsybgp2-1000ws.1000ws.top
@@ -228,7 +240,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
       Host: qsybgp1-1000ws.1000ws.top
@@ -240,7 +252,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
       Host: qsybgp2-1000ws.1000ws.top
@@ -252,7 +264,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
       Host: qsybgp1-1000ws.1000ws.top
@@ -264,7 +276,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 4779b8d3-f845-4029-b04d-f4804767edd0
+  uuid: 740f4ebb-660b-439e-9ca2-dc3dec7a5756
   ws-opts:
     headers:
       Host: qsybgp2-1000ws.1000ws.top
@@ -380,30 +392,6 @@ proxies:
   uuid: 03352677-995b-46b6-897f-ad8434cd9532
   ws-opts:
     path: ''
-- name: 🇰🇷+韩国-01
-  password: 03352677-995b-46b6-897f-ad8434cd9532
-  port: 48705
-  server: kr01.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇰🇷+韩国-02
-  password: 03352677-995b-46b6-897f-ad8434cd9532
-  port: 48702
-  server: kr02.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇰🇷+韩国-03
-  password: 03352677-995b-46b6-897f-ad8434cd9532
-  port: 48505
-  server: kr03.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
 - name: 🇮🇳+印度-1
   password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 25538
@@ -424,22 +412,6 @@ proxies:
   password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 30012
   server: nl01.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇵🇭+菲律宾
-  password: 03352677-995b-46b6-897f-ad8434cd9532
-  port: 19190
-  server: ph01.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇦🇷+阿根廷
-  password: 03352677-995b-46b6-897f-ad8434cd9532
-  port: 45715
-  server: ar01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
   tls: true
   type: trojan
@@ -476,14 +448,6 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇦🇪+迪拜
-  password: 03352677-995b-46b6-897f-ad8434cd9532
-  port: 40708
-  server: ae01.jsylianjie5.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
 - name: 🇩🇪+德国
   password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 34177
@@ -492,26 +456,10 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇲🇾+马来西亚
-  password: 03352677-995b-46b6-897f-ad8434cd9532
-  port: 45720
-  server: my01.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
 - name: 🇫🇷+法国
   password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 15713
   server: fr01.jsylianjie5.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇮🇩+印度尼西亚
-  password: 03352677-995b-46b6-897f-ad8434cd9532
-  port: 40710
-  server: id01.jsylianjie5.com
   sni: jsygouer.weixin-baidu-qq.com
   tls: true
   type: trojan
@@ -528,14 +476,6 @@ proxies:
   password: 03352677-995b-46b6-897f-ad8434cd9532
   port: 35661
   server: mx01.jsylianjie6.com
-  sni: jsygouer.weixin-baidu-qq.com
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇷🇺+俄罗斯
-  password: 03352677-995b-46b6-897f-ad8434cd9532
-  port: 42721
-  server: ru01.jsylianjie6.com
   sni: jsygouer.weixin-baidu-qq.com
   tls: true
   type: trojan
@@ -594,9 +534,10 @@ proxy-groups:
   - 🇦🇷[AR]阿根廷-BuenosAires
   - HK1
   - HK2
-  - HK4
+  - HK3
   - JP1
   - JP2
+  - JP3
   - TW1
   - TW2
   - SG1
@@ -615,17 +556,16 @@ proxy-groups:
   - 🇺🇸 美国-08
   - 🇺🇸 美国-09
   - 🇺🇸 美国-10
-  - 🇰🇷+韩国-01
-  - 🇰🇷+韩国-02
-  - 🇰🇷+韩国-03
   - 🇮🇳+印度-1
   - 🇮🇳+印度-2
   - 🇳🇱+荷兰
-  - 🇵🇭+菲律宾
-  - 🇦🇷+阿根廷
   - 🇮🇹+意大利
   - 🇹🇭+泰国
   - 🇹🇷+土耳其
+  - 🇻🇳+越南
+  - 🇩🇪+德国
+  - 🇫🇷+法国
+  - 🇪🇸+西班牙
   type: select
 - interval: 300
   name: LoadBalance
@@ -648,9 +588,10 @@ proxy-groups:
   - 🇦🇷[AR]阿根廷-BuenosAires
   - HK1
   - HK2
-  - HK4
+  - HK3
   - JP1
   - JP2
+  - JP3
   - TW1
   - TW2
   - SG1
@@ -669,26 +610,17 @@ proxy-groups:
   - 🇺🇸 美国-08
   - 🇺🇸 美国-09
   - 🇺🇸 美国-10
-  - 🇰🇷+韩国-01
-  - 🇰🇷+韩国-02
-  - 🇰🇷+韩国-03
   - 🇮🇳+印度-1
   - 🇮🇳+印度-2
   - 🇳🇱+荷兰
-  - 🇵🇭+菲律宾
-  - 🇦🇷+阿根廷
   - 🇮🇹+意大利
   - 🇹🇭+泰国
   - 🇹🇷+土耳其
   - 🇻🇳+越南
-  - 🇦🇪+迪拜
   - 🇩🇪+德国
-  - 🇲🇾+马来西亚
   - 🇫🇷+法国
-  - 🇮🇩+印度尼西亚
   - 🇪🇸+西班牙
   - 🇲🇽+墨西哥
-  - 🇷🇺+俄罗斯
   - 🇨🇦 加拿大
   - 🇧🇷 巴西
   - 🇬🇧 英国
