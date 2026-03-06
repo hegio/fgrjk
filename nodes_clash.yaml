@@ -16,7 +16,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: ead3d77d-1fbd-41b7-9f8b-bcbc6af96f86
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -24,38 +24,50 @@ proxies:
 - name: HK2
   network: ws
   port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcsg2/
+- name: HK3
+  network: ws
+  port: 80
   server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: ead3d77d-1fbd-41b7-9f8b-bcbc6af96f86
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcsg2/
+- name: HK4
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
     path: /grpcsg2/?ed=2560
-- name: HK3
-  network: ws
-  port: 80
-  server: qsynode-01.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: ead3d77d-1fbd-41b7-9f8b-bcbc6af96f86
-  ws-opts:
-    headers:
-      Host: qsynode-01.1000ws.top
-    path: /grpchongkong3/
 - name: JP1
   network: ws
   port: 80
-  server: qsybgp3-1000ws.1000ws.top
+  server: qsybgp2-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: ead3d77d-1fbd-41b7-9f8b-bcbc6af96f86
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
   ws-opts:
     headers:
-      Host: qsybgp3-1000ws.1000ws.top
+      Host: qsybgp2-1000ws.1000ws.top
     path: /grpcjapan1/?ed=2560
 - name: JP2
   network: ws
@@ -64,19 +76,55 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: ead3d77d-1fbd-41b7-9f8b-bcbc6af96f86
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
     path: /grpcjapan2/?ed=2560
+- name: JP3
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpcjapan2/?ed=2560
 - name: TW1
+  network: ws
+  port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpchongkong1/
+- name: TW2
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpchongkong1/
+- name: TW3
   network: ws
   port: 80
   server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: ead3d77d-1fbd-41b7-9f8b-bcbc6af96f86
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -84,11 +132,35 @@ proxies:
 - name: SG1
   network: ws
   port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcsg1/
+- name: SG2
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpcsg1/
+- name: SG3
+  network: ws
+  port: 80
   server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: ead3d77d-1fbd-41b7-9f8b-bcbc6af96f86
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -96,149 +168,388 @@ proxies:
 - name: US1
   network: ws
   port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcus1/
+- name: US2
+  network: ws
+  port: 80
+  server: qsybgp2-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp2-1000ws.1000ws.top
+    path: /grpcus1/
+- name: US3
+  network: ws
+  port: 80
   server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: ead3d77d-1fbd-41b7-9f8b-bcbc6af96f86
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
     path: /grpcus1/
-- alterId: 0
-  cipher: auto
-  name: 🇭🇰 香港_03
-  network: ws
-  port: 44552
-  server: hk03.stimaysmhy8.com
-  tls: false
-  type: vmess
-  uuid: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  ws-opts:
-    path: ''
-- name: 🇭🇰+香港-07
-  password: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  port: 44302
-  server: hk07.jsytongxin.com
-  sni: jsygouer.weixin-baidu-qq.com
+- name: 🇭🇰[HK]HongKong17+-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 22337
+  server: h7.t11-a.app
+  sni: hk07t.goodyun.buzz
   tls: true
   type: trojan
   udp: true
-- alterId: 0
-  cipher: auto
-  name: 🇭🇰 香港_09
-  network: ws
-  port: 51254
-  server: hk18.stimaysmhy8.com
-  tls: false
-  type: vmess
-  uuid: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  ws-opts:
-    path: ''
-- name: 🇯🇵+日本-13
-  password: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  port: 30502
-  server: jp13.stimaysmhy8.com
-  sni: jsygouer.weixin-baidu-qq.com
+- name: 🇭🇰[HK]HongKong18+-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 22338
+  server: h8.t11-a.app
+  sni: hk08t.goodyun.buzz
   tls: true
   type: trojan
   udp: true
-- name: 🇯🇵+日本-14
-  password: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  port: 39204
-  server: jp14.jsyjiedian8.com
-  sni: jsygouer.weixin-baidu-qq.com
+- name: 🇭🇰[HK]HongKong19+-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 22339
+  server: h9.t11-a.app
+  sni: v.t202511-s.icu
   tls: true
   type: trojan
   udp: true
-- name: 🇯🇵+日本-15
-  password: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  port: 39555
-  server: jp15.stimaysmhy8.com
-  sni: jsygouer.weixin-baidu-qq.com
+- name: 🇭🇰[HK]HongKong20+-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 22340
+  server: h10.t11-a.app
+  sni: v.t202511-s.icu
   tls: true
   type: trojan
   udp: true
-- name: 🇸🇬+新加坡-13
-  password: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  port: 45177
-  server: sg13.stimaysmhy8.com
-  sni: jsygouer.weixin-baidu-qq.com
+- name: 🇸🇬[SG]Singapore12
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 26212
+  server: s12.t11-a.app
+  sni: sg12t.goodyun.buzz
   tls: true
   type: trojan
   udp: true
-- name: 🇸🇬+新加坡-14
-  password: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  port: 45078
-  server: sg14.jsyjiedian8.com
-  sni: jsygouer.weixin-baidu-qq.com
+- name: 🇸🇬[SG]Singapore13
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 26213
+  server: s13.t11-a.app
+  sni: sg13t.goodyun.buzz
   tls: true
   type: trojan
   udp: true
-- name: 🇸🇬+新加坡-15
-  password: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  port: 45179
-  server: sg15.stimaysmhy8.com
-  sni: jsygouer.weixin-baidu-qq.com
+- name: 🇸🇬[SG]Singapore14
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 26214
+  server: s14.t11-a.app
+  sni: sg14t.goodyun.buzz
   tls: true
   type: trojan
   udp: true
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸 美国-08
-  network: ws
-  port: 40601
-  server: us05.stimaysmhy8.com
-  tls: false
-  type: vmess
-  uuid: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  ws-opts:
-    path: ''
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸 美国-09
-  network: ws
-  port: 40706
-  server: us09.stimaysmhy8.com
-  tls: false
-  type: vmess
-  uuid: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  ws-opts:
-    path: ''
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸 美国-10
-  network: ws
-  port: 40707
-  server: us10.jsyjiedian8.com
-  tls: false
-  type: vmess
-  uuid: ee7c08a6-1682-4219-bbfc-14faca3843a1
-  ws-opts:
-    path: ''
+- name: 🇸🇬[SG]Singapore15
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 26215
+  server: s15.t11-a.app
+  sni: sg15t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇯🇵[JP]Tokyo03
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 35003
+  server: j3.t11-a.app
+  sni: s.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇯🇵[JP]Tokyo04
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 35004
+  server: j4.t11-a.app
+  sni: s.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇯🇵[JP]Tokyo06
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 35006
+  server: j6.t11-a.app
+  sni: s.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇯🇵[JP]Tokyo07
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 35077
+  server: j7.t11-a.app
+  sni: jp077t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇺🇸[US]美国Santa+Clara06-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 33807
+  server: us6.t11-a.app
+  sni: us06t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇺🇸[US]美国San+Jose07-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 33808
+  server: us7.t11-a.app
+  sni: us07t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇺🇸[US]美国San+Jose08-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 33809
+  server: us8.t11-a.app
+  sni: us08t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇺🇸[US]美国San+Francisco10-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 33811
+  server: us10.t11-a.app
+  sni: us10t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇺🇸[US]美国San+Francisco11-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 33812
+  server: us11.t11-a.app
+  sni: us11t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇺🇸[US]美国San+Francisco12-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 33813
+  server: us12.t11-a.app
+  sni: us12t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇹🇼[TW]TaiPei03-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 33903
+  server: tw3.t11-a.app
+  sni: t.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇹🇼[TW]TaiPei04-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 33904
+  server: tw4.t11-a.app
+  sni: tw04t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇹🇼[TW]TaiPei05-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 33905
+  server: tw5.t11-a.app
+  sni: tw05t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇹🇼[TW]TaiPei06-GPT优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 33906
+  server: tw6.t11-a.app
+  sni: tw06t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇫🇷[FR]法国-Paris01
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11001
+  server: fr1.t11-a.app
+  sni: fr01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇫🇷[FR]法国-Paris02
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11002
+  server: fr2.t11-a.app
+  sni: fr02t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇬🇧[UK]英国Coventry01-BBC优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11003
+  server: uk1.t11-a.app
+  sni: uk01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇬🇧[UK]英国Coventry02-BBC优化
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11005
+  server: uk2.t11-a.app
+  sni: uk02t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇩🇪[DE]德国-Frankfurt01
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11006
+  server: de1.t11-a.app
+  sni: de01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇩🇪[DE]德国-Frankfurt02
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11007
+  server: de2.t11-a.app
+  sni: d2.t11-a2.click
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇨🇦[CA]加拿大-Toronto
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11008
+  server: ca1.t11-a.app
+  sni: ca01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇳🇱[NL]荷兰-Amsterdam
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11009
+  server: nl1.t11-a.app
+  sni: nl01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇷🇺[RU]俄罗斯-Moscow
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11010
+  server: ru1.t11-a.app
+  sni: ru01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇹🇷[TR]土耳其-Istanbul
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11051
+  server: tr1.t11-a.app
+  sni: tr01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇮🇳[IN]印度-bangalore
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11033
+  server: in1.t11-a.app
+  sni: in01tt.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇰🇷[KR]韩国-Seoul
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11029
+  server: kr1.t11-a.app
+  sni: kr011t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇦🇺[AU]澳大利亚-Sydney
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11016
+  server: au1.t11-a.app
+  sni: au01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇳🇬[NG]尼日利亚-Lagos
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11017
+  server: ng1.t11-a.app
+  sni: ng01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇦🇷[AR]阿根廷-BuenosAires
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11018
+  server: ar1.t11-a.app
+  sni: ar01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 proxy-groups:
 - name: Auto
   proxies:
   - HK1
   - HK2
   - HK3
+  - HK4
   - JP1
   - JP2
+  - JP3
   - TW1
+  - TW2
+  - TW3
   - SG1
+  - SG2
+  - SG3
   - US1
-  - 🇭🇰 香港_03
-  - 🇭🇰+香港-07
-  - 🇭🇰 香港_09
-  - 🇯🇵+日本-13
-  - 🇯🇵+日本-14
-  - 🇯🇵+日本-15
-  - 🇸🇬+新加坡-13
-  - 🇸🇬+新加坡-14
-  - 🇸🇬+新加坡-15
-  - 🇺🇸 美国-08
-  - 🇺🇸 美国-09
-  - 🇺🇸 美国-10
+  - US2
+  - US3
+  - 🇭🇰[HK]HongKong17+-GPT优化
+  - 🇭🇰[HK]HongKong18+-GPT优化
+  - 🇭🇰[HK]HongKong19+-GPT优化
+  - 🇭🇰[HK]HongKong20+-GPT优化
+  - 🇸🇬[SG]Singapore12
+  - 🇸🇬[SG]Singapore13
+  - 🇸🇬[SG]Singapore14
+  - 🇸🇬[SG]Singapore15
+  - 🇯🇵[JP]Tokyo03
+  - 🇯🇵[JP]Tokyo04
+  - 🇯🇵[JP]Tokyo06
+  - 🇯🇵[JP]Tokyo07
+  - 🇺🇸[US]美国Santa+Clara06-GPT优化
+  - 🇺🇸[US]美国San+Jose07-GPT优化
+  - 🇺🇸[US]美国San+Jose08-GPT优化
+  - 🇺🇸[US]美国San+Francisco10-GPT优化
+  - 🇺🇸[US]美国San+Francisco11-GPT优化
+  - 🇺🇸[US]美国San+Francisco12-GPT优化
+  - 🇹🇼[TW]TaiPei03-GPT优化
+  - 🇹🇼[TW]TaiPei04-GPT优化
+  - 🇹🇼[TW]TaiPei05-GPT优化
+  - 🇹🇼[TW]TaiPei06-GPT优化
+  - 🇫🇷[FR]法国-Paris01
+  - 🇫🇷[FR]法国-Paris02
+  - 🇬🇧[UK]英国Coventry01-BBC优化
+  - 🇬🇧[UK]英国Coventry02-BBC优化
+  - 🇩🇪[DE]德国-Frankfurt01
+  - 🇩🇪[DE]德国-Frankfurt02
+  - 🇨🇦[CA]加拿大-Toronto
+  - 🇳🇱[NL]荷兰-Amsterdam
+  - 🇷🇺[RU]俄罗斯-Moscow
+  - 🇹🇷[TR]土耳其-Istanbul
+  - 🇮🇳[IN]印度-bangalore
+  - 🇰🇷[KR]韩国-Seoul
   type: select
 - interval: 300
   name: LoadBalance
@@ -246,23 +557,56 @@ proxy-groups:
   - HK1
   - HK2
   - HK3
+  - HK4
   - JP1
   - JP2
+  - JP3
   - TW1
+  - TW2
+  - TW3
   - SG1
+  - SG2
+  - SG3
   - US1
-  - 🇭🇰 香港_03
-  - 🇭🇰+香港-07
-  - 🇭🇰 香港_09
-  - 🇯🇵+日本-13
-  - 🇯🇵+日本-14
-  - 🇯🇵+日本-15
-  - 🇸🇬+新加坡-13
-  - 🇸🇬+新加坡-14
-  - 🇸🇬+新加坡-15
-  - 🇺🇸 美国-08
-  - 🇺🇸 美国-09
-  - 🇺🇸 美国-10
+  - US2
+  - US3
+  - 🇭🇰[HK]HongKong17+-GPT优化
+  - 🇭🇰[HK]HongKong18+-GPT优化
+  - 🇭🇰[HK]HongKong19+-GPT优化
+  - 🇭🇰[HK]HongKong20+-GPT优化
+  - 🇸🇬[SG]Singapore12
+  - 🇸🇬[SG]Singapore13
+  - 🇸🇬[SG]Singapore14
+  - 🇸🇬[SG]Singapore15
+  - 🇯🇵[JP]Tokyo03
+  - 🇯🇵[JP]Tokyo04
+  - 🇯🇵[JP]Tokyo06
+  - 🇯🇵[JP]Tokyo07
+  - 🇺🇸[US]美国Santa+Clara06-GPT优化
+  - 🇺🇸[US]美国San+Jose07-GPT优化
+  - 🇺🇸[US]美国San+Jose08-GPT优化
+  - 🇺🇸[US]美国San+Francisco10-GPT优化
+  - 🇺🇸[US]美国San+Francisco11-GPT优化
+  - 🇺🇸[US]美国San+Francisco12-GPT优化
+  - 🇹🇼[TW]TaiPei03-GPT优化
+  - 🇹🇼[TW]TaiPei04-GPT优化
+  - 🇹🇼[TW]TaiPei05-GPT优化
+  - 🇹🇼[TW]TaiPei06-GPT优化
+  - 🇫🇷[FR]法国-Paris01
+  - 🇫🇷[FR]法国-Paris02
+  - 🇬🇧[UK]英国Coventry01-BBC优化
+  - 🇬🇧[UK]英国Coventry02-BBC优化
+  - 🇩🇪[DE]德国-Frankfurt01
+  - 🇩🇪[DE]德国-Frankfurt02
+  - 🇨🇦[CA]加拿大-Toronto
+  - 🇳🇱[NL]荷兰-Amsterdam
+  - 🇷🇺[RU]俄罗斯-Moscow
+  - 🇹🇷[TR]土耳其-Istanbul
+  - 🇮🇳[IN]印度-bangalore
+  - 🇰🇷[KR]韩国-Seoul
+  - 🇦🇺[AU]澳大利亚-Sydney
+  - 🇳🇬[NG]尼日利亚-Lagos
+  - 🇦🇷[AR]阿根廷-BuenosAires
   strategy: consistent-hashing
   type: load-balance
   url: http://www.gstatic.com/generate_204
