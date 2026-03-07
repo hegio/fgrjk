@@ -9,43 +9,15 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- name: HK1
-  network: ws
-  port: 80
-  server: qsybgp3-1000ws.1000ws.top
-  tls: false
-  type: vless
+- name: 🇨🇦[CA]加拿大-Toronto
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11008
+  server: ca1.t11-a.app
+  sni: ca01t.goodyun.buzz
+  tls: true
+  type: trojan
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
-  ws-opts:
-    headers:
-      Host: qsybgp3-1000ws.1000ws.top
-    path: /grpchongkong2/
-- name: HK2
-  network: ws
-  port: 80
-  server: qsybgp1-1-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
-  ws-opts:
-    headers:
-      Host: qsybgp1-1-1000ws.1000ws.top
-    path: /grpcsg2/
-- name: HK3
-  network: ws
-  port: 80
-  server: qsybgp3-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
-  ws-opts:
-    headers:
-      Host: qsybgp3-1000ws.1000ws.top
-    path: /grpcsg2/
-- name: HK4
+- name: 🇭🇰香港+08
   network: ws
   port: 80
   server: qsybgp3-1000ws.1000ws.top
@@ -57,19 +29,43 @@ proxies:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
     path: /grpcsg2/?ed=2560
-- name: JP1
+- name: 🇭🇰香港+05
   network: ws
   port: 80
-  server: qsybgp2-1000ws.1000ws.top
+  server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
   uuid: da6c3f60-3a62-45f7-b483-69578e790dde
   ws-opts:
     headers:
-      Host: qsybgp2-1000ws.1000ws.top
-    path: /grpcjapan1/?ed=2560
-- name: JP2
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpchongkong2/
+- name: 🇭🇰香港+06
+  network: ws
+  port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcsg2/
+- name: 🇭🇰香港+07
+  network: ws
+  port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcsg2/
+- name: 🇯🇵日本+03
   network: ws
   port: 80
   server: qsybgp3-1000ws.1000ws.top
@@ -81,55 +77,19 @@ proxies:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
     path: /grpcjapan2/?ed=2560
-- name: JP3
+- name: 🇯🇵日本+04
   network: ws
   port: 80
-  server: qsybgp2-1000ws.1000ws.top
+  server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
   uuid: da6c3f60-3a62-45f7-b483-69578e790dde
   ws-opts:
     headers:
-      Host: qsybgp2-1000ws.1000ws.top
+      Host: qsybgp3-1000ws.1000ws.top
     path: /grpcjapan2/?ed=2560
-- name: TW1
-  network: ws
-  port: 80
-  server: qsybgp1-1-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
-  ws-opts:
-    headers:
-      Host: qsybgp1-1-1000ws.1000ws.top
-    path: /grpchongkong1/
-- name: TW2
-  network: ws
-  port: 80
-  server: qsybgp2-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
-  ws-opts:
-    headers:
-      Host: qsybgp2-1000ws.1000ws.top
-    path: /grpchongkong1/
-- name: TW3
-  network: ws
-  port: 80
-  server: qsybgp3-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
-  ws-opts:
-    headers:
-      Host: qsybgp3-1000ws.1000ws.top
-    path: /grpchongkong1/
-- name: SG1
+- name: 🇸🇬新加坡+01
   network: ws
   port: 80
   server: qsybgp1-1-1000ws.1000ws.top
@@ -141,19 +101,7 @@ proxies:
     headers:
       Host: qsybgp1-1-1000ws.1000ws.top
     path: /grpcsg1/
-- name: SG2
-  network: ws
-  port: 80
-  server: qsybgp2-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
-  ws-opts:
-    headers:
-      Host: qsybgp2-1000ws.1000ws.top
-    path: /grpcsg1/
-- name: SG3
+- name: 🇸🇬新加坡+02
   network: ws
   port: 80
   server: qsybgp3-1000ws.1000ws.top
@@ -165,7 +113,55 @@ proxies:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
     path: /grpcsg1/
-- name: US1
+- name: 🇸🇬新加坡+03
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcsg1/
+- name: 🇹🇼台湾+01
+  network: ws
+  port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpchongkong1/
+- name: 🇹🇼台湾+02
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpchongkong1/
+- name: 🇹🇼台湾+03
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpchongkong1/
+- name: 🇺🇸美国+01
   network: ws
   port: 80
   server: qsybgp1-1-1000ws.1000ws.top
@@ -177,19 +173,19 @@ proxies:
     headers:
       Host: qsybgp1-1-1000ws.1000ws.top
     path: /grpcus1/
-- name: US2
+- name: 🇺🇸美国+02
   network: ws
   port: 80
-  server: qsybgp2-1000ws.1000ws.top
+  server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
   uuid: da6c3f60-3a62-45f7-b483-69578e790dde
   ws-opts:
     headers:
-      Host: qsybgp2-1000ws.1000ws.top
+      Host: qsybgp3-1000ws.1000ws.top
     path: /grpcus1/
-- name: US3
+- name: 🇺🇸美国+03
   network: ws
   port: 80
   server: qsybgp3-1000ws.1000ws.top
@@ -297,7 +293,7 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇺🇸[US]美国Santa+Clara06-GPT优化
+- name: 🇺🇸[US]Santa+Clara06-GPT优化
   password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
   port: 33807
   server: us6.t11-a.app
@@ -305,7 +301,7 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇺🇸[US]美国San+Jose07-GPT优化
+- name: 🇺🇸[US]San+Jose07-GPT优化
   password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
   port: 33808
   server: us7.t11-a.app
@@ -313,7 +309,7 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇺🇸[US]美国San+Jose08-GPT优化
+- name: 🇺🇸[US]San+Jose08-GPT优化
   password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
   port: 33809
   server: us8.t11-a.app
@@ -321,7 +317,7 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇺🇸[US]美国San+Francisco10-GPT优化
+- name: 🇺🇸[US]San+Francisco10-GPT优化
   password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
   port: 33811
   server: us10.t11-a.app
@@ -329,7 +325,7 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇺🇸[US]美国San+Francisco11-GPT优化
+- name: 🇺🇸[US]San+Francisco11-GPT优化
   password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
   port: 33812
   server: us11.t11-a.app
@@ -337,7 +333,7 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇺🇸[US]美国San+Francisco12-GPT优化
+- name: 🇺🇸[US]San+Francisco12-GPT优化
   password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
   port: 33813
   server: us12.t11-a.app
@@ -425,14 +421,6 @@ proxies:
   tls: true
   type: trojan
   udp: true
-- name: 🇨🇦[CA]加拿大-Toronto
-  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
-  port: 11008
-  server: ca1.t11-a.app
-  sni: ca01t.goodyun.buzz
-  tls: true
-  type: trojan
-  udp: true
 - name: 🇳🇱[NL]荷兰-Amsterdam
   password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
   port: 11009
@@ -473,6 +461,14 @@ proxies:
   tls: true
   type: trojan
   udp: true
+- name: 🇻🇳[VN]越南-HoChiMinh
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11015
+  server: vn1.t11-a.app
+  sni: vn01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇦🇺[AU]澳大利亚-Sydney
   password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
   port: 11016
@@ -500,22 +496,22 @@ proxies:
 proxy-groups:
 - name: Auto
   proxies:
-  - HK1
-  - HK2
-  - HK3
-  - HK4
-  - JP1
-  - JP2
-  - JP3
-  - TW1
-  - TW2
-  - TW3
-  - SG1
-  - SG2
-  - SG3
-  - US1
-  - US2
-  - US3
+  - 🇨🇦[CA]加拿大-Toronto
+  - 🇭🇰香港+08
+  - 🇭🇰香港+05
+  - 🇭🇰香港+06
+  - 🇭🇰香港+07
+  - 🇯🇵日本+03
+  - 🇯🇵日本+04
+  - 🇸🇬新加坡+01
+  - 🇸🇬新加坡+02
+  - 🇸🇬新加坡+03
+  - 🇹🇼台湾+01
+  - 🇹🇼台湾+02
+  - 🇹🇼台湾+03
+  - 🇺🇸美国+01
+  - 🇺🇸美国+02
+  - 🇺🇸美国+03
   - 🇭🇰[HK]HongKong17+-GPT优化
   - 🇭🇰[HK]HongKong18+-GPT优化
   - 🇭🇰[HK]HongKong19+-GPT优化
@@ -528,12 +524,12 @@ proxy-groups:
   - 🇯🇵[JP]Tokyo04
   - 🇯🇵[JP]Tokyo06
   - 🇯🇵[JP]Tokyo07
-  - 🇺🇸[US]美国Santa+Clara06-GPT优化
-  - 🇺🇸[US]美国San+Jose07-GPT优化
-  - 🇺🇸[US]美国San+Jose08-GPT优化
-  - 🇺🇸[US]美国San+Francisco10-GPT优化
-  - 🇺🇸[US]美国San+Francisco11-GPT优化
-  - 🇺🇸[US]美国San+Francisco12-GPT优化
+  - 🇺🇸[US]Santa+Clara06-GPT优化
+  - 🇺🇸[US]San+Jose07-GPT优化
+  - 🇺🇸[US]San+Jose08-GPT优化
+  - 🇺🇸[US]San+Francisco10-GPT优化
+  - 🇺🇸[US]San+Francisco11-GPT优化
+  - 🇺🇸[US]San+Francisco12-GPT优化
   - 🇹🇼[TW]TaiPei03-GPT优化
   - 🇹🇼[TW]TaiPei04-GPT优化
   - 🇹🇼[TW]TaiPei05-GPT优化
@@ -544,32 +540,32 @@ proxy-groups:
   - 🇬🇧[UK]英国Coventry02-BBC优化
   - 🇩🇪[DE]德国-Frankfurt01
   - 🇩🇪[DE]德国-Frankfurt02
-  - 🇨🇦[CA]加拿大-Toronto
   - 🇳🇱[NL]荷兰-Amsterdam
   - 🇷🇺[RU]俄罗斯-Moscow
   - 🇹🇷[TR]土耳其-Istanbul
   - 🇮🇳[IN]印度-bangalore
   - 🇰🇷[KR]韩国-Seoul
+  - 🇻🇳[VN]越南-HoChiMinh
   type: select
 - interval: 300
   name: LoadBalance
   proxies:
-  - HK1
-  - HK2
-  - HK3
-  - HK4
-  - JP1
-  - JP2
-  - JP3
-  - TW1
-  - TW2
-  - TW3
-  - SG1
-  - SG2
-  - SG3
-  - US1
-  - US2
-  - US3
+  - 🇨🇦[CA]加拿大-Toronto
+  - 🇭🇰香港+08
+  - 🇭🇰香港+05
+  - 🇭🇰香港+06
+  - 🇭🇰香港+07
+  - 🇯🇵日本+03
+  - 🇯🇵日本+04
+  - 🇸🇬新加坡+01
+  - 🇸🇬新加坡+02
+  - 🇸🇬新加坡+03
+  - 🇹🇼台湾+01
+  - 🇹🇼台湾+02
+  - 🇹🇼台湾+03
+  - 🇺🇸美国+01
+  - 🇺🇸美国+02
+  - 🇺🇸美国+03
   - 🇭🇰[HK]HongKong17+-GPT优化
   - 🇭🇰[HK]HongKong18+-GPT优化
   - 🇭🇰[HK]HongKong19+-GPT优化
@@ -582,12 +578,12 @@ proxy-groups:
   - 🇯🇵[JP]Tokyo04
   - 🇯🇵[JP]Tokyo06
   - 🇯🇵[JP]Tokyo07
-  - 🇺🇸[US]美国Santa+Clara06-GPT优化
-  - 🇺🇸[US]美国San+Jose07-GPT优化
-  - 🇺🇸[US]美国San+Jose08-GPT优化
-  - 🇺🇸[US]美国San+Francisco10-GPT优化
-  - 🇺🇸[US]美国San+Francisco11-GPT优化
-  - 🇺🇸[US]美国San+Francisco12-GPT优化
+  - 🇺🇸[US]Santa+Clara06-GPT优化
+  - 🇺🇸[US]San+Jose07-GPT优化
+  - 🇺🇸[US]San+Jose08-GPT优化
+  - 🇺🇸[US]San+Francisco10-GPT优化
+  - 🇺🇸[US]San+Francisco11-GPT优化
+  - 🇺🇸[US]San+Francisco12-GPT优化
   - 🇹🇼[TW]TaiPei03-GPT优化
   - 🇹🇼[TW]TaiPei04-GPT优化
   - 🇹🇼[TW]TaiPei05-GPT优化
@@ -598,12 +594,12 @@ proxy-groups:
   - 🇬🇧[UK]英国Coventry02-BBC优化
   - 🇩🇪[DE]德国-Frankfurt01
   - 🇩🇪[DE]德国-Frankfurt02
-  - 🇨🇦[CA]加拿大-Toronto
   - 🇳🇱[NL]荷兰-Amsterdam
   - 🇷🇺[RU]俄罗斯-Moscow
   - 🇹🇷[TR]土耳其-Istanbul
   - 🇮🇳[IN]印度-bangalore
   - 🇰🇷[KR]韩国-Seoul
+  - 🇻🇳[VN]越南-HoChiMinh
   - 🇦🇺[AU]澳大利亚-Sydney
   - 🇳🇬[NG]尼日利亚-Lagos
   - 🇦🇷[AR]阿根廷-BuenosAires
