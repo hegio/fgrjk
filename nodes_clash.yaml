@@ -9,26 +9,18 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- name: 🇨🇦[CA]加拿大-Toronto
-  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
-  port: 11008
-  server: ca1.t11-a.app
-  sni: ca01t.goodyun.buzz
-  tls: true
-  type: trojan
-  udp: true
-- name: 🇭🇰香港+08
+- name: 🇯🇵日本+03
   network: ws
   port: 80
   server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
-    path: /grpcsg2/?ed=2560
+    path: /grpcjapan2/?ed=2560
 - name: 🇭🇰香港+05
   network: ws
   port: 80
@@ -36,7 +28,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -48,7 +40,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp1-1-1000ws.1000ws.top
@@ -60,23 +52,23 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp1-1-1000ws.1000ws.top
     path: /grpcsg2/
-- name: 🇯🇵日本+03
+- name: 🇭🇰香港+08
   network: ws
   port: 80
   server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
-    path: /grpcjapan2/?ed=2560
+    path: /grpcsg2/?ed=2560
 - name: 🇯🇵日本+04
   network: ws
   port: 80
@@ -84,47 +76,11 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
     path: /grpcjapan2/?ed=2560
-- name: 🇸🇬新加坡+01
-  network: ws
-  port: 80
-  server: qsybgp1-1-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
-  ws-opts:
-    headers:
-      Host: qsybgp1-1-1000ws.1000ws.top
-    path: /grpcsg1/
-- name: 🇸🇬新加坡+02
-  network: ws
-  port: 80
-  server: qsybgp3-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
-  ws-opts:
-    headers:
-      Host: qsybgp3-1000ws.1000ws.top
-    path: /grpcsg1/
-- name: 🇸🇬新加坡+03
-  network: ws
-  port: 80
-  server: qsybgp3-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
-  ws-opts:
-    headers:
-      Host: qsybgp3-1000ws.1000ws.top
-    path: /grpcsg1/
 - name: 🇹🇼台湾+01
   network: ws
   port: 80
@@ -132,7 +88,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp1-1-1000ws.1000ws.top
@@ -144,7 +100,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -156,11 +112,47 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
     path: /grpchongkong1/
+- name: 🇸🇬新加坡+01
+  network: ws
+  port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
+  ws-opts:
+    headers:
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcsg1/
+- name: 🇸🇬新加坡+02
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcsg1/
+- name: 🇸🇬新加坡+03
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcsg1/
 - name: 🇺🇸美国+01
   network: ws
   port: 80
@@ -168,7 +160,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp1-1-1000ws.1000ws.top
@@ -180,7 +172,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -192,7 +184,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: da6c3f60-3a62-45f7-b483-69578e790dde
+  uuid: 7265618d-bc97-4043-97b6-17ed52ac814d
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -421,6 +413,14 @@ proxies:
   tls: true
   type: trojan
   udp: true
+- name: 🇨🇦[CA]加拿大-Toronto
+  password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
+  port: 11008
+  server: ca1.t11-a.app
+  sni: ca01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇳🇱[NL]荷兰-Amsterdam
   password: 9592e2ad-c422-4713-8cc3-a5aa15bb308b
   port: 11009
@@ -496,19 +496,18 @@ proxies:
 proxy-groups:
 - name: Auto
   proxies:
-  - 🇨🇦[CA]加拿大-Toronto
-  - 🇭🇰香港+08
+  - 🇯🇵日本+03
   - 🇭🇰香港+05
   - 🇭🇰香港+06
   - 🇭🇰香港+07
-  - 🇯🇵日本+03
+  - 🇭🇰香港+08
   - 🇯🇵日本+04
-  - 🇸🇬新加坡+01
-  - 🇸🇬新加坡+02
-  - 🇸🇬新加坡+03
   - 🇹🇼台湾+01
   - 🇹🇼台湾+02
   - 🇹🇼台湾+03
+  - 🇸🇬新加坡+01
+  - 🇸🇬新加坡+02
+  - 🇸🇬新加坡+03
   - 🇺🇸美国+01
   - 🇺🇸美国+02
   - 🇺🇸美国+03
@@ -540,6 +539,7 @@ proxy-groups:
   - 🇬🇧[UK]英国Coventry02-BBC优化
   - 🇩🇪[DE]德国-Frankfurt01
   - 🇩🇪[DE]德国-Frankfurt02
+  - 🇨🇦[CA]加拿大-Toronto
   - 🇳🇱[NL]荷兰-Amsterdam
   - 🇷🇺[RU]俄罗斯-Moscow
   - 🇹🇷[TR]土耳其-Istanbul
@@ -550,19 +550,18 @@ proxy-groups:
 - interval: 300
   name: LoadBalance
   proxies:
-  - 🇨🇦[CA]加拿大-Toronto
-  - 🇭🇰香港+08
+  - 🇯🇵日本+03
   - 🇭🇰香港+05
   - 🇭🇰香港+06
   - 🇭🇰香港+07
-  - 🇯🇵日本+03
+  - 🇭🇰香港+08
   - 🇯🇵日本+04
-  - 🇸🇬新加坡+01
-  - 🇸🇬新加坡+02
-  - 🇸🇬新加坡+03
   - 🇹🇼台湾+01
   - 🇹🇼台湾+02
   - 🇹🇼台湾+03
+  - 🇸🇬新加坡+01
+  - 🇸🇬新加坡+02
+  - 🇸🇬新加坡+03
   - 🇺🇸美国+01
   - 🇺🇸美国+02
   - 🇺🇸美国+03
@@ -594,6 +593,7 @@ proxy-groups:
   - 🇬🇧[UK]英国Coventry02-BBC优化
   - 🇩🇪[DE]德国-Frankfurt01
   - 🇩🇪[DE]德国-Frankfurt02
+  - 🇨🇦[CA]加拿大-Toronto
   - 🇳🇱[NL]荷兰-Amsterdam
   - 🇷🇺[RU]俄罗斯-Moscow
   - 🇹🇷[TR]土耳其-Istanbul
