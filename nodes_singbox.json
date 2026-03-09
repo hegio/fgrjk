@@ -923,6 +923,13 @@
       "outbounds": [
         "direct"
       ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_130",
+      "outbounds": [
+        "direct"
+      ]
     }
   ]
 }
