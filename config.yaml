@@ -9,66 +9,6 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- name: 🇯🇵日本高速04|BGP|流媒体
-  network: ws
-  port: 443
-  server: cfyes.lxy1015.top
-  tls: true
-  type: vless
-  udp: true
-  uuid: 11b41bd0-0e14-45a6-ad0f-3ada1c4fe34b
-  ws-opts:
-    headers:
-      Host: lxs1jp.lxy1015.top
-    path: /liangxin/jp1
-- name: 🇯🇵日本高速05|BGP|流媒体
-  network: ws
-  port: 443
-  server: cfyes.lxy1015.top
-  tls: true
-  type: vless
-  udp: true
-  uuid: 11b41bd0-0e14-45a6-ad0f-3ada1c4fe34b
-  ws-opts:
-    headers:
-      Host: lxs1jp.lxy1015.top
-    path: /liangxin/jp1
-- name: 🇯🇵日本高速06|BGP|流媒体
-  network: ws
-  port: 443
-  server: cfyes.lxy1015.top
-  tls: true
-  type: vless
-  udp: true
-  uuid: 11b41bd0-0e14-45a6-ad0f-3ada1c4fe34b
-  ws-opts:
-    headers:
-      Host: lxs1jp.lxy1015.top
-    path: /liangxin/jp1
-- name: 🇺🇸美国高速03|流媒体
-  network: ws
-  port: 443
-  server: cfyes.lxy1015.top
-  tls: true
-  type: vless
-  udp: true
-  uuid: 11b41bd0-0e14-45a6-ad0f-3ada1c4fe34b
-  ws-opts:
-    headers:
-      Host: lx-us1.lxy1015.top
-    path: /liangxin/us
-- name: 🇺🇸美国高速04|流媒体
-  network: ws
-  port: 443
-  server: cfyes.lxy1015.top
-  tls: true
-  type: vless
-  udp: true
-  uuid: 11b41bd0-0e14-45a6-ad0f-3ada1c4fe34b
-  ws-opts:
-    headers:
-      Host: lx-us1.lxy1015.top
-    path: /liangxin/us
 - name: 🇭🇰香港+06
   network: ws
   port: 80
@@ -76,7 +16,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
+  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
   ws-opts:
     headers:
       Host: qsybgp1-1-1000ws.1000ws.top
@@ -88,7 +28,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
+  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
   ws-opts:
     headers:
       Host: qsybgp2-1-1000ws.1000ws.top
@@ -100,7 +40,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
+  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -112,7 +52,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
+  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -124,23 +64,11 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
+  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
     path: /grpcjapan2/?ed=2560
-- name: 🇹🇼台湾+02
-  network: ws
-  port: 80
-  server: qsybgp2-1-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
-  ws-opts:
-    headers:
-      Host: qsybgp2-1-1000ws.1000ws.top
-    path: /grpchongkong1/
 - name: 🇹🇼台湾+03
   network: ws
   port: 80
@@ -148,7 +76,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
+  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -160,22 +88,10 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
+  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
   ws-opts:
     headers:
       Host: qsybgp2-1-1000ws.1000ws.top
-    path: /grpcsg1/
-- name: 🇸🇬新加坡+03
-  network: ws
-  port: 80
-  server: qsybgp3-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
-  ws-opts:
-    headers:
-      Host: qsybgp3-1000ws.1000ws.top
     path: /grpcsg1/
 - name: 🇺🇸美国+02
   network: ws
@@ -184,7 +100,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
+  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
   ws-opts:
     headers:
       Host: qsybgp2-1-1000ws.1000ws.top
@@ -196,7 +112,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 389b5b96-fa59-4754-a8bb-62c0be71cba1
+  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -508,20 +424,13 @@ proxies:
 proxy-groups:
 - name: Auto
   proxies:
-  - 🇯🇵日本高速04|BGP|流媒体
-  - 🇯🇵日本高速05|BGP|流媒体
-  - 🇯🇵日本高速06|BGP|流媒体
-  - 🇺🇸美国高速03|流媒体
-  - 🇺🇸美国高速04|流媒体
   - 🇭🇰香港+06
   - 🇭🇰香港+07
   - 🇭🇰香港+08
   - 🇯🇵日本+03
   - 🇯🇵日本+04
-  - 🇹🇼台湾+02
   - 🇹🇼台湾+03
   - 🇸🇬新加坡+02
-  - 🇸🇬新加坡+03
   - 🇺🇸美国+02
   - 🇺🇸美国+03
   - 🇭🇰[HK]HongKong17+-GPT优化
@@ -558,24 +467,21 @@ proxy-groups:
   - 🇹🇷[TR]土耳其-Istanbul
   - 🇮🇳[IN]印度-bangalore
   - 🇰🇷[KR]韩国-Seoul
+  - 🇻🇳[VN]越南-HoChiMinh
+  - 🇦🇺[AU]澳大利亚-Sydney
+  - 🇳🇬[NG]尼日利亚-Lagos
+  - 🇦🇷[AR]阿根廷-BuenosAires
   type: select
 - interval: 300
   name: LoadBalance
   proxies:
-  - 🇯🇵日本高速04|BGP|流媒体
-  - 🇯🇵日本高速05|BGP|流媒体
-  - 🇯🇵日本高速06|BGP|流媒体
-  - 🇺🇸美国高速03|流媒体
-  - 🇺🇸美国高速04|流媒体
   - 🇭🇰香港+06
   - 🇭🇰香港+07
   - 🇭🇰香港+08
   - 🇯🇵日本+03
   - 🇯🇵日本+04
-  - 🇹🇼台湾+02
   - 🇹🇼台湾+03
   - 🇸🇬新加坡+02
-  - 🇸🇬新加坡+03
   - 🇺🇸美国+02
   - 🇺🇸美国+03
   - 🇭🇰[HK]HongKong17+-GPT优化
