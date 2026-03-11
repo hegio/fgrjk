@@ -16,7 +16,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
+  uuid: cabca9e8-8eff-49ec-9933-eec9eaaabb6a
   ws-opts:
     headers:
       Host: qsybgp1-1-1000ws.1000ws.top
@@ -28,47 +28,35 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
+  uuid: cabca9e8-8eff-49ec-9933-eec9eaaabb6a
   ws-opts:
     headers:
       Host: qsybgp2-1-1000ws.1000ws.top
     path: /grpcsg2/
-- name: 🇭🇰香港+08
+- name: 🇯🇵日本+01
   network: ws
   port: 80
-  server: qsybgp3-1000ws.1000ws.top
+  server: qsybgp1-1-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
+  uuid: cabca9e8-8eff-49ec-9933-eec9eaaabb6a
   ws-opts:
     headers:
-      Host: qsybgp3-1000ws.1000ws.top
-    path: /grpcsg2/?ed=2560
-- name: 🇯🇵日本+03
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcjapan1/?ed=2560
+- name: 🇯🇵日本+02
   network: ws
   port: 80
-  server: qsybgp3-1000ws.1000ws.top
+  server: qsybgp2-1-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
+  uuid: cabca9e8-8eff-49ec-9933-eec9eaaabb6a
   ws-opts:
     headers:
-      Host: qsybgp3-1000ws.1000ws.top
-    path: /grpcjapan2/?ed=2560
-- name: 🇯🇵日本+04
-  network: ws
-  port: 80
-  server: qsybgp3-1000ws.1000ws.top
-  tls: false
-  type: vless
-  udp: true
-  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
-  ws-opts:
-    headers:
-      Host: qsybgp3-1000ws.1000ws.top
-    path: /grpcjapan2/?ed=2560
+      Host: qsybgp2-1-1000ws.1000ws.top
+    path: /grpcjapan1/?ed=2560
 - name: 🇹🇼台湾+03
   network: ws
   port: 80
@@ -76,22 +64,22 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
+  uuid: cabca9e8-8eff-49ec-9933-eec9eaaabb6a
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
     path: /grpchongkong1/
-- name: 🇸🇬新加坡+02
+- name: 🇸🇬新加坡+03
   network: ws
   port: 80
-  server: qsybgp2-1-1000ws.1000ws.top
+  server: qsybgp3-1000ws.1000ws.top
   tls: false
   type: vless
   udp: true
-  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
+  uuid: cabca9e8-8eff-49ec-9933-eec9eaaabb6a
   ws-opts:
     headers:
-      Host: qsybgp2-1-1000ws.1000ws.top
+      Host: qsybgp3-1000ws.1000ws.top
     path: /grpcsg1/
 - name: 🇺🇸美国+02
   network: ws
@@ -100,7 +88,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
+  uuid: cabca9e8-8eff-49ec-9933-eec9eaaabb6a
   ws-opts:
     headers:
       Host: qsybgp2-1-1000ws.1000ws.top
@@ -112,7 +100,7 @@ proxies:
   tls: false
   type: vless
   udp: true
-  uuid: 37390d3c-269f-44da-9b4c-ea05ee45e962
+  uuid: cabca9e8-8eff-49ec-9933-eec9eaaabb6a
   ws-opts:
     headers:
       Host: qsybgp3-1000ws.1000ws.top
@@ -426,11 +414,10 @@ proxy-groups:
   proxies:
   - 🇭🇰香港+06
   - 🇭🇰香港+07
-  - 🇭🇰香港+08
-  - 🇯🇵日本+03
-  - 🇯🇵日本+04
+  - 🇯🇵日本+01
+  - 🇯🇵日本+02
   - 🇹🇼台湾+03
-  - 🇸🇬新加坡+02
+  - 🇸🇬新加坡+03
   - 🇺🇸美国+02
   - 🇺🇸美国+03
   - 🇭🇰[HK]HongKong17+-GPT优化
@@ -477,11 +464,10 @@ proxy-groups:
   proxies:
   - 🇭🇰香港+06
   - 🇭🇰香港+07
-  - 🇭🇰香港+08
-  - 🇯🇵日本+03
-  - 🇯🇵日本+04
+  - 🇯🇵日本+01
+  - 🇯🇵日本+02
   - 🇹🇼台湾+03
-  - 🇸🇬新加坡+02
+  - 🇸🇬新加坡+03
   - 🇺🇸美国+02
   - 🇺🇸美国+03
   - 🇭🇰[HK]HongKong17+-GPT优化
