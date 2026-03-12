@@ -1,4 +1,4 @@
-name: Sync & Enhance Proxy Nodes
+name: Sync Proxy Nodes
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  sync-and-enhance:
+  sync:
     runs-on: ubuntu-latest
     
     steps:
@@ -21,128 +21,167 @@ jobs:
     - name: Install dependencies
       run: pip install pyyaml
 
-    - name: Download nodes file
+    - name: Download v2fgrjk from upstream
       run: |
-        if curl -L --fail --max-time 30 -o "锋哥软件库节点.tmp" "https://ghfast.top/https://raw.githubusercontent.com/FGBLH/fgrjk/main/锋哥软件库节点"; then
+        echo "Downloading v2fgrjk..."
+        if curl -L --fail --max-time 30 -o "v2fgrjk.tmp" "https://ghfast.top/https://raw.githubusercontent.com/FGBLH/fgrjk/main/v2fgrjk"; then
           echo "Downloaded via ghfast.top"
-        elif curl -L --fail --max-time 30 -o "锋哥软件库节点.tmp" "https://raw.githubusercontent.com/FGBLH/fgrjk/main/锋哥软件库节点"; then
+        elif curl -L --fail --max-time 30 -o "v2fgrjk.tmp" "https://raw.githubusercontent.com/FGBLH/fgrjk/main/v2fgrjk"; then
           echo "Downloaded via direct"
         else
           echo "::error::Download failed"
           exit 1
         fi
-        mv "锋哥软件库节点.tmp" "锋哥软件库节点"
-
-    - name: Decode and validate nodes
-      run: |
-        cat > process_nodes.py << 'EOF'
-        import base64
-        import re
-        import urllib.parse
-
-        # 读取文件
-        with open('锋哥软件库节点', 'r', encoding='utf-8') as f:
-            content = f.read()
-
-        # 尝试 Base64 解码
-        try:
-            decoded = base64.b64decode(content + '=' * (4 - len(content) % 4)).decode('utf-8')
-            lines = [l.strip() for l in decoded.split('\n') if l.strip()]
-        except:
-            lines = [l.strip() for l in content.split('\n') if l.strip()]
-
-        # 保存明文
-        with open('nodes_plain.txt', 'w') as f:
-            f.write('\n'.join(lines))
         
-        print(f"Processed {len(lines)} lines")
-        EOF
-        python3 process_nodes.py
+        if [ -s "v2fgrjk.tmp" ]; then
+          mv "v2fgrjk.tmp" "v2fgrjk"
+          echo "Saved v2fgrjk ($(wc -c < v2fgrjk) bytes)"
+        else
+          echo "File is empty"
+          exit 1
+        fi
 
-    - name: Generate valid Clash config
+    - name: Decode and parse nodes
       run: |
-        cat > generate_clash.py << 'EOF'
-        import yaml
+        cat > parse_nodes.py << 'EOF'
         import base64
         import json
         import urllib.parse
         import re
 
-        def parse_vmess(link):
-            """解析 vmess:// 链接"""
+        def safe_decode_base64(s):
+            """安全解码 base64"""
             try:
+                s = s.strip()
+                # 补全 padding
+                padding = 4 - len(s) % 4
+                if padding != 4:
+                    s += '=' * padding
+                return base64.b64decode(s).decode('utf-8')
+            except:
+                return None
+
+        def parse_vmess(link):
+            """解析 vmess:// 为标准 Clash 格式"""
+            try:
+                if not link.startswith('vmess://'):
+                    return None
+                
                 b64_data = link[8:]
-                b64_data += '=' * (4 - len(b64_data) % 4)
-                json_str = base64.b64decode(b64_data).decode('utf-8')
+                json_str = safe_decode_base64(b64_data)
+                if not json_str:
+                    return None
+                
                 data = json.loads(json_str)
                 
+                # 标准 Clash 字段映射
                 node = {
-                    'name': data.get('ps', 'VMess Node'),
+                    'name': data.get('ps', data.get('remark', 'VMess Node')),
                     'type': 'vmess',
                     'server': data.get('add', ''),
                     'port': int(data.get('port', 443)),
                     'uuid': data.get('id', ''),
-                    'alterId': int(data.get('aid', 0)),
-                    'cipher': 'auto',
-                    'tls': data.get('tls', '') == 'tls',
+                    'alterId': int(data.get('aid', data.get('alterId', 0))),
+                    'cipher': data.get('scy', 'auto'),
+                    'tls': data.get('tls', '') == 'tls' or data.get('security', '') == 'tls',
+                    'skip-cert-verify': True,
+                    'servername': data.get('sni', ''),
                     'network': data.get('net', 'tcp'),
-                    'ws-opts': {}
                 }
                 
-                # WebSocket 配置
+                # WebSocket 配置 (参考你的示例格式)
                 if node['network'] == 'ws':
-                    node['ws-opts']['path'] = data.get('path', '/')
+                    node['ws-opts'] = {
+                        'path': data.get('path', '/'),
+                    }
                     if data.get('host'):
-                        node['ws-opts']['headers'] = {'Host': data['host']}
+                        node['ws-opts']['headers'] = {
+                            'Host': data['host']
+                        }
                 
-                # 跳过无效节点
-                if not node['server'] or not node['uuid']:
-                    return None
+                # 删除空值，保持整洁
+                node = {k: v for k, v in node.items() if v not in ('', None)}
+                if not node.get('servername'):
+                    node.pop('servername', None)
+                
                 return node
             except Exception as e:
                 print(f"Parse vmess error: {e}")
                 return None
 
         def parse_vless(link):
-            """解析 vless:// 链接"""
+            """解析 vless:// """
             try:
-                # vless://uuid@server:port?params#name
-                match = re.match(r'vless://([^@]+)@([^:]+):(\d+)\?([^#]+)#(.+)', link)
-                if not match:
-                    # 尝试不带 name 的格式
-                    match = re.match(r'vless://([^@]+)@([^:]+):(\d+)\?(.+)', link)
-                    if match:
-                        uuid, server, port, params = match.groups()
-                        name = f"VLESS-{server}"
-                    else:
-                        return None
-                else:
-                    uuid, server, port, params, name = match.groups()
+                if not link.startswith('vless://'):
+                    return None
                 
+                # vless://uuid@server:port?params#name
+                content = link[8:]
+                
+                # 分离 name
+                if '#' in content:
+                    content, name_b64 = content.split('#', 1)
+                    name = urllib.parse.unquote(name_b64)
+                else:
+                    name = 'VLESS Node'
+                
+                # 分离参数
+                if '?' in content:
+                    base_part, params = content.split('?', 1)
+                else:
+                    base_part, params = content, ''
+                
+                # 解析 base: uuid@server:port
+                if '@' not in base_part:
+                    return None
+                
+                uuid, server_port = base_part.split('@', 1)
+                
+                if ':' not in server_port:
+                    return None
+                
+                server, port_str = server_port.rsplit(':', 1)
+                port = int(port_str)
+                
+                # 解析参数
                 query = urllib.parse.parse_qs(params)
                 
                 node = {
-                    'name': urllib.parse.unquote(name),
+                    'name': name,
                     'type': 'vless',
                     'server': server,
-                    'port': int(port),
+                    'port': port,
                     'uuid': uuid,
-                    'tls': query.get('security', [''])[0] == 'tls',
+                    'tls': query.get('security', [''])[0] in ['tls', 'xtls', 'reality'],
                     'network': query.get('type', ['tcp'])[0],
-                    'udp': True
+                    'skip-cert-verify': True,
                 }
                 
-                # XTLS/Flow 支持
-                flow = query.get('flow', [''])[0]
-                if flow:
-                    node['flow'] = flow
+                # flow 控制
+                if 'flow' in query:
+                    node['flow'] = query['flow'][0]
                 
-                # WebSocket / gRPC
+                # WS 配置
                 if node['network'] == 'ws':
                     node['ws-opts'] = {
                         'path': query.get('path', ['/'])[0],
-                        'headers': {'Host': query.get('sni', [server])[0]}
                     }
+                    if 'host' in query:
+                        node['ws-opts']['headers'] = {
+                            'Host': query['host'][0]
+                        }
+                
+                # Reality 配置
+                if query.get('security', [''])[0] == 'reality':
+                    node['reality-opts'] = {
+                        'public-key': query.get('pbk', [''])[0],
+                        'short-id': query.get('sid', [''])[0],
+                    }
+                
+                # 删除空值
+                node = {k: v for k, v in node.items() if v not in ('', None, False)}
+                if not node.get('tls'):
+                    node.pop('tls', None)
                 
                 return node
             except Exception as e:
@@ -150,102 +189,135 @@ jobs:
                 return None
 
         def parse_trojan(link):
-            """解析 trojan:// 链接"""
+            """解析 trojan:// """
             try:
-                # trojan://password@server:port?params#name
-                match = re.match(r'trojan://([^@]+)@([^:]+):(\d+)\?([^#]+)#(.+)', link)
-                if not match:
-                    match = re.match(r'trojan://([^@]+)@([^:]+):(\d+)#(.+)', link)
-                    if match:
-                        password, server, port, name = match.groups()
-                        params = ''
-                    else:
-                        return None
-                else:
-                    password, server, port, params, name = match.groups()
+                if not link.startswith('trojan://'):
+                    return None
                 
-                query = urllib.parse.parse_qs(params) if params else {}
+                content = link[9:]
+                
+                # 分离 name
+                if '#' in content:
+                    content, name_encoded = content.split('#', 1)
+                    name = urllib.parse.unquote(name_encoded)
+                else:
+                    name = 'Trojan Node'
+                
+                # 分离参数
+                if '?' in content:
+                    base_part, params = content.split('?', 1)
+                else:
+                    base_part, params = content, ''
+                
+                # 解析 password@server:port
+                if '@' not in base_part:
+                    return None
+                
+                password, server_port = base_part.split('@', 1)
+                
+                if ':' not in server_port:
+                    return None
+                
+                server, port_str = server_port.rsplit(':', 1)
+                port = int(port_str)
+                
+                query = urllib.parse.parse_qs(params)
                 
                 node = {
-                    'name': urllib.parse.unquote(name),
+                    'name': name,
                     'type': 'trojan',
                     'server': server,
-                    'port': int(port),
+                    'port': port,
                     'password': password,
-                    'tls': True,
-                    'sni': query.get('sni', [server])[0],
-                    'udp': True
+                    'skip-cert-verify': True,
                 }
                 
-                # 跳过无效
-                if not node['server'] or not node['password']:
-                    return None
+                # sni
+                if 'sni' in query:
+                    node['sni'] = query['sni'][0]
+                
+                # ws
+                if query.get('type', [''])[0] == 'ws':
+                    node['network'] = 'ws'
+                    node['ws-opts'] = {
+                        'path': query.get('path', ['/'])[0],
+                    }
+                
                 return node
             except Exception as e:
                 print(f"Parse trojan error: {e}")
                 return None
 
         def parse_ss(link):
-            """解析 ss:// 链接"""
+            """解析 ss:// """
             try:
-                # ss://method:password@server:port#name
-                # 或 ss://base64(method:password)@server:port#name
-                if link.startswith('ss://'):
-                    content = link[5:]
+                if not link.startswith('ss://'):
+                    return None
                 
-                # 检查是否是 base64 编码
-                if '@' not in content and content.startswith('Ym'):
-                    # base64 编码的旧格式
-                    parts = content.split('@')
-                    if len(parts) == 2:
-                        b64 = parts[0] + '=' * (4 - len(parts[0]) % 4)
-                        method_pass = base64.b64decode(b64).decode('utf-8')
-                        server_part = parts[1]
+                content = link[5:]
+                
+                # 分离 name
+                if '#' in content:
+                    content, name_encoded = content.split('#', 1)
+                    name = urllib.parse.unquote(name_encoded)
+                else:
+                    name = 'SS Node'
+                
+                # 处理 base64 编码部分
+                if '@' in content and not content.startswith('Ym'):
+                    # 明文格式: method:pass@server:port
+                    method_pass, server_port = content.split('@', 1)
+                    method, password = method_pass.split(':', 1)
+                else:
+                    # base64 格式
+                    if '@' in content:
+                        b64_part, server_port = content.split('@', 1)
                     else:
+                        b64_part = content
+                        server_port = ''
+                    
+                    decoded = safe_decode_base64(b64_part)
+                    if not decoded or ':' not in decoded:
                         return None
-                else:
-                    # 新格式：直接解析
-                    match = re.match(r'(.+?)@(.+)', content)
-                    if not match:
-                        return None
-                    method_pass = urllib.parse.unquote(match.group(1))
-                    server_part = match.group(2)
+                    method, password = decoded.split(':', 1)
                 
-                method, password = method_pass.split(':', 1)
+                if not server_port or ':' not in server_port:
+                    return None
                 
-                # 解析 server:port#name
-                if '#' in server_part:
-                    server_port, name = server_part.split('#', 1)
-                    name = urllib.parse.unquote(name)
-                else:
-                    server_port = server_part
-                    name = f"SS-{server_part.split(':')[0]}"
-                
-                server, port = server_port.split(':')
+                server, port_str = server_port.rsplit(':', 1)
+                port = int(port_str)
                 
                 node = {
                     'name': name,
                     'type': 'ss',
                     'server': server,
-                    'port': int(port),
+                    'port': port,
                     'cipher': method,
                     'password': password,
-                    'udp': True
                 }
+                
                 return node
             except Exception as e:
                 print(f"Parse ss error: {e}")
                 return None
 
-        # 读取明文节点
-        with open('nodes_plain.txt', 'r') as f:
-            lines = f.readlines()
+        # 读取 v2fgrjk 文件
+        with open('v2fgrjk', 'r', encoding='utf-8') as f:
+            content = f.read().strip()
+
+        # 尝试 base64 解码（订阅格式通常是 base64）
+        decoded = safe_decode_base64(content)
+        if decoded:
+            lines = [l.strip() for l in decoded.split('\n') if l.strip()]
+            print(f"Decoded base64 subscription: {len(lines)} lines")
+        else:
+            lines = [l.strip() for l in content.split('\n') if l.strip()]
+            print(f"Plain text mode: {len(lines)} lines")
 
         proxies = []
         errors = []
-        
+
         for line in lines:
-            line = line.strip()
             if not line:
                 continue
             
@@ -260,111 +332,109 @@ jobs:
                 node = parse_ss(line)
             
             if node:
-                # 去重：检查是否已有相同 name
-                existing = [p for p in proxies if p['name'] == node['name']]
-                if not existing:
-                    proxies.append(node)
-                else:
-                    node['name'] = node['name'] + '-2'
-                    proxies.append(node)
+                proxies.append(node)
             else:
-                errors.append(line[:50] + '...' if len(line) > 50 else line)
+                errors.append(line[:50])
 
-        print(f"✓ Successfully parsed {len(proxies)} nodes")
-        print(f"✗ Failed to parse {len(errors)} lines")
+        print(f"✓ Successfully parsed: {len(proxies)} nodes")
+        if errors:
+            print(f"✗ Failed to parse: {len(errors)} lines")
 
-        # 生成 Clash 配置
-        clash_config = {
+        # 保存解析结果供后续使用
+        import json
+        with open('parsed_nodes.json', 'w') as f:
+            json.dump(proxies, f, indent=2)
+        
+        print("Saved parsed_nodes.json")
+        EOF
+        
+        python3 parse_nodes.py
+
+    - name: Generate Clash config (修正版)
+      run: |
+        cat > generate_clash.py << 'EOF'
+        import yaml
+        import json
+
+        # 读取解析后的节点
+        with open('parsed_nodes.json', 'r') as f:
+            proxies = json.load(f)
+
+        if not proxies:
+            print("No valid proxies found!")
+            exit(1)
+
+        # 生成 proxy-groups（参考你的示例格式）
+        proxy_names = [p['name'] for p in proxies]
+        
+        proxy_groups = [
+            {
+                'name': 'Auto',
+                'type': 'select',
+                'proxies': proxy_names[:50]  # 限制数量避免卡顿
+            },
+            {
+                'name': 'LoadBalance',
+                'type': 'load-balance',
+                'strategy': 'consistent-hashing',
+                'proxies': proxy_names,
+                'url': 'http://www.gstatic.com/generate_204',
+                'interval': 300
+            }
+        ]
+
+        # 基础 rules（简化版，可根据需要扩展）
+        rules = [
+            'DOMAIN-SUFFIX,google.com,Auto',
+            'DOMAIN-SUFFIX,youtube.com,Auto',
+            'DOMAIN-KEYWORD,google,Auto',
+            'MATCH,DIRECT'
+        ]
+
+        # 构建完整配置（严格遵循参考格式）
+        config = {
             'mixed-port': 7890,
             'allow-lan': True,
+            'bind-address': '*',
             'mode': 'rule',
             'log-level': 'info',
-            'external-controller': '0.0.0.0:9090',
+            'external-controller': '127.0.0.1:9090',
             'dns': {
                 'enable': True,
                 'nameserver': ['114.114.114.114', '8.8.8.8']
             },
             'proxies': proxies,
-            'proxy-groups': [
-                {
-                    'name': 'Auto',
-                    'type': 'select',
-                    'proxies': [p['name'] for p in proxies[:10]]  # 最多前10个
-                },
-                {
-                    'name': 'LoadBalance',
-                    'type': 'load-balance',
-                    'strategy': 'consistent-hashing',
-                    'proxies': [p['name'] for p in proxies],
-                    'url': 'http://www.gstatic.com/generate_204',
-                    'interval': 300
-                }
-            ],
-            'rules': [
-                'DOMAIN-SUFFIX,google.com,Auto',
-                'DOMAIN-SUFFIX,youtube.com,Auto',
-                'DOMAIN-KEYWORD,google,Auto',
-                'MATCH,DIRECT'
-            ]
+            'proxy-groups': proxy_groups,
+            'rules': rules
         }
 
+        # 写入 YAML（使用标准格式，不转义 Unicode）
         with open('nodes_clash.yaml', 'w', encoding='utf-8') as f:
-            yaml.dump(clash_config, f, default_flow_style=False, allow_unicode=True)
+            yaml.dump(config, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
 
-        print("Generated nodes_clash.yaml")
+        print(f"Generated nodes_clash.yaml with {len(proxies)} proxies")
         
-        # 同时生成适合 Clash Verge/CFW 的 config.yaml
+        # 同时生成 config.yaml（供 Clash Verge 等使用）
         with open('config.yaml', 'w', encoding='utf-8') as f:
-            yaml.dump(clash_config, f, default_flow_style=False, allow_unicode=True)
-            
+            yaml.dump(config, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+        
+        print("Generated config.yaml")
         EOF
         
         python3 generate_clash.py
 
-    - name: Generate Sing-box config
-      run: |
-        cat > generate_singbox.py << 'EOF'
-        import json
-        
-        # 读取明文节点
-        with open('nodes_plain.txt', 'r') as f:
-            lines = [l.strip() for l in f if l.strip()]
-        
-        outbounds = [{"type": "direct", "tag": "direct"}]
-        
-        for i, line in enumerate(lines):
-            if line.startswith(('vmess://', 'vless://', 'trojan://', 'ss://')):
-                outbounds.append({
-                    "type": "selector",
-                    "tag": f"node_{i}",
-                    "outbounds": ["direct"]
-                })
-        
-        config = {
-            "log": {"level": "info"},
-            "dns": {"servers": [{"address": "8.8.8.8"}]},
-            "outbounds": outbounds
-        }
-        
-        with open('nodes_singbox.json', 'w') as f:
-            json.dump(config, f, indent=2)
-        
-        print("Generated nodes_singbox.json")
-        EOF
-        
-        python3 generate_singbox.py
-
-    - name: Commit and push
+    - name: Commit changes
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         
-        git add -A
+        # 只添加新文件和更新的文件，保留旧文件
+        git add v2fgrjk parsed_nodes.json nodes_clash.yaml config.yaml
         
         if git diff --staged --quiet; then
           echo "No changes"
         else
-          git commit -m "🔄 Sync: Updated nodes with valid Clash config [$(date '+%Y-%m-%d %H:%M')]"
+          git commit -m "🔄 Update v2fgrjk and generate Clash config [$(date '+%Y-%m-%d %H:%M')]"
           git push
           echo "✅ Done"
         fi
