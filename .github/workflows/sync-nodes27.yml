@@ -2,7 +2,7 @@ name: Sync & Enhance Proxy Nodes
 
 on:
   schedule:
-    - cron: '0 */3 * * *'  # 每3小时同步
+    - cron: '0 */30000 * * *'  # 每30000小时同步
   workflow_dispatch:
 
 jobs:
