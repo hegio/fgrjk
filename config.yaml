@@ -1,106 +1,124 @@
-mixed-port: 7890
 allow-lan: true
-bind-address: '*'
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
 proxies:
 - name: 🇭🇰香港+06
-  type: vless
-  server: qsybgp1-1-1000ws.1000ws.top
-  port: 80
-  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
   ws-opts:
-    path: /grpcsg2/
     headers:
-      Host: 1000ws33.iptests.net
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcsg2/
 - name: 🇭🇰香港+07
-  type: vless
+  network: ws
+  port: 80
   server: qsybgp2-1-1000ws.1000ws.top
-  port: 80
+  tls: false
+  type: vless
+  udp: true
   uuid: a9f601ba-de1a-4718-b93d-134eb690901f
-  network: ws
-  skip-cert-verify: true
   ws-opts:
+    headers:
+      Host: qsybgp2-1-1000ws.1000ws.top
     path: /grpcsg2/
-    headers:
-      Host: 1000ws34.iptests.net
 - name: 🇯🇵日本+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
   ws-opts:
-    path: /grpcjapan2/?ed=2560
     headers:
-      Host: 1000ws34.iptests.net
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcjapan2/?ed=2560
 - name: 🇯🇵日本+04
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
   ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
     path: /grpcjapan2/?ed=2560
-    headers:
-      Host: 1000ws33.iptests.net
 - name: 🇹🇼台湾+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
   ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
     path: /grpchongkong1/
-    headers:
-      Host: 1000ws33.iptests.net
 - name: 🇸🇬新加坡+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
   ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
     path: /grpcsg1/
-    headers:
-      Host: 1000ws33.iptests.net
 - name: 🇺🇸美国+01
-  type: vless
+  network: ws
+  port: 80
   server: qsybgp1-1-1000ws.1000ws.top
-  port: 80
-  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
-  network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: /grpcus1/
-    headers:
-      Host: 1000ws34.iptests.net
-- name: 🇺🇸美国+03
+  tls: false
   type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
+  udp: true
   uuid: a9f601ba-de1a-4718-b93d-134eb690901f
-  network: ws
-  skip-cert-verify: true
   ws-opts:
-    path: /grpcus1/
     headers:
-      Host: 1000ws33.iptests.net
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcus1/
+- name: 🇺🇸美国+03
+  network: ws
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: a9f601ba-de1a-4718-b93d-134eb690901f
+  ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcus1/
 proxy-groups:
 - name: Auto
+  proxies:
+  - 🇭🇰香港+06
+  - 🇭🇰香港+07
+  - 🇯🇵日本+03
+  - 🇯🇵日本+04
+  - 🇹🇼台湾+03
+  - 🇸🇬新加坡+03
+  - 🇺🇸美国+01
+  - 🇺🇸美国+03
   type: select
+- interval: 300
+  name: LoadBalance
   proxies:
   - 🇭🇰香港+06
   - 🇭🇰香港+07
@@ -110,20 +128,9 @@ proxy-groups:
   - 🇸🇬新加坡+03
   - 🇺🇸美国+01
   - 🇺🇸美国+03
-- name: LoadBalance
-  type: load-balance
   strategy: consistent-hashing
-  proxies:
-  - 🇭🇰香港+06
-  - 🇭🇰香港+07
-  - 🇯🇵日本+03
-  - 🇯🇵日本+04
-  - 🇹🇼台湾+03
-  - 🇸🇬新加坡+03
-  - 🇺🇸美国+01
-  - 🇺🇸美国+03
+  type: load-balance
   url: http://www.gstatic.com/generate_204
-  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
