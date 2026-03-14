@@ -1,819 +1,493 @@
-mixed-port: 7890
 allow-lan: true
-bind-address: '*'
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
 proxies:
-- name: 🇭🇰香港+04
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
+- name: 🇭🇰香港+02
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: fad6df36-5735-456a-9692-53653b3b2248
   ws-opts:
+    headers:
+      Host: qsybgp1-1-1000ws.1000ws.top
     path: /grpchongkong2/?ed=2560
-    headers:
-      Host: 1000ws33.iptests.net
-- name: 🇭🇰香港+05
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
-  network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: /grpchongkong2/
-    headers:
-      Host: 1000ws34.iptests.net
-- name: 🇭🇰香港+08
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
-  network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: /grpcsg2/?ed=2560
-    headers:
-      Host: 1000ws33.iptests.net
-- name: 🇯🇵日本+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
-  network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: /grpcjapan2/?ed=2560
-    headers:
-      Host: 1000ws34.iptests.net
-- name: 🇯🇵日本+04
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
-  network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: /grpcjapan2/?ed=2560
-    headers:
-      Host: 1000ws33.iptests.net
-- name: 🇹🇼台湾+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
-  network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: /grpchongkong1/
-    headers:
-      Host: 1000ws33.iptests.net
-- name: 🇸🇬新加坡+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
-  network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: /grpcsg1/
-    headers:
-      Host: 1000ws33.iptests.net
-- name: 🇺🇸美国+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
-  network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: /grpcus1/
-    headers:
-      Host: 1000ws33.iptests.net
-- name: 🇭🇰[HK]HongKong17+-GPT优化
-  type: trojan
-  server: h7.t11-a.app
-  port: 22337
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: hk07t.goodyun.buzz
-- name: 🇭🇰[HK]HongKong18+-GPT优化
-  type: trojan
-  server: h8.t11-a.app
-  port: 22338
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: hk08t.goodyun.buzz
-- name: 🇭🇰[HK]HongKong19+-GPT优化
-  type: trojan
-  server: h9.t11-a.app
-  port: 22339
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: v.t202511-s.icu
-- name: 🇭🇰[HK]HongKong20+-GPT优化
-  type: trojan
-  server: h10.t11-a.app
-  port: 22340
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: v.t202511-s.icu
-- name: 🇸🇬[SG]Singapore04
-  type: trojan
-  server: s4.t11-a.app
-  port: 26211
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: v.t202511-s.icu
-- name: 🇸🇬[SG]Singapore05
-  type: trojan
-  server: s5.t11-a.app
-  port: 26205
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: s.t202511-s.icu
-- name: 🇸🇬[SG]Singapore09
-  type: trojan
-  server: s9.t11-a.app
-  port: 26209
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: sg09t.goodyun.buzz
-- name: 🇸🇬[SG]Singapore10
-  type: trojan
-  server: s10.t11-a.app
-  port: 26210
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: sg10t.goodyun.buzz
-- name: 🇸🇬[SG]Singapore11
-  type: trojan
-  server: s11.t11-a.app
-  port: 26218
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: sg11t.goodyun.buzz
-- name: 🇸🇬[SG]Singapore12
-  type: trojan
-  server: s12.t11-a.app
-  port: 26212
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: sg12t.goodyun.buzz
-- name: 🇸🇬[SG]Singapore13
-  type: trojan
-  server: s13.t11-a.app
-  port: 26213
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: sg13t.goodyun.buzz
-- name: 🇸🇬[SG]Singapore14
-  type: trojan
-  server: s14.t11-a.app
-  port: 26214
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: sg14t.goodyun.buzz
-- name: 🇸🇬[SG]Singapore15
-  type: trojan
-  server: s15.t11-a.app
-  port: 26215
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: sg15t.goodyun.buzz
-- name: 🇯🇵[JP]Tokyo01
-  type: trojan
-  server: j01.t11-a.app
-  port: 35001
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: n.t202511-s.icu
-- name: 🇯🇵[JP]Tokyo02
-  type: trojan
-  server: j02.t11-a.app
-  port: 35002
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: t.t202511-s.icu
-- name: 🇯🇵[JP]Tokyo03
-  type: trojan
-  server: j3.t11-a.app
-  port: 35003
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: s.t202511-s.icu
-- name: 🇯🇵[JP]Tokyo04
-  type: trojan
-  server: j4.t11-a.app
-  port: 35004
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: s.t202511-s.icu
-- name: 🇯🇵[JP]Tokyo07
-  type: trojan
-  server: j7.t11-a.app
-  port: 35077
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: jp077t.goodyun.buzz
-- name: 🇺🇸[US]美国Los+Angeles04-GPT优化
-  type: trojan
-  server: u4.t11-a.app
-  port: 33805
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: n.t202511-s.icu
-- name: 🇺🇸[US]美国Santa+Clara05-GPT优化
-  type: trojan
-  server: u5.t11-a.app
-  port: 33806
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: n.t202511-s.icu
-- name: 🇺🇸[US]美国San+Jose07-GPT优化
-  type: trojan
-  server: us7.t11-a.app
-  port: 33808
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: us07t.goodyun.buzz
-- name: 🇺🇸[US]美国San+Jose08-GPT优化
-  type: trojan
-  server: us8.t11-a.app
-  port: 33809
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: us08t.goodyun.buzz
-- name: 🇺🇸[US]美国San+Francisco09-GPT优化
-  type: trojan
-  server: us9.t11-a.app
-  port: 33810
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: us09t.goodyun.buzz
-- name: 🇺🇸[US]美国San+Francisco10-GPT优化
-  type: trojan
-  server: us10.t11-a.app
-  port: 33811
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: us10t.goodyun.buzz
-- name: 🇺🇸[US]美国San+Francisco11-GPT优化
-  type: trojan
-  server: us11.t11-a.app
-  port: 33812
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: us11t.goodyun.buzz
-- name: 🇺🇸[US]美国San+Francisco12-GPT优化
-  type: trojan
-  server: us12.t11-a.app
-  port: 33813
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: us12t.goodyun.buzz
-- name: 🇹🇼[TW]TaiPei05-GPT优化
-  type: trojan
-  server: tw5.t11-a.app
-  port: 33905
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: tw05t.goodyun.buzz
-- name: 🇹🇼[TW]TaiPei06-GPT优化
-  type: trojan
-  server: tw6.t11-a.app
-  port: 33906
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: tw06t.goodyun.buzz
-- name: 🇫🇷[FR]法国-Paris01
-  type: trojan
-  server: fr1.t11-a.app
-  port: 11001
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: fr01t.goodyun.buzz
-- name: 🇫🇷[FR]法国-Paris02
-  type: trojan
-  server: fr2.t11-a.app
-  port: 11002
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: fr02t.goodyun.buzz
-- name: 🇬🇧[UK]英国Coventry01-BBC优化
-  type: trojan
-  server: uk1.t11-a.app
-  port: 11003
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: uk01t.goodyun.buzz
-- name: 🇬🇧[UK]英国Coventry02-BBC优化
-  type: trojan
-  server: uk2.t11-a.app
-  port: 11005
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: uk02t.goodyun.buzz
-- name: 🇩🇪[DE]德国-Frankfurt01
-  type: trojan
-  server: de1.t11-a.app
-  port: 11006
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: de01t.goodyun.buzz
-- name: 🇩🇪[DE]德国-Frankfurt02
-  type: trojan
-  server: de2.t11-a.app
-  port: 11007
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: d2.t11-a2.click
-- name: 🇨🇦[CA]加拿大-Toronto
-  type: trojan
-  server: ca1.t11-a.app
-  port: 11008
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: ca01t.goodyun.buzz
-- name: 🇳🇱[NL]荷兰-Amsterdam
-  type: trojan
-  server: nl1.t11-a.app
-  port: 11009
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: nl01t.goodyun.buzz
-- name: 🇷🇺[RU]俄罗斯-Moscow
-  type: trojan
-  server: ru1.t11-a.app
-  port: 11010
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: ru01t.goodyun.buzz
-- name: 🇹🇷[TR]土耳其-Istanbul
-  type: trojan
-  server: tr1.t11-a.app
-  port: 11051
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: tr01t.goodyun.buzz
-- name: 🇮🇳[IN]印度-bangalore
-  type: trojan
-  server: in1.t11-a.app
-  port: 11033
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: in01tt.goodyun.buzz
-- name: 🇰🇷[KR]韩国-Seoul
-  type: trojan
-  server: kr1.t11-a.app
-  port: 11029
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: kr011t.goodyun.buzz
-- name: 🇻🇳[VN]越南-HoChiMinh
-  type: trojan
-  server: vn1.t11-a.app
-  port: 11015
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: vn01t.goodyun.buzz
-- name: 🇦🇺[AU]澳大利亚-Sydney
-  type: trojan
-  server: au1.t11-a.app
-  port: 11016
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: au01t.goodyun.buzz
-- name: 🇳🇬[NG]尼日利亚-Lagos
-  type: trojan
-  server: ng1.t11-a.app
-  port: 11017
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: ng01t.goodyun.buzz
-- name: 🇦🇷[AR]阿根廷-BuenosAires
-  type: trojan
-  server: ar1.t11-a.app
-  port: 11018
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: ar01t.goodyun.buzz
 - name: 🇭🇰香港+04
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: fad6df36-5735-456a-9692-53653b3b2248
   ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
     path: /grpchongkong2/?ed=2560
-    headers:
-      Host: 1000ws33.iptests.net
-- name: 🇭🇰香港+05
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
+- name: 🇭🇰香港+06
   network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: /grpchongkong2/
-    headers:
-      Host: 1000ws34.iptests.net
-- name: 🇭🇰香港+08
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
   port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
-  network: ws
-  skip-cert-verify: true
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: fad6df36-5735-456a-9692-53653b3b2248
   ws-opts:
-    path: /grpcsg2/?ed=2560
     headers:
-      Host: 1000ws33.iptests.net
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcsg2/
 - name: 🇯🇵日本+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: fad6df36-5735-456a-9692-53653b3b2248
   ws-opts:
-    path: /grpcjapan2/?ed=2560
     headers:
-      Host: 1000ws34.iptests.net
+      Host: qsybgp3-1000ws.1000ws.top
+    path: /grpcjapan2/?ed=2560
 - name: 🇯🇵日本+04
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: fad6df36-5735-456a-9692-53653b3b2248
   ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
     path: /grpcjapan2/?ed=2560
-    headers:
-      Host: 1000ws33.iptests.net
-- name: 🇹🇼台湾+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
+- name: 🇹🇼台湾+01
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: fad6df36-5735-456a-9692-53653b3b2248
   ws-opts:
+    headers:
+      Host: qsybgp1-1-1000ws.1000ws.top
     path: /grpchongkong1/
-    headers:
-      Host: 1000ws33.iptests.net
 - name: 🇸🇬新加坡+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp3-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: fad6df36-5735-456a-9692-53653b3b2248
   ws-opts:
+    headers:
+      Host: qsybgp3-1000ws.1000ws.top
     path: /grpcsg1/
-    headers:
-      Host: 1000ws33.iptests.net
-- name: 🇺🇸美国+03
-  type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: 83dd822c-5552-495e-a4f0-699bda29431c
+- name: 🇺🇸美国+01
   network: ws
-  skip-cert-verify: true
+  port: 80
+  server: qsybgp1-1-1000ws.1000ws.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: fad6df36-5735-456a-9692-53653b3b2248
   ws-opts:
-    path: /grpcus1/
     headers:
-      Host: 1000ws33.iptests.net
+      Host: qsybgp1-1-1000ws.1000ws.top
+    path: /grpcus1/
 - name: 🇭🇰[HK]HongKong17+-GPT优化
-  type: trojan
-  server: h7.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 22337
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: h7.t11-a.app
   sni: hk07t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇭🇰[HK]HongKong18+-GPT优化
-  type: trojan
-  server: h8.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 22338
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: h8.t11-a.app
   sni: hk08t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇭🇰[HK]HongKong19+-GPT优化
-  type: trojan
-  server: h9.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 22339
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: h9.t11-a.app
   sni: v.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇭🇰[HK]HongKong20+-GPT优化
-  type: trojan
-  server: h10.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 22340
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: h10.t11-a.app
   sni: v.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇸🇬[SG]Singapore04
-  type: trojan
-  server: s4.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 26211
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: s4.t11-a.app
   sni: v.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇸🇬[SG]Singapore05
-  type: trojan
-  server: s5.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 26205
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: s5.t11-a.app
   sni: s.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇸🇬[SG]Singapore09
-  type: trojan
-  server: s9.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 26209
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: s9.t11-a.app
   sni: sg09t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇸🇬[SG]Singapore10
-  type: trojan
-  server: s10.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 26210
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: s10.t11-a.app
   sni: sg10t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇸🇬[SG]Singapore11
-  type: trojan
-  server: s11.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 26218
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: s11.t11-a.app
   sni: sg11t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇸🇬[SG]Singapore12
-  type: trojan
-  server: s12.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 26212
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: s12.t11-a.app
   sni: sg12t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇸🇬[SG]Singapore13
-  type: trojan
-  server: s13.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 26213
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: s13.t11-a.app
   sni: sg13t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇸🇬[SG]Singapore14
-  type: trojan
-  server: s14.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 26214
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: s14.t11-a.app
   sni: sg14t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇸🇬[SG]Singapore15
-  type: trojan
-  server: s15.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 26215
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: s15.t11-a.app
   sni: sg15t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇯🇵[JP]Tokyo01
-  type: trojan
-  server: j01.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 35001
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: j01.t11-a.app
   sni: n.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇯🇵[JP]Tokyo02
-  type: trojan
-  server: j02.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 35002
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: j02.t11-a.app
   sni: t.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇯🇵[JP]Tokyo03
-  type: trojan
-  server: j3.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 35003
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: j3.t11-a.app
   sni: s.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇯🇵[JP]Tokyo04
-  type: trojan
-  server: j4.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 35004
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: j4.t11-a.app
   sni: s.t202511-s.icu
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇯🇵[JP]Tokyo07
-  type: trojan
-  server: j7.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 35077
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: j7.t11-a.app
   sni: jp077t.goodyun.buzz
-- name: 🇺🇸[US]美国Los+Angeles04-GPT优化
+  tls: true
   type: trojan
-  server: u4.t11-a.app
-  port: 33805
+  udp: true
+- name: San+Jose07-GPT优化
   password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: n.t202511-s.icu
-- name: 🇺🇸[US]美国Santa+Clara05-GPT优化
-  type: trojan
-  server: u5.t11-a.app
-  port: 33806
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: n.t202511-s.icu
-- name: 🇺🇸[US]美国San+Jose07-GPT优化
-  type: trojan
-  server: us7.t11-a.app
   port: 33808
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: us7.t11-a.app
   sni: us07t.goodyun.buzz
-- name: 🇺🇸[US]美国San+Jose08-GPT优化
+  tls: true
   type: trojan
-  server: us8.t11-a.app
+  udp: true
+- name: San+Jose08-GPT优化
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 33809
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: us8.t11-a.app
   sni: us08t.goodyun.buzz
-- name: 🇺🇸[US]美国San+Francisco09-GPT优化
+  tls: true
   type: trojan
-  server: us9.t11-a.app
+  udp: true
+- name: San+Francisco09-GPT优化
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 33810
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: us9.t11-a.app
   sni: us09t.goodyun.buzz
-- name: 🇺🇸[US]美国San+Francisco10-GPT优化
+  tls: true
   type: trojan
-  server: us10.t11-a.app
+  udp: true
+- name: San+Francisco10-GPT优化
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 33811
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: us10.t11-a.app
   sni: us10t.goodyun.buzz
-- name: 🇺🇸[US]美国San+Francisco11-GPT优化
+  tls: true
   type: trojan
-  server: us11.t11-a.app
-  port: 33812
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: us11t.goodyun.buzz
-- name: 🇺🇸[US]美国San+Francisco12-GPT优化
-  type: trojan
-  server: us12.t11-a.app
-  port: 33813
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: us12t.goodyun.buzz
+  udp: true
 - name: 🇹🇼[TW]TaiPei05-GPT优化
-  type: trojan
-  server: tw5.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 33905
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: tw5.t11-a.app
   sni: tw05t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇹🇼[TW]TaiPei06-GPT优化
-  type: trojan
-  server: tw6.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 33906
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: tw6.t11-a.app
   sni: tw06t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇫🇷[FR]法国-Paris01
-  type: trojan
-  server: fr1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11001
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: fr1.t11-a.app
   sni: fr01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇫🇷[FR]法国-Paris02
-  type: trojan
-  server: fr2.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11002
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: fr2.t11-a.app
   sni: fr02t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇬🇧[UK]英国Coventry01-BBC优化
-  type: trojan
-  server: uk1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11003
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: uk1.t11-a.app
   sni: uk01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇬🇧[UK]英国Coventry02-BBC优化
-  type: trojan
-  server: uk2.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11005
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: uk2.t11-a.app
   sni: uk02t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇩🇪[DE]德国-Frankfurt01
-  type: trojan
-  server: de1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11006
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: de1.t11-a.app
   sni: de01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇩🇪[DE]德国-Frankfurt02
-  type: trojan
-  server: de2.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11007
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: de2.t11-a.app
   sni: d2.t11-a2.click
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇨🇦[CA]加拿大-Toronto
-  type: trojan
-  server: ca1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11008
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: ca1.t11-a.app
   sni: ca01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇳🇱[NL]荷兰-Amsterdam
-  type: trojan
-  server: nl1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11009
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: nl1.t11-a.app
   sni: nl01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇷🇺[RU]俄罗斯-Moscow
-  type: trojan
-  server: ru1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11010
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: ru1.t11-a.app
   sni: ru01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇹🇷[TR]土耳其-Istanbul
-  type: trojan
-  server: tr1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11051
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: tr1.t11-a.app
   sni: tr01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇮🇳[IN]印度-bangalore
-  type: trojan
-  server: in1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11033
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: in1.t11-a.app
   sni: in01tt.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇰🇷[KR]韩国-Seoul
-  type: trojan
-  server: kr1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11029
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: kr1.t11-a.app
   sni: kr011t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇻🇳[VN]越南-HoChiMinh
-  type: trojan
-  server: vn1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11015
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: vn1.t11-a.app
   sni: vn01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇦🇺[AU]澳大利亚-Sydney
-  type: trojan
-  server: au1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11016
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: au1.t11-a.app
   sni: au01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 - name: 🇳🇬[NG]尼日利亚-Lagos
-  type: trojan
-  server: ng1.t11-a.app
+  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   port: 11017
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  server: ng1.t11-a.app
   sni: ng01t.goodyun.buzz
-- name: 🇦🇷[AR]阿根廷-BuenosAires
+  tls: true
   type: trojan
-  server: ar1.t11-a.app
-  port: 11018
+  udp: true
+- name: 🇦🇷[AR]阿根廷-BuenosAires
   password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
+  port: 11018
+  server: ar1.t11-a.app
   sni: ar01t.goodyun.buzz
+  tls: true
+  type: trojan
+  udp: true
 proxy-groups:
 - name: Auto
+  proxies:
+  - 🇭🇰香港+02
+  - 🇭🇰香港+04
+  - 🇭🇰香港+06
+  - 🇯🇵日本+03
+  - 🇯🇵日本+04
+  - 🇹🇼台湾+01
+  - 🇸🇬新加坡+03
+  - 🇺🇸美国+01
+  - 🇭🇰[HK]HongKong17+-GPT优化
+  - 🇭🇰[HK]HongKong18+-GPT优化
+  - 🇭🇰[HK]HongKong19+-GPT优化
+  - 🇭🇰[HK]HongKong20+-GPT优化
+  - 🇸🇬[SG]Singapore04
+  - 🇸🇬[SG]Singapore05
+  - 🇸🇬[SG]Singapore09
+  - 🇸🇬[SG]Singapore10
+  - 🇸🇬[SG]Singapore11
+  - 🇸🇬[SG]Singapore12
+  - 🇸🇬[SG]Singapore13
+  - 🇸🇬[SG]Singapore14
+  - 🇸🇬[SG]Singapore15
+  - 🇯🇵[JP]Tokyo01
+  - 🇯🇵[JP]Tokyo02
+  - 🇯🇵[JP]Tokyo03
+  - 🇯🇵[JP]Tokyo04
+  - 🇯🇵[JP]Tokyo07
+  - San+Jose07-GPT优化
+  - San+Jose08-GPT优化
+  - San+Francisco09-GPT优化
+  - San+Francisco10-GPT优化
+  - 🇹🇼[TW]TaiPei05-GPT优化
+  - 🇹🇼[TW]TaiPei06-GPT优化
+  - 🇫🇷[FR]法国-Paris01
+  - 🇫🇷[FR]法国-Paris02
+  - 🇬🇧[UK]英国Coventry01-BBC优化
+  - 🇬🇧[UK]英国Coventry02-BBC优化
+  - 🇩🇪[DE]德国-Frankfurt01
+  - 🇩🇪[DE]德国-Frankfurt02
+  - 🇨🇦[CA]加拿大-Toronto
+  - 🇳🇱[NL]荷兰-Amsterdam
+  - 🇷🇺[RU]俄罗斯-Moscow
+  - 🇹🇷[TR]土耳其-Istanbul
+  - 🇮🇳[IN]印度-bangalore
+  - 🇰🇷[KR]韩国-Seoul
+  - 🇻🇳[VN]越南-HoChiMinh
+  - 🇦🇺[AU]澳大利亚-Sydney
+  - 🇳🇬[NG]尼日利亚-Lagos
+  - 🇦🇷[AR]阿根廷-BuenosAires
   type: select
+- interval: 300
+  name: LoadBalance
   proxies:
+  - 🇭🇰香港+02
   - 🇭🇰香港+04
-  - 🇭🇰香港+05
-  - 🇭🇰香港+08
+  - 🇭🇰香港+06
   - 🇯🇵日本+03
   - 🇯🇵日本+04
-  - 🇹🇼台湾+03
+  - 🇹🇼台湾+01
   - 🇸🇬新加坡+03
-  - 🇺🇸美国+03
+  - 🇺🇸美国+01
   - 🇭🇰[HK]HongKong17+-GPT优化
   - 🇭🇰[HK]HongKong18+-GPT优化
   - 🇭🇰[HK]HongKong19+-GPT优化
@@ -832,14 +506,10 @@ proxy-groups:
   - 🇯🇵[JP]Tokyo03
   - 🇯🇵[JP]Tokyo04
   - 🇯🇵[JP]Tokyo07
-  - 🇺🇸[US]美国Los+Angeles04-GPT优化
-  - 🇺🇸[US]美国Santa+Clara05-GPT优化
-  - 🇺🇸[US]美国San+Jose07-GPT优化
-  - 🇺🇸[US]美国San+Jose08-GPT优化
-  - 🇺🇸[US]美国San+Francisco09-GPT优化
-  - 🇺🇸[US]美国San+Francisco10-GPT优化
-  - 🇺🇸[US]美国San+Francisco11-GPT优化
-  - 🇺🇸[US]美国San+Francisco12-GPT优化
+  - San+Jose07-GPT优化
+  - San+Jose08-GPT优化
+  - San+Francisco09-GPT优化
+  - San+Francisco10-GPT优化
   - 🇹🇼[TW]TaiPei05-GPT优化
   - 🇹🇼[TW]TaiPei06-GPT优化
   - 🇫🇷[FR]法国-Paris01
@@ -856,116 +526,11 @@ proxy-groups:
   - 🇰🇷[KR]韩国-Seoul
   - 🇻🇳[VN]越南-HoChiMinh
   - 🇦🇺[AU]澳大利亚-Sydney
-- name: LoadBalance
-  type: load-balance
+  - 🇳🇬[NG]尼日利亚-Lagos
+  - 🇦🇷[AR]阿根廷-BuenosAires
   strategy: consistent-hashing
-  proxies:
-  - 🇭🇰香港+04
-  - 🇭🇰香港+05
-  - 🇭🇰香港+08
-  - 🇯🇵日本+03
-  - 🇯🇵日本+04
-  - 🇹🇼台湾+03
-  - 🇸🇬新加坡+03
-  - 🇺🇸美国+03
-  - 🇭🇰[HK]HongKong17+-GPT优化
-  - 🇭🇰[HK]HongKong18+-GPT优化
-  - 🇭🇰[HK]HongKong19+-GPT优化
-  - 🇭🇰[HK]HongKong20+-GPT优化
-  - 🇸🇬[SG]Singapore04
-  - 🇸🇬[SG]Singapore05
-  - 🇸🇬[SG]Singapore09
-  - 🇸🇬[SG]Singapore10
-  - 🇸🇬[SG]Singapore11
-  - 🇸🇬[SG]Singapore12
-  - 🇸🇬[SG]Singapore13
-  - 🇸🇬[SG]Singapore14
-  - 🇸🇬[SG]Singapore15
-  - 🇯🇵[JP]Tokyo01
-  - 🇯🇵[JP]Tokyo02
-  - 🇯🇵[JP]Tokyo03
-  - 🇯🇵[JP]Tokyo04
-  - 🇯🇵[JP]Tokyo07
-  - 🇺🇸[US]美国Los+Angeles04-GPT优化
-  - 🇺🇸[US]美国Santa+Clara05-GPT优化
-  - 🇺🇸[US]美国San+Jose07-GPT优化
-  - 🇺🇸[US]美国San+Jose08-GPT优化
-  - 🇺🇸[US]美国San+Francisco09-GPT优化
-  - 🇺🇸[US]美国San+Francisco10-GPT优化
-  - 🇺🇸[US]美国San+Francisco11-GPT优化
-  - 🇺🇸[US]美国San+Francisco12-GPT优化
-  - 🇹🇼[TW]TaiPei05-GPT优化
-  - 🇹🇼[TW]TaiPei06-GPT优化
-  - 🇫🇷[FR]法国-Paris01
-  - 🇫🇷[FR]法国-Paris02
-  - 🇬🇧[UK]英国Coventry01-BBC优化
-  - 🇬🇧[UK]英国Coventry02-BBC优化
-  - 🇩🇪[DE]德国-Frankfurt01
-  - 🇩🇪[DE]德国-Frankfurt02
-  - 🇨🇦[CA]加拿大-Toronto
-  - 🇳🇱[NL]荷兰-Amsterdam
-  - 🇷🇺[RU]俄罗斯-Moscow
-  - 🇹🇷[TR]土耳其-Istanbul
-  - 🇮🇳[IN]印度-bangalore
-  - 🇰🇷[KR]韩国-Seoul
-  - 🇻🇳[VN]越南-HoChiMinh
-  - 🇦🇺[AU]澳大利亚-Sydney
-  - 🇳🇬[NG]尼日利亚-Lagos
-  - 🇦🇷[AR]阿根廷-BuenosAires
-  - 🇭🇰香港+04
-  - 🇭🇰香港+05
-  - 🇭🇰香港+08
-  - 🇯🇵日本+03
-  - 🇯🇵日本+04
-  - 🇹🇼台湾+03
-  - 🇸🇬新加坡+03
-  - 🇺🇸美国+03
-  - 🇭🇰[HK]HongKong17+-GPT优化
-  - 🇭🇰[HK]HongKong18+-GPT优化
-  - 🇭🇰[HK]HongKong19+-GPT优化
-  - 🇭🇰[HK]HongKong20+-GPT优化
-  - 🇸🇬[SG]Singapore04
-  - 🇸🇬[SG]Singapore05
-  - 🇸🇬[SG]Singapore09
-  - 🇸🇬[SG]Singapore10
-  - 🇸🇬[SG]Singapore11
-  - 🇸🇬[SG]Singapore12
-  - 🇸🇬[SG]Singapore13
-  - 🇸🇬[SG]Singapore14
-  - 🇸🇬[SG]Singapore15
-  - 🇯🇵[JP]Tokyo01
-  - 🇯🇵[JP]Tokyo02
-  - 🇯🇵[JP]Tokyo03
-  - 🇯🇵[JP]Tokyo04
-  - 🇯🇵[JP]Tokyo07
-  - 🇺🇸[US]美国Los+Angeles04-GPT优化
-  - 🇺🇸[US]美国Santa+Clara05-GPT优化
-  - 🇺🇸[US]美国San+Jose07-GPT优化
-  - 🇺🇸[US]美国San+Jose08-GPT优化
-  - 🇺🇸[US]美国San+Francisco09-GPT优化
-  - 🇺🇸[US]美国San+Francisco10-GPT优化
-  - 🇺🇸[US]美国San+Francisco11-GPT优化
-  - 🇺🇸[US]美国San+Francisco12-GPT优化
-  - 🇹🇼[TW]TaiPei05-GPT优化
-  - 🇹🇼[TW]TaiPei06-GPT优化
-  - 🇫🇷[FR]法国-Paris01
-  - 🇫🇷[FR]法国-Paris02
-  - 🇬🇧[UK]英国Coventry01-BBC优化
-  - 🇬🇧[UK]英国Coventry02-BBC优化
-  - 🇩🇪[DE]德国-Frankfurt01
-  - 🇩🇪[DE]德国-Frankfurt02
-  - 🇨🇦[CA]加拿大-Toronto
-  - 🇳🇱[NL]荷兰-Amsterdam
-  - 🇷🇺[RU]俄罗斯-Moscow
-  - 🇹🇷[TR]土耳其-Istanbul
-  - 🇮🇳[IN]印度-bangalore
-  - 🇰🇷[KR]韩国-Seoul
-  - 🇻🇳[VN]越南-HoChiMinh
-  - 🇦🇺[AU]澳大利亚-Sydney
-  - 🇳🇬[NG]尼日利亚-Lagos
-  - 🇦🇷[AR]阿根廷-BuenosAires
+  type: load-balance
   url: http://www.gstatic.com/generate_204
-  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
