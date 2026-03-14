@@ -10,44 +10,93 @@ dns:
   - 114.114.114.114
   - 8.8.8.8
 proxies:
-- name: 🇭🇰香港+02
+- name: 🇯🇵日本高速04|BGP|流媒体
   type: vless
-  server: qsybgp1-1-1000ws.1000ws.top
-  port: 80
-  uuid: fad6df36-5735-456a-9692-53653b3b2248
+  server: cfyes.lxy1015.top
+  port: 443
+  uuid: b1dae84d-1c48-4e9f-87c5-2d8e2c2f488a
+  tls: true
   network: ws
   skip-cert-verify: true
   ws-opts:
-    path: /grpchongkong2/?ed=2560
+    path: /liangxin/jp1
     headers:
-      Host: 1000ws33.iptests.net
-- name: 🇭🇰香港+04
+      Host: lx-1jp.lxy1015.top
+- name: 🇯🇵日本高速05|BGP|流媒体
   type: vless
-  server: qsybgp3-1000ws.1000ws.top
-  port: 80
-  uuid: fad6df36-5735-456a-9692-53653b3b2248
+  server: cfyes.lxy1015.top
+  port: 443
+  uuid: b1dae84d-1c48-4e9f-87c5-2d8e2c2f488a
+  tls: true
   network: ws
   skip-cert-verify: true
   ws-opts:
-    path: /grpchongkong2/?ed=2560
+    path: /liangxin/jp1
     headers:
-      Host: 1000ws33.iptests.net
+      Host: lx-1jp.lxy1015.top
+- name: 🇯🇵日本高速06|BGP|流媒体
+  type: vless
+  server: cfyes.lxy1015.top
+  port: 443
+  uuid: b1dae84d-1c48-4e9f-87c5-2d8e2c2f488a
+  tls: true
+  network: ws
+  skip-cert-verify: true
+  ws-opts:
+    path: /liangxin/jp1
+    headers:
+      Host: lx-1jp.lxy1015.top
+- name: 🇺🇸美国高速03|流媒体
+  type: vless
+  server: cfyes.lxy1015.top
+  port: 443
+  uuid: b1dae84d-1c48-4e9f-87c5-2d8e2c2f488a
+  tls: true
+  network: ws
+  skip-cert-verify: true
+  ws-opts:
+    path: /liangxin/us
+    headers:
+      Host: lx-us1.lxy1015.top
+- name: 🇺🇸美国高速04|流媒体
+  type: vless
+  server: cfyes.lxy1015.top
+  port: 443
+  uuid: b1dae84d-1c48-4e9f-87c5-2d8e2c2f488a
+  tls: true
+  network: ws
+  skip-cert-verify: true
+  ws-opts:
+    path: /liangxin/us
+    headers:
+      Host: lx-us1.lxy1015.top
 - name: 🇭🇰香港+06
   type: vless
   server: qsybgp1-1-1000ws.1000ws.top
   port: 80
-  uuid: fad6df36-5735-456a-9692-53653b3b2248
+  uuid: 98814bc4-31c2-4636-b708-7fbbe43dd05c
   network: ws
   skip-cert-verify: true
   ws-opts:
     path: /grpcsg2/
     headers:
       Host: 1000ws33.iptests.net
+- name: 🇭🇰香港+07
+  type: vless
+  server: qsybgp2-1-1000ws.1000ws.top
+  port: 80
+  uuid: 98814bc4-31c2-4636-b708-7fbbe43dd05c
+  network: ws
+  skip-cert-verify: true
+  ws-opts:
+    path: /grpcsg2/
+    headers:
+      Host: 1000ws34.iptests.net
 - name: 🇯🇵日本+03
   type: vless
   server: qsybgp3-1000ws.1000ws.top
   port: 80
-  uuid: fad6df36-5735-456a-9692-53653b3b2248
+  uuid: 98814bc4-31c2-4636-b708-7fbbe43dd05c
   network: ws
   skip-cert-verify: true
   ws-opts:
@@ -58,29 +107,29 @@ proxies:
   type: vless
   server: qsybgp3-1000ws.1000ws.top
   port: 80
-  uuid: fad6df36-5735-456a-9692-53653b3b2248
+  uuid: 98814bc4-31c2-4636-b708-7fbbe43dd05c
   network: ws
   skip-cert-verify: true
   ws-opts:
     path: /grpcjapan2/?ed=2560
     headers:
       Host: 1000ws33.iptests.net
-- name: 🇹🇼台湾+01
+- name: 🇹🇼台湾+03
   type: vless
-  server: qsybgp1-1-1000ws.1000ws.top
+  server: qsybgp3-1000ws.1000ws.top
   port: 80
-  uuid: fad6df36-5735-456a-9692-53653b3b2248
+  uuid: 98814bc4-31c2-4636-b708-7fbbe43dd05c
   network: ws
   skip-cert-verify: true
   ws-opts:
     path: /grpchongkong1/
     headers:
-      Host: 1000ws34.iptests.net
-- name: 🇸🇬新加坡+03
+      Host: 1000ws33.iptests.net
+- name: 🇸🇬新加坡+02
   type: vless
-  server: qsybgp3-1000ws.1000ws.top
+  server: qsybgp2-1-1000ws.1000ws.top
   port: 80
-  uuid: fad6df36-5735-456a-9692-53653b3b2248
+  uuid: 98814bc4-31c2-4636-b708-7fbbe43dd05c
   network: ws
   skip-cert-verify: true
   ws-opts:
@@ -91,7 +140,7 @@ proxies:
   type: vless
   server: qsybgp1-1-1000ws.1000ws.top
   port: 80
-  uuid: fad6df36-5735-456a-9692-53653b3b2248
+  uuid: 98814bc4-31c2-4636-b708-7fbbe43dd05c
   network: ws
   skip-cert-verify: true
   ws-opts:
@@ -231,13 +280,6 @@ proxies:
   password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   skip-cert-verify: true
   sni: us07t.goodyun.buzz
-- name: San+Jose08-GPT优化
-  type: trojan
-  server: us8.t11-a.app
-  port: 33809
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: us08t.goodyun.buzz
 - name: San+Francisco09-GPT优化
   type: trojan
   server: us9.t11-a.app
@@ -252,13 +294,6 @@ proxies:
   password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   skip-cert-verify: true
   sni: us10t.goodyun.buzz
-- name: 🇹🇼[TW]TaiPei05-GPT优化
-  type: trojan
-  server: tw5.t11-a.app
-  port: 33905
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: tw05t.goodyun.buzz
 - name: 🇹🇼[TW]TaiPei06-GPT优化
   type: trojan
   server: tw6.t11-a.app
@@ -280,13 +315,6 @@ proxies:
   password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   skip-cert-verify: true
   sni: fr02t.goodyun.buzz
-- name: 🇬🇧[UK]英国Coventry01-BBC优化
-  type: trojan
-  server: uk1.t11-a.app
-  port: 11003
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: uk01t.goodyun.buzz
 - name: 🇬🇧[UK]英国Coventry02-BBC优化
   type: trojan
   server: uk2.t11-a.app
@@ -294,20 +322,6 @@ proxies:
   password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
   skip-cert-verify: true
   sni: uk02t.goodyun.buzz
-- name: 🇩🇪[DE]德国-Frankfurt01
-  type: trojan
-  server: de1.t11-a.app
-  port: 11006
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: de01t.goodyun.buzz
-- name: 🇩🇪[DE]德国-Frankfurt02
-  type: trojan
-  server: de2.t11-a.app
-  port: 11007
-  password: bb0fe94d-8675-42f7-b0b7-73a5e2a0f76a
-  skip-cert-verify: true
-  sni: d2.t11-a2.click
 - name: 🇨🇦[CA]加拿大-Toronto
   type: trojan
   server: ca1.t11-a.app
@@ -382,13 +396,17 @@ proxy-groups:
 - name: Auto
   type: select
   proxies:
-  - 🇭🇰香港+02
-  - 🇭🇰香港+04
+  - 🇯🇵日本高速04|BGP|流媒体
+  - 🇯🇵日本高速05|BGP|流媒体
+  - 🇯🇵日本高速06|BGP|流媒体
+  - 🇺🇸美国高速03|流媒体
+  - 🇺🇸美国高速04|流媒体
   - 🇭🇰香港+06
+  - 🇭🇰香港+07
   - 🇯🇵日本+03
   - 🇯🇵日本+04
-  - 🇹🇼台湾+01
-  - 🇸🇬新加坡+03
+  - 🇹🇼台湾+03
+  - 🇸🇬新加坡+02
   - 🇺🇸美国+01
   - 🇭🇰[HK]HongKong17+-GPT优化
   - 🇭🇰[HK]HongKong18+-GPT优化
@@ -409,17 +427,12 @@ proxy-groups:
   - 🇯🇵[JP]Tokyo04
   - 🇯🇵[JP]Tokyo07
   - San+Jose07-GPT优化
-  - San+Jose08-GPT优化
   - San+Francisco09-GPT优化
   - San+Francisco10-GPT优化
-  - 🇹🇼[TW]TaiPei05-GPT优化
   - 🇹🇼[TW]TaiPei06-GPT优化
   - 🇫🇷[FR]法国-Paris01
   - 🇫🇷[FR]法国-Paris02
-  - 🇬🇧[UK]英国Coventry01-BBC优化
   - 🇬🇧[UK]英国Coventry02-BBC优化
-  - 🇩🇪[DE]德国-Frankfurt01
-  - 🇩🇪[DE]德国-Frankfurt02
   - 🇨🇦[CA]加拿大-Toronto
   - 🇳🇱[NL]荷兰-Amsterdam
   - 🇷🇺[RU]俄罗斯-Moscow
@@ -434,13 +447,17 @@ proxy-groups:
   type: load-balance
   strategy: consistent-hashing
   proxies:
-  - 🇭🇰香港+02
-  - 🇭🇰香港+04
+  - 🇯🇵日本高速04|BGP|流媒体
+  - 🇯🇵日本高速05|BGP|流媒体
+  - 🇯🇵日本高速06|BGP|流媒体
+  - 🇺🇸美国高速03|流媒体
+  - 🇺🇸美国高速04|流媒体
   - 🇭🇰香港+06
+  - 🇭🇰香港+07
   - 🇯🇵日本+03
   - 🇯🇵日本+04
-  - 🇹🇼台湾+01
-  - 🇸🇬新加坡+03
+  - 🇹🇼台湾+03
+  - 🇸🇬新加坡+02
   - 🇺🇸美国+01
   - 🇭🇰[HK]HongKong17+-GPT优化
   - 🇭🇰[HK]HongKong18+-GPT优化
@@ -461,17 +478,12 @@ proxy-groups:
   - 🇯🇵[JP]Tokyo04
   - 🇯🇵[JP]Tokyo07
   - San+Jose07-GPT优化
-  - San+Jose08-GPT优化
   - San+Francisco09-GPT优化
   - San+Francisco10-GPT优化
-  - 🇹🇼[TW]TaiPei05-GPT优化
   - 🇹🇼[TW]TaiPei06-GPT优化
   - 🇫🇷[FR]法国-Paris01
   - 🇫🇷[FR]法国-Paris02
-  - 🇬🇧[UK]英国Coventry01-BBC优化
   - 🇬🇧[UK]英国Coventry02-BBC优化
-  - 🇩🇪[DE]德国-Frankfurt01
-  - 🇩🇪[DE]德国-Frankfurt02
   - 🇨🇦[CA]加拿大-Toronto
   - 🇳🇱[NL]荷兰-Amsterdam
   - 🇷🇺[RU]俄罗斯-Moscow
