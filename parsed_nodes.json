@@ -1,139 +1,59 @@
 [
   {
-    "name": "\ud83c\uddef\ud83c\uddf5\u65e5\u672c\u9ad8\u901f04|BGP|\u6d41\u5a92\u4f53",
+    "name": "\ud83c\udded\ud83c\uddf0\u9999\u6e2f+07",
     "type": "vless",
-    "server": "cfyes.lxy1015.top",
-    "port": 443,
-    "uuid": "b1dae84d-1c48-4e9f-87c5-2d8e2c2f488a",
-    "tls": true,
-    "network": "ws",
-    "skip-cert-verify": true,
-    "ws-opts": {
-      "path": "/liangxin/jp1",
-      "headers": {
-        "Host": "lx-1jp.lxy1015.top"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\uddef\ud83c\uddf5\u65e5\u672c\u9ad8\u901f05|BGP|\u6d41\u5a92\u4f53",
-    "type": "vless",
-    "server": "cfyes.lxy1015.top",
-    "port": 443,
-    "uuid": "b1dae84d-1c48-4e9f-87c5-2d8e2c2f488a",
-    "tls": true,
-    "network": "ws",
-    "skip-cert-verify": true,
-    "ws-opts": {
-      "path": "/liangxin/jp1",
-      "headers": {
-        "Host": "lx-1jp.lxy1015.top"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\uddef\ud83c\uddf5\u65e5\u672c\u9ad8\u901f06|BGP|\u6d41\u5a92\u4f53",
-    "type": "vless",
-    "server": "cfyes.lxy1015.top",
-    "port": 443,
-    "uuid": "b1dae84d-1c48-4e9f-87c5-2d8e2c2f488a",
-    "tls": true,
-    "network": "ws",
-    "skip-cert-verify": true,
-    "ws-opts": {
-      "path": "/liangxin/jp1",
-      "headers": {
-        "Host": "lx-1jp.lxy1015.top"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\uddfa\ud83c\uddf8\u7f8e\u56fd\u9ad8\u901f03|\u6d41\u5a92\u4f53",
-    "type": "vless",
-    "server": "cfyes.lxy1015.top",
-    "port": 443,
-    "uuid": "b1dae84d-1c48-4e9f-87c5-2d8e2c2f488a",
-    "tls": true,
-    "network": "ws",
-    "skip-cert-verify": true,
-    "ws-opts": {
-      "path": "/liangxin/us",
-      "headers": {
-        "Host": "lx-us1.lxy1015.top"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\uddfa\ud83c\uddf8\u7f8e\u56fd\u9ad8\u901f04|\u6d41\u5a92\u4f53",
-    "type": "vless",
-    "server": "cfyes.lxy1015.top",
-    "port": 443,
-    "uuid": "b1dae84d-1c48-4e9f-87c5-2d8e2c2f488a",
-    "tls": true,
-    "network": "ws",
-    "skip-cert-verify": true,
-    "ws-opts": {
-      "path": "/liangxin/us",
-      "headers": {
-        "Host": "lx-us1.lxy1015.top"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\udded\ud83c\uddf0\u9999\u6e2f+06",
-    "type": "vless",
-    "server": "qsybgp1-1-1000ws.1000ws.top",
+    "server": "qsybgp2-1-1000ws.1000ws.top",
     "port": 80,
-    "uuid": "98814bc4-31c2-4636-b708-7fbbe43dd05c",
+    "uuid": "1701e794-359a-445b-bc3b-ea03ca10b213",
     "network": "ws",
     "skip-cert-verify": true,
     "ws-opts": {
       "path": "/grpcsg2/",
+      "headers": {
+        "Host": "1000ws34.iptests.net"
+      }
+    }
+  },
+  {
+    "name": "\ud83c\udded\ud83c\uddf0\u9999\u6e2f+08",
+    "type": "vless",
+    "server": "qsybgp3-1000ws.1000ws.top",
+    "port": 80,
+    "uuid": "1701e794-359a-445b-bc3b-ea03ca10b213",
+    "network": "ws",
+    "skip-cert-verify": true,
+    "ws-opts": {
+      "path": "/grpcsg2/?ed=2560",
       "headers": {
         "Host": "1000ws33.iptests.net"
       }
     }
   },
   {
-    "name": "\ud83c\udded\ud83c\uddf0\u9999\u6e2f+07",
+    "name": "\ud83c\uddef\ud83c\uddf5\u65e5\u672c+01",
+    "type": "vless",
+    "server": "qsybgp1-1-1000ws.1000ws.top",
+    "port": 80,
+    "uuid": "1701e794-359a-445b-bc3b-ea03ca10b213",
+    "network": "ws",
+    "skip-cert-verify": true,
+    "ws-opts": {
+      "path": "/grpcjapan1/?ed=2560",
+      "headers": {
+        "Host": "1000ws34.iptests.net"
+      }
+    }
+  },
+  {
+    "name": "\ud83c\uddef\ud83c\uddf5\u65e5\u672c+02",
     "type": "vless",
     "server": "qsybgp2-1-1000ws.1000ws.top",
     "port": 80,
-    "uuid": "98814bc4-31c2-4636-b708-7fbbe43dd05c",
+    "uuid": "1701e794-359a-445b-bc3b-ea03ca10b213",
     "network": "ws",
     "skip-cert-verify": true,
     "ws-opts": {
-      "path": "/grpcsg2/",
-      "headers": {
-        "Host": "1000ws34.iptests.net"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\uddef\ud83c\uddf5\u65e5\u672c+03",
-    "type": "vless",
-    "server": "qsybgp3-1000ws.1000ws.top",
-    "port": 80,
-    "uuid": "98814bc4-31c2-4636-b708-7fbbe43dd05c",
-    "network": "ws",
-    "skip-cert-verify": true,
-    "ws-opts": {
-      "path": "/grpcjapan2/?ed=2560",
-      "headers": {
-        "Host": "1000ws34.iptests.net"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\uddef\ud83c\uddf5\u65e5\u672c+04",
-    "type": "vless",
-    "server": "qsybgp3-1000ws.1000ws.top",
-    "port": 80,
-    "uuid": "98814bc4-31c2-4636-b708-7fbbe43dd05c",
-    "network": "ws",
-    "skip-cert-verify": true,
-    "ws-opts": {
-      "path": "/grpcjapan2/?ed=2560",
+      "path": "/grpcjapan1/?ed=2560",
       "headers": {
         "Host": "1000ws33.iptests.net"
       }
@@ -144,7 +64,7 @@
     "type": "vless",
     "server": "qsybgp3-1000ws.1000ws.top",
     "port": 80,
-    "uuid": "98814bc4-31c2-4636-b708-7fbbe43dd05c",
+    "uuid": "1701e794-359a-445b-bc3b-ea03ca10b213",
     "network": "ws",
     "skip-cert-verify": true,
     "ws-opts": {
@@ -155,11 +75,11 @@
     }
   },
   {
-    "name": "\ud83c\uddf8\ud83c\uddec\u65b0\u52a0\u5761+02",
+    "name": "\ud83c\uddf8\ud83c\uddec\u65b0\u52a0\u5761+03",
     "type": "vless",
-    "server": "qsybgp2-1-1000ws.1000ws.top",
+    "server": "qsybgp3-1000ws.1000ws.top",
     "port": 80,
-    "uuid": "98814bc4-31c2-4636-b708-7fbbe43dd05c",
+    "uuid": "1701e794-359a-445b-bc3b-ea03ca10b213",
     "network": "ws",
     "skip-cert-verify": true,
     "ws-opts": {
@@ -170,17 +90,17 @@
     }
   },
   {
-    "name": "\ud83c\uddfa\ud83c\uddf8\u7f8e\u56fd+01",
+    "name": "\ud83c\uddfa\ud83c\uddf8\u7f8e\u56fd+03",
     "type": "vless",
-    "server": "qsybgp1-1-1000ws.1000ws.top",
+    "server": "qsybgp3-1000ws.1000ws.top",
     "port": 80,
-    "uuid": "98814bc4-31c2-4636-b708-7fbbe43dd05c",
+    "uuid": "1701e794-359a-445b-bc3b-ea03ca10b213",
     "network": "ws",
     "skip-cert-verify": true,
     "ws-opts": {
       "path": "/grpcus1/",
       "headers": {
-        "Host": "1000ws34.iptests.net"
+        "Host": "1000ws33.iptests.net"
       }
     }
   },
