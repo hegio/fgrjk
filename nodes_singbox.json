@@ -62,27 +62,6 @@
       "outbounds": [
         "direct"
       ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_7",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_8",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_9",
-      "outbounds": [
-        "direct"
-      ]
     }
   ]
 }

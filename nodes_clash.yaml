@@ -8,14 +8,70 @@ external-controller: 0.0.0.0:9090
 log-level: info
 mixed-port: 7890
 mode: rule
-proxies: []
+proxies:
+- name: TG:@usfgrjk
+  network: ws
+  port: 443
+  server: cdn.7zz.cn
+  tls: true
+  type: vless
+  udp: true
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  ws-opts:
+    headers:
+      Host: wy.090881.xyz
+    path: /img/project/config/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+- name: TG:@usfgrjk-2
+  network: ws
+  port: 443
+  server: 336688.chinwa.eu.cc
+  tls: true
+  type: vless
+  udp: true
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  ws-opts:
+    headers:
+      Host: wu.090881.xyz
+    path: /torrent/documents/comic/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+- name: TG:@usfgrjk-2
+  network: ws
+  port: 443
+  server: 162.159.18.76
+  tls: true
+  type: vless
+  udp: true
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  ws-opts:
+    headers:
+      Host: wr.090881.xyz
+    path: /torrent/community/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+- name: TG:@usfgrjk-2
+  network: ws
+  port: 443
+  server: fn.130519.xyz
+  tls: true
+  type: vless
+  udp: true
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  ws-opts:
+    headers:
+      Host: wr.090881.xyz
+    path: /document/go.php/en/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
 proxy-groups:
 - name: Auto
-  proxies: []
+  proxies:
+  - TG:@usfgrjk
+  - TG:@usfgrjk-2
+  - TG:@usfgrjk-2
+  - TG:@usfgrjk-2
   type: select
 - interval: 300
   name: LoadBalance
-  proxies: []
+  proxies:
+  - TG:@usfgrjk
+  - TG:@usfgrjk-2
+  - TG:@usfgrjk-2
+  - TG:@usfgrjk-2
   strategy: consistent-hashing
   type: load-balance
   url: http://www.gstatic.com/generate_204
