@@ -1,91 +1,65 @@
 [
   {
-    "name": "\ud83c\udded\ud83c\uddf0\u9999\u6e2f+06",
+    "name": "TG:@usfgrjk",
     "type": "vless",
-    "server": "qsybgp1-1-1000ws.1000ws.top",
-    "port": 80,
-    "uuid": "923e6bb9-3824-4fa9-8d49-d163e8db65c5",
+    "server": "cdn.7zz.cn",
+    "port": 443,
+    "uuid": "29ff2954-dfea-4d20-8089-059cfa861453",
+    "tls": true,
     "network": "ws",
     "skip-cert-verify": true,
     "ws-opts": {
-      "path": "/grpcsg2/",
+      "path": "/img/project/config/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net",
       "headers": {
-        "Host": "1000ws33.iptests.net"
+        "Host": "wy.090881.xyz"
       }
     }
   },
   {
-    "name": "\ud83c\udded\ud83c\uddf0\u9999\u6e2f+07",
+    "name": "TG:@usfgrjk",
     "type": "vless",
-    "server": "qsybgp2-1-1000ws.1000ws.top",
-    "port": 80,
-    "uuid": "923e6bb9-3824-4fa9-8d49-d163e8db65c5",
+    "server": "336688.chinwa.eu.cc",
+    "port": 443,
+    "uuid": "29ff2954-dfea-4d20-8089-059cfa861453",
+    "tls": true,
     "network": "ws",
     "skip-cert-verify": true,
     "ws-opts": {
-      "path": "/grpcsg2/",
+      "path": "/torrent/documents/comic/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net",
       "headers": {
-        "Host": "1000ws34.iptests.net"
+        "Host": "wu.090881.xyz"
       }
     }
   },
   {
-    "name": "\ud83c\uddef\ud83c\uddf5\u65e5\u672c+03",
+    "name": "TG:@usfgrjk",
     "type": "vless",
-    "server": "qsybgp3-1000ws.1000ws.top",
-    "port": 80,
-    "uuid": "923e6bb9-3824-4fa9-8d49-d163e8db65c5",
+    "server": "162.159.18.76",
+    "port": 443,
+    "uuid": "29ff2954-dfea-4d20-8089-059cfa861453",
+    "tls": true,
     "network": "ws",
     "skip-cert-verify": true,
     "ws-opts": {
-      "path": "/grpcjapan2/?ed=2560",
+      "path": "/torrent/community/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net",
       "headers": {
-        "Host": "1000ws34.iptests.net"
+        "Host": "wr.090881.xyz"
       }
     }
   },
   {
-    "name": "\ud83c\uddef\ud83c\uddf5\u65e5\u672c+04",
+    "name": "TG:@usfgrjk",
     "type": "vless",
-    "server": "qsybgp3-1000ws.1000ws.top",
-    "port": 80,
-    "uuid": "923e6bb9-3824-4fa9-8d49-d163e8db65c5",
+    "server": "fn.130519.xyz",
+    "port": 443,
+    "uuid": "29ff2954-dfea-4d20-8089-059cfa861453",
+    "tls": true,
     "network": "ws",
     "skip-cert-verify": true,
     "ws-opts": {
-      "path": "/grpcjapan2/?ed=2560",
+      "path": "/document/go.php/en/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net",
       "headers": {
-        "Host": "1000ws33.iptests.net"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\uddf9\ud83c\uddfc\u53f0\u6e7e+01",
-    "type": "vless",
-    "server": "qsybgp1-1-1000ws.1000ws.top",
-    "port": 80,
-    "uuid": "923e6bb9-3824-4fa9-8d49-d163e8db65c5",
-    "network": "ws",
-    "skip-cert-verify": true,
-    "ws-opts": {
-      "path": "/grpchongkong1/",
-      "headers": {
-        "Host": "1000ws34.iptests.net"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\uddfa\ud83c\uddf8\u7f8e\u56fd+01",
-    "type": "vless",
-    "server": "qsybgp1-1-1000ws.1000ws.top",
-    "port": 80,
-    "uuid": "923e6bb9-3824-4fa9-8d49-d163e8db65c5",
-    "network": "ws",
-    "skip-cert-verify": true,
-    "ws-opts": {
-      "path": "/grpcus1/",
-      "headers": {
-        "Host": "1000ws34.iptests.net"
+        "Host": "wr.090881.xyz"
       }
     }
   }
