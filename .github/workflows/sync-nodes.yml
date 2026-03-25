@@ -2,7 +2,7 @@ name: Sync Proxy Nodes
 
 on:
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '0 */50 * * *'  # 每50小时同步
   workflow_dispatch:
 
 jobs:
