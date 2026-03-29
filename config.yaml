@@ -1,81 +1,80 @@
-mixed-port: 7890
 allow-lan: true
-bind-address: '*'
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
 proxies:
 - name: TG:@usfgrjk
-  type: vless
-  server: cdn.7zz.cn
-  port: 443
-  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
-  tls: true
   network: ws
-  skip-cert-verify: true
+  port: 443
+  server: cdn.7zz.cn
+  tls: true
+  type: vless
+  udp: true
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
   ws-opts:
-    path: /img/project/config/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
     headers:
       Host: wy.090881.xyz
-- name: TG:@usfgrjk
-  type: vless
-  server: 336688.chinwa.eu.cc
-  port: 443
-  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
-  tls: true
+    path: /img/project/config/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+- name: TG:@usfgrjk-2
   network: ws
-  skip-cert-verify: true
+  port: 443
+  server: 336688.chinwa.eu.cc
+  tls: true
+  type: vless
+  udp: true
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
   ws-opts:
-    path: /torrent/documents/comic/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
     headers:
       Host: wu.090881.xyz
-- name: TG:@usfgrjk
-  type: vless
+    path: /torrent/documents/comic/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+- name: TG:@usfgrjk-2
+  network: ws
+  port: 443
   server: 162.159.18.76
-  port: 443
-  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
   tls: true
-  network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: /torrent/community/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
-    headers:
-      Host: wr.090881.xyz
-- name: TG:@usfgrjk
   type: vless
-  server: fn.130519.xyz
-  port: 443
+  udp: true
   uuid: 29ff2954-dfea-4d20-8089-059cfa861453
-  tls: true
-  network: ws
-  skip-cert-verify: true
   ws-opts:
-    path: /document/go.php/en/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
     headers:
       Host: wr.090881.xyz
+    path: /torrent/community/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
+- name: TG:@usfgrjk-2
+  network: ws
+  port: 443
+  server: fn.130519.xyz
+  tls: true
+  type: vless
+  udp: true
+  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
+  ws-opts:
+    headers:
+      Host: wr.090881.xyz
+    path: /document/go.php/en/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
 proxy-groups:
 - name: Auto
+  proxies:
+  - TG:@usfgrjk
+  - TG:@usfgrjk-2
+  - TG:@usfgrjk-2
+  - TG:@usfgrjk-2
   type: select
+- interval: 300
+  name: LoadBalance
   proxies:
   - TG:@usfgrjk
-  - TG:@usfgrjk
-  - TG:@usfgrjk
-  - TG:@usfgrjk
-- name: LoadBalance
-  type: load-balance
+  - TG:@usfgrjk-2
+  - TG:@usfgrjk-2
+  - TG:@usfgrjk-2
   strategy: consistent-hashing
-  proxies:
-  - TG:@usfgrjk
-  - TG:@usfgrjk
-  - TG:@usfgrjk
-  - TG:@usfgrjk
+  type: load-balance
   url: http://www.gstatic.com/generate_204
-  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
