@@ -1,81 +1,84 @@
-mixed-port: 7890
 allow-lan: true
-bind-address: '*'
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
 proxies:
-- name: TG:@usfgrjk
-  type: vless
-  server: cdn.7zz.cn
-  port: 443
-  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
-  tls: true
+- alterId: 0
+  cipher: auto
+  name: 🇭🇰香港
   network: ws
-  skip-cert-verify: true
+  port: 12890
+  server: gtm1.ktmwan.net
+  tls: false
+  type: vmess
+  uuid: ff54668a-faf7-405c-a8be-77935348851a
   ws-opts:
-    path: /img/project/config/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
     headers:
-      Host: wy.090881.xyz
-- name: TG:@usfgrjk
-  type: vless
-  server: 336688.chinwa.eu.cc
-  port: 443
-  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
-  tls: true
+      Host: baidu.com
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 🇻🇳 越南
   network: ws
-  skip-cert-verify: true
+  port: 12891
+  server: gtm1.ktmwan.net
+  tls: false
+  type: vmess
+  uuid: ff54668a-faf7-405c-a8be-77935348851a
   ws-opts:
-    path: /torrent/documents/comic/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
     headers:
-      Host: wu.090881.xyz
-- name: TG:@usfgrjk
-  type: vless
-  server: 162.159.18.76
-  port: 443
-  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
-  tls: true
+      Host: baidu.com
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 🇮🇳 印度
   network: ws
-  skip-cert-verify: true
+  port: 12887
+  server: gtm1.ktmwan.net
+  tls: false
+  type: vmess
+  uuid: ff54668a-faf7-405c-a8be-77935348851a
   ws-opts:
-    path: /torrent/community/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
     headers:
-      Host: wr.090881.xyz
-- name: TG:@usfgrjk
-  type: vless
-  server: fn.130519.xyz
-  port: 443
-  uuid: 29ff2954-dfea-4d20-8089-059cfa861453
-  tls: true
+      Host: baidu.com
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 🇦🇺 澳大利亚
   network: ws
-  skip-cert-verify: true
+  port: 12889
+  server: gtm1.ktmwan.net
+  tls: false
+  type: vmess
+  uuid: ff54668a-faf7-405c-a8be-77935348851a
   ws-opts:
-    path: /document/go.php/en/proxyip=ProxyIP.SG.CMLiussss.net/proxyip=tw.william.us.ci,ProxyIP.SG.CMLiussss.net
     headers:
-      Host: wr.090881.xyz
+      Host: baidu.com
+    path: /
 proxy-groups:
 - name: Auto
+  proxies:
+  - 🇭🇰香港
+  - 🇻🇳 越南
+  - 🇮🇳 印度
+  - 🇦🇺 澳大利亚
   type: select
+- interval: 300
+  name: LoadBalance
   proxies:
-  - TG:@usfgrjk
-  - TG:@usfgrjk
-  - TG:@usfgrjk
-  - TG:@usfgrjk
-- name: LoadBalance
-  type: load-balance
+  - 🇭🇰香港
+  - 🇻🇳 越南
+  - 🇮🇳 印度
+  - 🇦🇺 澳大利亚
   strategy: consistent-hashing
-  proxies:
-  - TG:@usfgrjk
-  - TG:@usfgrjk
-  - TG:@usfgrjk
-  - TG:@usfgrjk
+  type: load-balance
   url: http://www.gstatic.com/generate_204
-  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto

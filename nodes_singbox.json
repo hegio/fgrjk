@@ -62,6 +62,13 @@
       "outbounds": [
         "direct"
       ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_7",
+      "outbounds": [
+        "direct"
+      ]
     }
   ]
 }
