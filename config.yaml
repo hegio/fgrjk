@@ -1,84 +1,89 @@
+mixed-port: 7890
 allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
-external-controller: 0.0.0.0:9090
-log-level: info
-mixed-port: 7890
-mode: rule
 proxies:
-- alterId: 0
-  cipher: auto
-  name: 🇭🇰香港
-  network: ws
+- name: 🇭🇰香港
+  type: vmess
+  server: gtm1.ktmwan.net
   port: 12890
-  server: gtm1.ktmwan.net
-  tls: false
-  type: vmess
   uuid: ff54668a-faf7-405c-a8be-77935348851a
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
   ws-opts:
+    path: /
     headers:
       Host: baidu.com
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 🇻🇳 越南
-  network: ws
+- name: 🇻🇳 越南
+  type: vmess
+  server: gtm1.ktmwan.net
   port: 12891
-  server: gtm1.ktmwan.net
-  tls: false
-  type: vmess
   uuid: ff54668a-faf7-405c-a8be-77935348851a
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
   ws-opts:
+    path: /
     headers:
       Host: baidu.com
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 🇮🇳 印度
-  network: ws
+- name: 🇮🇳 印度
+  type: vmess
+  server: gtm1.ktmwan.net
   port: 12887
-  server: gtm1.ktmwan.net
-  tls: false
-  type: vmess
   uuid: ff54668a-faf7-405c-a8be-77935348851a
-  ws-opts:
-    headers:
-      Host: baidu.com
-    path: /
-- alterId: 0
+  alterId: 0
   cipher: auto
-  name: 🇦🇺 澳大利亚
-  network: ws
-  port: 12889
-  server: gtm1.ktmwan.net
   tls: false
-  type: vmess
-  uuid: ff54668a-faf7-405c-a8be-77935348851a
+  skip-cert-verify: true
+  network: ws
   ws-opts:
+    path: /
     headers:
       Host: baidu.com
+- name: 🇦🇺 澳大利亚
+  type: vmess
+  server: gtm1.ktmwan.net
+  port: 12889
+  uuid: ff54668a-faf7-405c-a8be-77935348851a
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
     path: /
+    headers:
+      Host: baidu.com
 proxy-groups:
 - name: Auto
-  proxies:
-  - 🇭🇰香港
-  - 🇻🇳 越南
-  - 🇮🇳 印度
-  - 🇦🇺 澳大利亚
   type: select
-- interval: 300
-  name: LoadBalance
   proxies:
   - 🇭🇰香港
   - 🇻🇳 越南
   - 🇮🇳 印度
   - 🇦🇺 澳大利亚
-  strategy: consistent-hashing
+- name: LoadBalance
   type: load-balance
+  strategy: consistent-hashing
+  proxies:
+  - 🇭🇰香港
+  - 🇻🇳 越南
+  - 🇮🇳 印度
+  - 🇦🇺 澳大利亚
   url: http://www.gstatic.com/generate_204
+  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
