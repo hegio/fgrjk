@@ -1,74 +1,20 @@
 [
   {
-    "name": "\ud83c\udded\ud83c\uddf0\u9999\u6e2f",
-    "type": "vmess",
-    "server": "gtm1.ktmwan.net",
-    "port": 12890,
-    "uuid": "ff54668a-faf7-405c-a8be-77935348851a",
-    "alterId": 0,
-    "cipher": "auto",
-    "tls": false,
+    "name": "\ud83c\uddf9\ud83c\uddfc\u53f0\u6e7e trojan",
+    "type": "trojan",
+    "server": "xj-tw2.zzsspnode.com",
+    "port": 5418,
+    "password": "87501829-4fcc-4954-9ecb-fd02d809dbcc",
     "skip-cert-verify": true,
-    "network": "ws",
-    "ws-opts": {
-      "path": "/",
-      "headers": {
-        "Host": "baidu.com"
-      }
-    }
+    "sni": "xj-tw2.zzsspnode.com"
   },
   {
-    "name": "\ud83c\uddfb\ud83c\uddf3 \u8d8a\u5357",
-    "type": "vmess",
-    "server": "gtm1.ktmwan.net",
-    "port": 12891,
-    "uuid": "ff54668a-faf7-405c-a8be-77935348851a",
-    "alterId": 0,
-    "cipher": "auto",
-    "tls": false,
+    "name": "\ud83c\udded\ud83c\uddf0\u9999\u6e2f trojan",
+    "type": "trojan",
+    "server": "tj.oopscat.com",
+    "port": 7443,
+    "password": "88888888",
     "skip-cert-verify": true,
-    "network": "ws",
-    "ws-opts": {
-      "path": "/",
-      "headers": {
-        "Host": "baidu.com"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\uddee\ud83c\uddf3 \u5370\u5ea6",
-    "type": "vmess",
-    "server": "gtm1.ktmwan.net",
-    "port": 12887,
-    "uuid": "ff54668a-faf7-405c-a8be-77935348851a",
-    "alterId": 0,
-    "cipher": "auto",
-    "tls": false,
-    "skip-cert-verify": true,
-    "network": "ws",
-    "ws-opts": {
-      "path": "/",
-      "headers": {
-        "Host": "baidu.com"
-      }
-    }
-  },
-  {
-    "name": "\ud83c\udde6\ud83c\uddfa \u6fb3\u5927\u5229\u4e9a",
-    "type": "vmess",
-    "server": "gtm1.ktmwan.net",
-    "port": 12889,
-    "uuid": "ff54668a-faf7-405c-a8be-77935348851a",
-    "alterId": 0,
-    "cipher": "auto",
-    "tls": false,
-    "skip-cert-verify": true,
-    "network": "ws",
-    "ws-opts": {
-      "path": "/",
-      "headers": {
-        "Host": "baidu.com"
-      }
-    }
+    "sni": "tj.oopscat.com"
   }
 ]
