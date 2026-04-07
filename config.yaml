@@ -1,89 +1,44 @@
-mixed-port: 7890
 allow-lan: true
-bind-address: '*'
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
 proxies:
-- name: 🇭🇰香港
-  type: vmess
-  server: gtm1.ktmwan.net
-  port: 12890
-  uuid: ff54668a-faf7-405c-a8be-77935348851a
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: baidu.com
-- name: 🇻🇳 越南
-  type: vmess
-  server: gtm1.ktmwan.net
-  port: 12891
-  uuid: ff54668a-faf7-405c-a8be-77935348851a
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: baidu.com
-- name: 🇮🇳 印度
-  type: vmess
-  server: gtm1.ktmwan.net
-  port: 12887
-  uuid: ff54668a-faf7-405c-a8be-77935348851a
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: baidu.com
-- name: 🇦🇺 澳大利亚
-  type: vmess
-  server: gtm1.ktmwan.net
-  port: 12889
-  uuid: ff54668a-faf7-405c-a8be-77935348851a
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: baidu.com
+- name: 🇹🇼台湾 trojan
+  password: 87501829-4fcc-4954-9ecb-fd02d809dbcc
+  port: 5418
+  server: xj-tw2.zzsspnode.com
+  sni: xj-tw2.zzsspnode.com
+  tls: true
+  type: trojan
+  udp: true
+- name: 🇭🇰香港 trojan
+  password: '88888888'
+  port: 7443
+  server: tj.oopscat.com
+  sni: tj.oopscat.com
+  tls: true
+  type: trojan
+  udp: true
 proxy-groups:
 - name: Auto
+  proxies:
+  - 🇹🇼台湾 trojan
+  - 🇭🇰香港 trojan
   type: select
+- interval: 300
+  name: LoadBalance
   proxies:
-  - 🇭🇰香港
-  - 🇻🇳 越南
-  - 🇮🇳 印度
-  - 🇦🇺 澳大利亚
-- name: LoadBalance
-  type: load-balance
+  - 🇹🇼台湾 trojan
+  - 🇭🇰香港 trojan
   strategy: consistent-hashing
-  proxies:
-  - 🇭🇰香港
-  - 🇻🇳 越南
-  - 🇮🇳 印度
-  - 🇦🇺 澳大利亚
+  type: load-balance
   url: http://www.gstatic.com/generate_204
-  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
