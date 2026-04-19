@@ -20,27 +20,6 @@
       "outbounds": [
         "direct"
       ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_1",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_2",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_3",
-      "outbounds": [
-        "direct"
-      ]
     }
   ]
 }

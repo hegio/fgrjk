@@ -1,43 +1,36 @@
-mixed-port: 7890
 allow-lan: true
-bind-address: '*'
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
 proxies:
-- name: 🇹🇼台湾 trojan
-  type: trojan
-  server: xj-tw2.zzsspnode.com
-  port: 5418
-  password: 87501829-4fcc-4954-9ecb-fd02d809dbcc
-  skip-cert-verify: true
-  sni: xj-tw2.zzsspnode.com
-- name: 🇭🇰香港 trojan
-  type: trojan
-  server: tj.oopscat.com
-  port: 7443
-  password: '88888888'
-  skip-cert-verify: true
-  sni: tj.oopscat.com
+- alterId: 0
+  cipher: auto
+  name: 新加坡 — 腾讯云
+  network: raw
+  port: 443
+  server: 43.128.70.62
+  tls: false
+  type: vmess
+  uuid: 7eb64dc1-5b5c-4795-8383-e1964c45477b
+  ws-opts: {}
 proxy-groups:
 - name: Auto
+  proxies:
+  - 新加坡 — 腾讯云
   type: select
+- interval: 300
+  name: LoadBalance
   proxies:
-  - 🇹🇼台湾 trojan
-  - 🇭🇰香港 trojan
-- name: LoadBalance
-  type: load-balance
+  - 新加坡 — 腾讯云
   strategy: consistent-hashing
-  proxies:
-  - 🇹🇼台湾 trojan
-  - 🇭🇰香港 trojan
+  type: load-balance
   url: http://www.gstatic.com/generate_204
-  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
