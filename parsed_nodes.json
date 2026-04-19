@@ -1,20 +1,44 @@
 [
   {
-    "name": "\ud83c\uddf9\ud83c\uddfc\u53f0\u6e7e trojan",
-    "type": "trojan",
-    "server": "xj-tw2.zzsspnode.com",
-    "port": 5418,
-    "password": "87501829-4fcc-4954-9ecb-fd02d809dbcc",
+    "name": "\u65b0\u52a0\u5761 \u2014 \u817e\u8baf\u4e91",
+    "type": "vmess",
+    "server": "43.128.70.62",
+    "port": 443,
+    "uuid": "7eb64dc1-5b5c-4795-8383-e1964c45477b",
+    "alterId": 0,
+    "cipher": "auto",
+    "tls": false,
     "skip-cert-verify": true,
-    "sni": "xj-tw2.zzsspnode.com"
+    "network": "raw"
   },
   {
-    "name": "\ud83c\udded\ud83c\uddf0\u9999\u6e2f trojan",
-    "type": "trojan",
-    "server": "tj.oopscat.com",
-    "port": 7443,
-    "password": "88888888",
+    "name": "\ud83c\uddf2\ud83c\uddfe\u9a6c\u6765\u897f\u4e9a\u4e28MY\u02e3\u00b9",
+    "type": "vless",
+    "server": "lmmy.yostar.org",
+    "port": 24318,
+    "uuid": "4b73e393-9962-4f4b-b570-9ceed65cede0",
+    "tls": true,
+    "network": "raw",
     "skip-cert-verify": true,
-    "sni": "tj.oopscat.com"
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "z9KXhnlVu1GEo3Qt0XPSBS9KVbjyAphMO-X-0B4rE34",
+      "short-id": "0e1e1b97"
+    }
+  },
+  {
+    "name": "JP\u9690\u853d\u76f4\u8fdeJP",
+    "type": "vless",
+    "server": "64.81.112.190",
+    "port": 443,
+    "uuid": "3b3223d0-c2b2-4a74-ab7c-9bb19f16a408",
+    "tls": true,
+    "network": "raw",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "UC6bNeUyQI8DG_XjOOoUeii885CZoO4HouOgga3BWxM",
+      "short-id": "51febf0c7c4aa43d"
+    }
   }
 ]
