@@ -1,73 +1,77 @@
+mixed-port: 7890
 allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
-external-controller: 0.0.0.0:9090
-log-level: info
-mixed-port: 7890
-mode: rule
 proxies:
-- alterId: 0
-  cipher: auto
-  name: 新加坡 — 腾讯云
-  network: tcp
-  port: 443
+- name: 新加坡 — 腾讯云
+  type: vmess
   server: 43.128.70.62
-  tls: false
-  type: vmess
+  port: 443
   uuid: 7eb64dc1-5b5c-4795-8383-e1964c45477b
-  ws-opts: {}
-- alterId: 0
+  alterId: 0
   cipher: auto
-  name: 🇺🇸美国
+  tls: false
+  skip-cert-verify: true
   network: tcp
-  port: 180
+- name: 🇺🇸美国
+  type: vmess
   server: 82.198.246.233
-  tls: false
-  type: vmess
+  port: 180
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  ws-opts: {}
-- alterId: 0
+  alterId: 0
   cipher: auto
-  name: 🇯🇵日本
-  network: ws
-  port: 80
-  server: jp01.a0a.xyz
   tls: false
+  skip-cert-verify: true
+  network: tcp
+- name: 🇯🇵日本
   type: vmess
+  server: jp01.a0a.xyz
+  port: 80
   uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
   ws-opts:
+    path: /cctv13.m3u8
     headers:
       Host: jp01.a0a.xyz
-    path: /cctv13.m3u8
 - name: 🇩🇪德国
-  password: '1234567890'
-  port: 443
-  server: 159.195.5.181
-  sni: kfm-bn0.pages.dev
-  tls: true
   type: trojan
-  udp: true
+  server: 159.195.5.181
+  port: 443
+  password: '1234567890'
+  skip-cert-verify: true
+  sni: kfm-bn0.pages.dev
+  network: ws
+  ws-opts:
+    path: /?ed=2560&https://t.me/WangCai2🇨🇳
 proxy-groups:
 - name: Auto
-  proxies:
-  - 新加坡 — 腾讯云
-  - 🇺🇸美国
-  - 🇯🇵日本
-  - 🇩🇪德国
   type: select
-- interval: 300
-  name: LoadBalance
   proxies:
   - 新加坡 — 腾讯云
   - 🇺🇸美国
   - 🇯🇵日本
   - 🇩🇪德国
-  strategy: consistent-hashing
+- name: LoadBalance
   type: load-balance
+  strategy: consistent-hashing
+  proxies:
+  - 新加坡 — 腾讯云
+  - 🇺🇸美国
+  - 🇯🇵日本
+  - 🇩🇪德国
   url: http://www.gstatic.com/generate_204
+  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
