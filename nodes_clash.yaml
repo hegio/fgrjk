@@ -1,65 +1,73 @@
-mixed-port: 7890
 allow-lan: true
-bind-address: '*'
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
 proxies:
-- name: 新加坡 — 腾讯云
-  type: vmess
-  server: 43.128.70.62
-  port: 443
-  uuid: 7eb64dc1-5b5c-4795-8383-e1964c45477b
-  alterId: 0
+- alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: raw
-- name: 🇲🇾马来西亚丨MYˣ¹
-  type: vless
-  server: lmmy.yostar.org
-  port: 24318
-  uuid: 4b73e393-9962-4f4b-b570-9ceed65cede0
-  tls: true
-  network: raw
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: z9KXhnlVu1GEo3Qt0XPSBS9KVbjyAphMO-X-0B4rE34
-    short-id: 0e1e1b97
-- name: JP隐蔽直连JP
-  type: vless
-  server: 64.81.112.190
+  name: 新加坡 — 腾讯云
+  network: tcp
   port: 443
-  uuid: 3b3223d0-c2b2-4a74-ab7c-9bb19f16a408
+  server: 43.128.70.62
+  tls: false
+  type: vmess
+  uuid: 7eb64dc1-5b5c-4795-8383-e1964c45477b
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸美国
+  network: tcp
+  port: 180
+  server: 82.198.246.233
+  tls: false
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: 🇯🇵日本
+  network: ws
+  port: 80
+  server: jp01.a0a.xyz
+  tls: false
+  type: vmess
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  ws-opts:
+    headers:
+      Host: jp01.a0a.xyz
+    path: /cctv13.m3u8
+- name: 🇩🇪德国
+  password: '1234567890'
+  port: 443
+  server: 159.195.5.181
+  sni: kfm-bn0.pages.dev
   tls: true
-  network: raw
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: UC6bNeUyQI8DG_XjOOoUeii885CZoO4HouOgga3BWxM
-    short-id: 51febf0c7c4aa43d
+  type: trojan
+  udp: true
 proxy-groups:
 - name: Auto
+  proxies:
+  - 新加坡 — 腾讯云
+  - 🇺🇸美国
+  - 🇯🇵日本
+  - 🇩🇪德国
   type: select
+- interval: 300
+  name: LoadBalance
   proxies:
   - 新加坡 — 腾讯云
-  - 🇲🇾马来西亚丨MYˣ¹
-  - JP隐蔽直连JP
-- name: LoadBalance
-  type: load-balance
+  - 🇺🇸美国
+  - 🇯🇵日本
+  - 🇩🇪德国
   strategy: consistent-hashing
-  proxies:
-  - 新加坡 — 腾讯云
-  - 🇲🇾马来西亚丨MYˣ¹
-  - JP隐蔽直连JP
+  type: load-balance
   url: http://www.gstatic.com/generate_204
-  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
