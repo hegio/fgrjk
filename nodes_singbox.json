@@ -30,14 +30,14 @@
     },
     {
       "type": "selector",
-      "tag": "node_3",
+      "tag": "node_2",
       "outbounds": [
         "direct"
       ]
     },
     {
       "type": "selector",
-      "tag": "node_4",
+      "tag": "node_3",
       "outbounds": [
         "direct"
       ]
