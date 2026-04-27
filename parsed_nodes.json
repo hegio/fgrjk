@@ -1,17 +1,5 @@
 [
   {
-    "name": "\u65b0\u52a0\u5761 \u2014 \u817e\u8baf\u4e91",
-    "type": "vmess",
-    "server": "43.128.70.62",
-    "port": 443,
-    "uuid": "7eb64dc1-5b5c-4795-8383-e1964c45477b",
-    "alterId": 0,
-    "cipher": "auto",
-    "tls": false,
-    "skip-cert-verify": true,
-    "network": "tcp"
-  },
-  {
     "name": "\ud83c\uddfa\ud83c\uddf8\u7f8e\u56fd",
     "type": "vmess",
     "server": "82.198.246.233",
@@ -22,24 +10,6 @@
     "tls": false,
     "skip-cert-verify": true,
     "network": "tcp"
-  },
-  {
-    "name": "\ud83c\uddef\ud83c\uddf5\u65e5\u672c",
-    "type": "vmess",
-    "server": "jp01.a0a.xyz",
-    "port": 80,
-    "uuid": "11c3627f-31e8-4695-dfbd-34076e2f1f5d",
-    "alterId": 0,
-    "cipher": "auto",
-    "tls": false,
-    "skip-cert-verify": true,
-    "network": "ws",
-    "ws-opts": {
-      "path": "/cctv13.m3u8",
-      "headers": {
-        "Host": "jp01.a0a.xyz"
-      }
-    }
   },
   {
     "name": "\ud83c\udde9\ud83c\uddea\u5fb7\u56fd",

@@ -1,46 +1,49 @@
+mixed-port: 7890
 allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
-external-controller: 0.0.0.0:9090
-log-level: info
-mixed-port: 7890
-mode: rule
 proxies:
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸美国
-  network: tcp
-  port: 180
-  server: 82.198.246.233
-  tls: false
+- name: 🇺🇸美国
   type: vmess
+  server: 82.198.246.233
+  port: 180
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  ws-opts: {}
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: tcp
 - name: 🇩🇪德国
-  password: '1234567890'
-  port: 443
-  server: 159.195.5.181
-  sni: kfm-bn0.pages.dev
-  tls: true
   type: trojan
-  udp: true
+  server: 159.195.5.181
+  port: 443
+  password: '1234567890'
+  skip-cert-verify: true
+  sni: kfm-bn0.pages.dev
+  network: ws
+  ws-opts:
+    path: /?ed=2560&https://t.me/WangCai2🇨🇳
 proxy-groups:
 - name: Auto
-  proxies:
-  - 🇺🇸美国
-  - 🇩🇪德国
   type: select
-- interval: 300
-  name: LoadBalance
   proxies:
   - 🇺🇸美国
   - 🇩🇪德国
-  strategy: consistent-hashing
+- name: LoadBalance
   type: load-balance
+  strategy: consistent-hashing
+  proxies:
+  - 🇺🇸美国
+  - 🇩🇪德国
   url: http://www.gstatic.com/generate_204
+  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
