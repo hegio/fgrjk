@@ -16,28 +16,14 @@
     },
     {
       "type": "selector",
-      "tag": "node_0",
+      "tag": "node_5",
       "outbounds": [
         "direct"
       ]
     },
     {
       "type": "selector",
-      "tag": "node_1",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_2",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_3",
+      "tag": "node_6",
       "outbounds": [
         "direct"
       ]
