@@ -1,5 +1,50 @@
 [
   {
+    "name": "\ud83c\uddf9\ud83c\uddfc\u53f0\u6e7e01",
+    "type": "vless",
+    "server": "pq-hinet.tw1.yydjc.top",
+    "port": 443,
+    "uuid": "635b8b69-f1f9-4e11-9c21-44dc58e03dc2",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "kp6ml6xwSt4hTDEKj6U0FR0l-kDy2iUiILiT0XfFwjA",
+      "short-id": "3662ca42"
+    }
+  },
+  {
+    "name": "\ud83c\uddf9\ud83c\uddfc\u53f0\u6e7e02",
+    "type": "vless",
+    "server": "pq-hinet.tw2.yydjc.top",
+    "port": 443,
+    "uuid": "635b8b69-f1f9-4e11-9c21-44dc58e03dc2",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "Z-S-J9zDn7pXU7haa9_BeIny-Yp5qtS0R_MnHSgsoGA",
+      "short-id": "0c9347ba"
+    }
+  },
+  {
+    "name": "\ud83c\uddf9\ud83c\uddfc\u53f0\u6e7e03",
+    "type": "vless",
+    "server": "pq-hinet.tw3.yydjc.top",
+    "port": 443,
+    "uuid": "635b8b69-f1f9-4e11-9c21-44dc58e03dc2",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "eECwNaUgTEzRbyaeSaYpZGNTuuf5xZL2UVeGhDNWxTE",
+      "short-id": "c85e4b9b"
+    }
+  },
+  {
     "name": "\ud83c\uddfa\ud83c\uddf8\u7f8e\u56fd",
     "type": "vmess",
     "server": "82.198.246.233",
