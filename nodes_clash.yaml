@@ -1,91 +1,79 @@
-mixed-port: 7890
 allow-lan: true
-bind-address: '*'
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
 proxies:
-- name: 🇹🇼台湾01
-  type: vless
+- flow: xtls-rprx-vision
+  name: 🇹🇼台湾01
+  network: tcp
+  port: 443
   server: pq-hinet.tw1.yydjc.top
-  port: 443
-  uuid: 635b8b69-f1f9-4e11-9c21-44dc58e03dc2
-  tls: true
-  network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: kp6ml6xwSt4hTDEKj6U0FR0l-kDy2iUiILiT0XfFwjA
-    short-id: 3662ca42
-- name: 🇹🇼台湾02
-  type: vless
-  server: pq-hinet.tw2.yydjc.top
-  port: 443
-  uuid: 635b8b69-f1f9-4e11-9c21-44dc58e03dc2
-  tls: true
-  network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Z-S-J9zDn7pXU7haa9_BeIny-Yp5qtS0R_MnHSgsoGA
-    short-id: 0c9347ba
-- name: 🇹🇼台湾03
-  type: vless
-  server: pq-hinet.tw3.yydjc.top
-  port: 443
-  uuid: 635b8b69-f1f9-4e11-9c21-44dc58e03dc2
-  tls: true
-  network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: eECwNaUgTEzRbyaeSaYpZGNTuuf5xZL2UVeGhDNWxTE
-    short-id: c85e4b9b
-- name: 🇺🇸美国
-  type: vmess
-  server: 82.198.246.233
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
   tls: false
-  skip-cert-verify: true
+  type: vless
+  udp: true
+  uuid: 635b8b69-f1f9-4e11-9c21-44dc58e03dc2
+- flow: xtls-rprx-vision
+  name: 🇹🇼台湾02
   network: tcp
-- name: 🇩🇪德国
-  type: trojan
-  server: 159.195.5.181
   port: 443
+  server: pq-hinet.tw2.yydjc.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 635b8b69-f1f9-4e11-9c21-44dc58e03dc2
+- flow: xtls-rprx-vision
+  name: 🇹🇼台湾03
+  network: tcp
+  port: 443
+  server: pq-hinet.tw3.yydjc.top
+  tls: false
+  type: vless
+  udp: true
+  uuid: 635b8b69-f1f9-4e11-9c21-44dc58e03dc2
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸美国
+  network: tcp
+  port: 180
+  server: 82.198.246.233
+  tls: false
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  ws-opts: {}
+- name: 🇩🇪德国
   password: '1234567890'
-  skip-cert-verify: true
+  port: 443
+  server: 159.195.5.181
   sni: kfm-bn0.pages.dev
-  network: ws
-  ws-opts:
-    path: /?ed=2560&https://t.me/WangCai2🇨🇳
+  tls: true
+  type: trojan
+  udp: true
 proxy-groups:
 - name: Auto
+  proxies:
+  - 🇹🇼台湾01
+  - 🇹🇼台湾02
+  - 🇹🇼台湾03
+  - 🇺🇸美国
+  - 🇩🇪德国
   type: select
+- interval: 300
+  name: LoadBalance
   proxies:
   - 🇹🇼台湾01
   - 🇹🇼台湾02
   - 🇹🇼台湾03
   - 🇺🇸美国
   - 🇩🇪德国
-- name: LoadBalance
-  type: load-balance
   strategy: consistent-hashing
-  proxies:
-  - 🇹🇼台湾01
-  - 🇹🇼台湾02
-  - 🇹🇼台湾03
-  - 🇺🇸美国
-  - 🇩🇪德国
+  type: load-balance
   url: http://www.gstatic.com/generate_204
-  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
