@@ -16,7 +16,112 @@
     },
     {
       "type": "selector",
+      "tag": "node_0",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_1",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
       "tag": "node_2",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_3",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_4",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_5",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_6",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_7",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_8",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_9",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_11",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_12",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_13",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_14",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_15",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "node_16",
       "outbounds": [
         "direct"
       ]
