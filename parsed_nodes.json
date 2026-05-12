@@ -1,18 +1,6 @@
 [
   {
-    "name": "\ud83c\uddfa\ud83c\uddf8\u7f8e\u56fd",
-    "type": "vmess",
-    "server": "82.198.246.233",
-    "port": 180,
-    "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-    "alterId": 0,
-    "cipher": "auto",
-    "tls": false,
-    "skip-cert-verify": true,
-    "network": "tcp"
-  },
-  {
-    "name": "\u7f8e\u56fd\u52a0\u5229\u798f\u5c3c\u4e9a\u5dde\u6d1b\u6749\u77f6\uff08NTT\u5bb6\u5bbd\uff09      usa\u5bb6\u5bbd\u64b8\u8d77\u6765",
+    "name": "\u7f8e\u56fd\u52a0\u5229\u798f\u5c3c\u4e9a\u5dde\u6d1b\u6749\u77f6NTT\u5bb6\u5bbd",
     "type": "vless",
     "server": "192.204.34.36",
     "port": 443,
@@ -39,21 +27,6 @@
     "network": "tcp"
   },
   {
-    "name": "\u7f8e\u56fd \u534e\u76db\u987f\u5dde \u897f\u96c5\u56fe(HostPapa",
-    "type": "vless",
-    "server": "96.47.238.103",
-    "port": 443,
-    "uuid": "6b2bd003-b3fd-4208-83f3-197f9a4d2297",
-    "tls": true,
-    "network": "tcp",
-    "skip-cert-verify": true,
-    "flow": "xtls-rprx-vision",
-    "reality-opts": {
-      "public-key": "EaaPtT7jhK6wTiZKklE7uHMjlege0ZN6TBqgojca2yg",
-      "short-id": "5a626ceb"
-    }
-  },
-  {
     "name": "\u7f8e\u56fd \u52a0\u5dde \u6d1b\u6749\u77f6 - DMIT\u76f4\u8fdeVPS",
     "type": "vmess",
     "server": "64.186.233.131",
@@ -64,21 +37,6 @@
     "tls": false,
     "skip-cert-verify": true,
     "network": "tcp"
-  },
-  {
-    "name": "\u7f8e\u56fd          \u7f8e\u56fd\u7ebd\u7ea6\u5dde\u5e03\u6cd5\u7f57- RackNerd",
-    "type": "vless",
-    "server": "107.174.36.68",
-    "port": 443,
-    "uuid": "cd2d70ba-2257-42e3-b056-b6f287500586",
-    "tls": true,
-    "network": "tcp",
-    "skip-cert-verify": true,
-    "flow": "xtls-rprx-vision",
-    "reality-opts": {
-      "public-key": "Tl1EY9sS8_58HUoMl_SfCDJ734XRHAIc7p43EDm9Kkk",
-      "short-id": "41356403c350d859"
-    }
   },
   {
     "name": "\u7f8e\u56fd \u54e5\u4f26\u6bd4\u4e9a\u7279\u533a \u534e\u76db\u987f",
@@ -96,22 +54,7 @@
     }
   },
   {
-    "name": "\u7f8e\u56fd\u52a0\u5229\u798f\u5c3c\u4e9a\u5dde\u5723\u4f55\u585e",
-    "type": "vless",
-    "server": "23.226.133.217",
-    "port": 443,
-    "uuid": "b831381d-6324-4d53-ad4f-8cda48b30811",
-    "tls": true,
-    "network": "tcp",
-    "skip-cert-verify": true,
-    "flow": "xtls-rprx-vision",
-    "reality-opts": {
-      "public-key": "xucbdzEUf7rDPkKMrmoMiN2KIzGK17yuDeasKbeSyhw",
-      "short-id": "0123456789abcdef"
-    }
-  },
-  {
-    "name": "Taiwan-HiNet          \u53f0\u6e7e\u7701\u5bb6\u5bbd\u64b8\u8d77\u6765",
+    "name": "Taiwan-HiNet  \u53f0\u6e7e\u7701\u5bb6\u5bbd",
     "type": "vless",
     "server": "59.120.5.169",
     "port": 443,
@@ -126,7 +69,7 @@
     }
   },
   {
-    "name": "\u65b0\u52a0\u5761 \u2014 \u817e\u8baf\u4e91      \u65b0\u52a0\u5761\u4f7f\u52b2cao",
+    "name": "\u65b0\u52a0\u5761 \u2014 \u817e\u8baf\u4e91",
     "type": "vless",
     "server": "43.153.215.3",
     "port": 443,
@@ -196,5 +139,93 @@
     "tls": false,
     "skip-cert-verify": true,
     "network": "tcp"
+  },
+  {
+    "name": "US\u642c\u74e6\u5de5",
+    "type": "vless",
+    "server": "38.175.216.7",
+    "port": 33381,
+    "uuid": "6cfe06cf-2059-4480-c8d1-38a9be043bf2",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "9rx7JwMO-KRZZEM9TQBO19BOAmmGjJyjN86ll2J7uVc",
+      "short-id": ""
+    }
+  },
+  {
+    "name": "VM-vps",
+    "type": "vless",
+    "server": "dban.chenzhenyu.dpdns.org",
+    "port": 443,
+    "uuid": "771a7dc1-b071-4157-a431-3b4562b2c201",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "4LlboJuopTrAJDFuHwvPpEZNXY6cCAc0JT-JaEv86m0",
+      "short-id": "af47f94c11"
+    }
+  },
+  {
+    "name": "vmr-yedz3onl",
+    "type": "vmess",
+    "server": "ev.bione.store",
+    "port": 443,
+    "uuid": "6bc5ff96-1bab-4d4a-ace5-5a83ff0694c1",
+    "alterId": 0,
+    "cipher": "auto",
+    "tls": true,
+    "skip-cert-verify": true,
+    "servername": "ev.bione.store",
+    "network": "ws",
+    "ws-opts": {
+      "path": "/dsg",
+      "headers": {
+        "Host": "ev.bione.store"
+      }
+    }
+  },
+  {
+    "name": "1-f8l5evzf",
+    "type": "trojan",
+    "server": "hkvps.510900.xyz",
+    "port": 443,
+    "password": "06Wfpv6kAL",
+    "skip-cert-verify": true,
+    "sni": "www.apple.com"
+  },
+  {
+    "name": "\u6d1b\u6749\u77f6 \u2014 DMIT",
+    "type": "vless",
+    "server": "154.21.84.172",
+    "port": 443,
+    "uuid": "58538b9e-2cc5-42bf-90c5-305439916b31",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "ArPjAWK7xOPzpWSxJTgJ2TVqHuBclErU3uiLczPJZhM",
+      "short-id": "abcd1234"
+    }
+  },
+  {
+    "name": "\u52a0\u62ff\u5927",
+    "type": "vless",
+    "server": "ai.nyxtrans.com",
+    "port": 443,
+    "uuid": "6bffe2e2-86f1-4778-b09d-299db8fe4c3e",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "7xYM_06zODv6DGn3c8OwI2U1ef_oJUFqqiEtHN8zTTM",
+      "short-id": "fc8def901c4d789b"
+    }
   }
 ]
