@@ -1,75 +1,78 @@
+mixed-port: 7890
 allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
-external-controller: 0.0.0.0:9090
-log-level: info
-mixed-port: 7890
-mode: rule
 proxies:
-- alterId: 0
-  cipher: auto
-  name: 美國
-  network: tcp
-  port: 180
+- name: 美國
+  type: vmess
   server: 82.198.246.9
-  tls: false
-  type: vmess
+  port: 180
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  ws-opts: {}
-- alterId: 0
+  alterId: 0
   cipher: auto
-  name: vmr-yedz3onl
-  network: ws
-  port: 443
-  server: ev.bione.store
-  tls: true
+  tls: false
+  skip-cert-verify: true
+  network: tcp
+- name: vmr-yedz3onl
   type: vmess
+  server: ev.bione.store
+  port: 443
   uuid: 6bc5ff96-1bab-4d4a-ace5-5a83ff0694c1
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: ev.bione.store
+  network: ws
   ws-opts:
+    path: /dsg
     headers:
       Host: ev.bione.store
-    path: /dsg
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸美国
-  network: tcp
-  port: 180
+- name: 🇺🇸美国
+  type: vmess
   server: 82.198.246.250
-  tls: false
-  type: vmess
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  ws-opts: {}
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸 美国 | USA
-  network: tcp
   port: 180
-  server: 82.198.246.214
-  tls: false
-  type: vmess
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  ws-opts: {}
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: tcp
+- name: 🇺🇸 美国 | USA
+  type: vmess
+  server: 82.198.246.214
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: tcp
 proxy-groups:
 - name: Auto
-  proxies:
-  - 美國
-  - vmr-yedz3onl
-  - 🇺🇸美国
-  - 🇺🇸 美国 | USA
   type: select
-- interval: 300
-  name: LoadBalance
   proxies:
   - 美國
   - vmr-yedz3onl
   - 🇺🇸美国
   - 🇺🇸 美国 | USA
-  strategy: consistent-hashing
+- name: LoadBalance
   type: load-balance
+  strategy: consistent-hashing
+  proxies:
+  - 美國
+  - vmr-yedz3onl
+  - 🇺🇸美国
+  - 🇺🇸 美国 | USA
   url: http://www.gstatic.com/generate_204
+  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
