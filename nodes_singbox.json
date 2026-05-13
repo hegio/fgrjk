@@ -79,13 +79,6 @@
     },
     {
       "type": "selector",
-      "tag": "node_9",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
       "tag": "node_10",
       "outbounds": [
         "direct"
@@ -100,14 +93,14 @@
     },
     {
       "type": "selector",
-      "tag": "node_13",
+      "tag": "node_12",
       "outbounds": [
         "direct"
       ]
     },
     {
       "type": "selector",
-      "tag": "node_14",
+      "tag": "node_13",
       "outbounds": [
         "direct"
       ]
@@ -136,83 +129,6 @@
     {
       "type": "selector",
       "tag": "node_18",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_19",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_20",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_21",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_22",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_23",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_24",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_25",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_26",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_27",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_28",
-      "outbounds": [
-        "direct"
-      ]
-    },
-    {
-      "type": "selector",
-      "tag": "node_30",
       "outbounds": [
         "direct"
       ]
