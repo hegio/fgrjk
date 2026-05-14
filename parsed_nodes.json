@@ -1,5 +1,131 @@
 [
   {
+    "name": "Taiwan-HiNet  \u53f0\u6e7e\u7701\u5bb6\u5bbd",
+    "type": "vless",
+    "server": "59.120.5.169",
+    "port": 443,
+    "uuid": "c7475750-f104-4c07-b63b-06a4a2b9c476",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "jLx1Lb-doJBxM8wJUnIglx4t4pGrIW0EcLGfUnMK1TQ",
+      "short-id": "a2261cc14b0f3d5a"
+    }
+  },
+  {
+    "name": "\u65b0\u52a0\u5761 \u2014 \u817e\u8baf\u4e91",
+    "type": "vless",
+    "server": "43.153.215.3",
+    "port": 443,
+    "uuid": "29249aae-edc1-483f-98b3-f70dec2068e9",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "o8Ne4dsatUimeCfmnHHBKv0rdfs6rWicF3ZDyQrjAnE",
+      "short-id": ""
+    }
+  },
+  {
+    "name": "SG-\u963f\u91cc\u4e91",
+    "type": "vless",
+    "server": "43.106.16.116",
+    "port": 443,
+    "uuid": "7d8baaa8-5300-4678-80f7-c25be63e139f",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "PPaNbUFtjpLOGzUAA9G9gc26c8HRKdevikUAvIdLnDs",
+      "short-id": "a1b2c3d4"
+    }
+  },
+  {
+    "name": "\u65b0\u52a0\u5761 \u6d1b\u9633\u7518\u699c -\u7532\u9aa8\u6587\u4e91 Oracle",
+    "type": "vless",
+    "server": "158.178.236.83",
+    "port": 443,
+    "uuid": "8477aa4b-8fb2-4b75-9e21-6b2a57f6f4cd",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "KsOXdJFQC-zahqfSmDcR4BrRK2R0o19T9SBgARXkHSU",
+      "short-id": "c16b8a1f2b520040"
+    }
+  },
+  {
+    "name": "VPS-Trojan",
+    "type": "trojan",
+    "server": "link.honghongai.top",
+    "port": 8443,
+    "password": "8f3a2b1c9d4e5f6a7b8c9d0e1f2a3b4c",
+    "skip-cert-verify": true,
+    "sni": "link.honghongai.top"
+  },
+  {
+    "name": "kazakh-vps-vmess",
+    "type": "vmess",
+    "server": "45.159.250.38",
+    "port": 8443,
+    "uuid": "cd3250c0-7d9c-4ca2-bd9e-6a3f49ed255e",
+    "alterId": 0,
+    "cipher": "auto",
+    "tls": false,
+    "skip-cert-verify": true,
+    "network": "tcp"
+  },
+  {
+    "name": "\u8377\u5170\u7701 \u963f\u59c6\u65af\u7279\u4e39",
+    "type": "vless",
+    "server": "151.242.88.133",
+    "port": 8443,
+    "uuid": "0b2164d4-e0cb-49ad-b50c-f716e9068cac",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "uPWRm-4_ynGfbqu8mnuo8f1Nf16r0uIfwI-U0CTgd04",
+      "short-id": "20f111d77ed4aa6a"
+    }
+  },
+  {
+    "name": "\u65e5\u672c \u4e1c\u4eac \u2014 Vultr",
+    "type": "vless",
+    "server": "104.238.161.74",
+    "port": 443,
+    "uuid": "e9049e37-e115-4d33-83d6-8ebe462cffd7",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "qu6AyU4NUXnczpTekVS5H--zseYS9QKjy-jncP4Qnic",
+      "short-id": "cb37bfb89fc44d40"
+    }
+  },
+  {
+    "name": "\u7f8e\u56fd\u52a0\u5229\u798f\u5c3c\u4e9a\u5dde\u6d1b\u6749\u77f6NTT\u5bb6\u5bbd",
+    "type": "vless",
+    "server": "192.204.34.36",
+    "port": 443,
+    "uuid": "c9a94f26-cef3-4728-bf49-1201b994841a",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "RQ9PEH2tbO673G0Kw0A8s0gD4GIqhMgoLR-2xe5-FCI",
+      "short-id": ""
+    }
+  },
+  {
     "name": "\u7f8e\u570b",
     "type": "vmess",
     "server": "82.198.246.9",
@@ -12,22 +138,18 @@
     "network": "tcp"
   },
   {
-    "name": "vmr-yedz3onl",
-    "type": "vmess",
-    "server": "ev.bione.store",
+    "name": "\u7f8e\u56fd \u54e5\u4f26\u6bd4\u4e9a\u7279\u533a \u534e\u76db\u987f",
+    "type": "vless",
+    "server": "209.166.46.195",
     "port": 443,
-    "uuid": "6bc5ff96-1bab-4d4a-ace5-5a83ff0694c1",
-    "alterId": 0,
-    "cipher": "auto",
+    "uuid": "73c16ed4-d111-4434-8b24-0dfe112a0813",
     "tls": true,
+    "network": "tcp",
     "skip-cert-verify": true,
-    "servername": "ev.bione.store",
-    "network": "ws",
-    "ws-opts": {
-      "path": "/dsg",
-      "headers": {
-        "Host": "ev.bione.store"
-      }
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "wIFJUBk4GRYT8Oim0-cPDwlGaTHh3kUYP2tOlKz1xlc",
+      "short-id": "9f4380a6"
     }
   },
   {
@@ -53,5 +175,93 @@
     "tls": false,
     "skip-cert-verify": true,
     "network": "tcp"
+  },
+  {
+    "name": "US\u642c\u74e6\u5de5",
+    "type": "vless",
+    "server": "38.175.216.7",
+    "port": 33381,
+    "uuid": "6cfe06cf-2059-4480-c8d1-38a9be043bf2",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "9rx7JwMO-KRZZEM9TQBO19BOAmmGjJyjN86ll2J7uVc",
+      "short-id": ""
+    }
+  },
+  {
+    "name": "\ud83c\uddeb\ud83c\uddf7 \u041f\u0430\u0440\u0438\u0436",
+    "type": "vless",
+    "server": "194.226.169.189",
+    "port": 443,
+    "uuid": "701bab46-9453-41e6-ad47-009aa3df47e9",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do",
+      "short-id": "3c6fc84d"
+    }
+  },
+  {
+    "name": "vmr-yedz3onl",
+    "type": "vmess",
+    "server": "ev.bione.store",
+    "port": 443,
+    "uuid": "6bc5ff96-1bab-4d4a-ace5-5a83ff0694c1",
+    "alterId": 0,
+    "cipher": "auto",
+    "tls": true,
+    "skip-cert-verify": true,
+    "servername": "ev.bione.store",
+    "network": "ws",
+    "ws-opts": {
+      "path": "/dsg",
+      "headers": {
+        "Host": "ev.bione.store"
+      }
+    }
+  },
+  {
+    "name": "1-f8l5evzf",
+    "type": "trojan",
+    "server": "hkvps.510900.xyz",
+    "port": 443,
+    "password": "06Wfpv6kAL",
+    "skip-cert-verify": true,
+    "sni": "www.apple.com"
+  },
+  {
+    "name": "\u6d1b\u6749\u77f6 \u2014 DMIT",
+    "type": "vless",
+    "server": "154.21.84.172",
+    "port": 443,
+    "uuid": "58538b9e-2cc5-42bf-90c5-305439916b31",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "ArPjAWK7xOPzpWSxJTgJ2TVqHuBclErU3uiLczPJZhM",
+      "short-id": "abcd1234"
+    }
+  },
+  {
+    "name": "\u52a0\u62ff\u5927",
+    "type": "vless",
+    "server": "ai.nyxtrans.com",
+    "port": 443,
+    "uuid": "6bffe2e2-86f1-4778-b09d-299db8fe4c3e",
+    "tls": true,
+    "network": "tcp",
+    "skip-cert-verify": true,
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "7xYM_06zODv6DGn3c8OwI2U1ef_oJUFqqiEtHN8zTTM",
+      "short-id": "fc8def901c4d789b"
+    }
   }
 ]
