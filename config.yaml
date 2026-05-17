@@ -1,231 +1,216 @@
-mixed-port: 7890
 allow-lan: true
-bind-address: '*'
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
 dns:
   enable: true
   nameserver:
   - 114.114.114.114
   - 8.8.8.8
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
 proxies:
-- name: Taiwan-HiNet  台湾省家宽
-  type: vless
+- flow: xtls-rprx-vision
+  name: Taiwan-HiNet  台湾省家宽
+  network: tcp
+  port: 443
   server: 59.120.5.169
-  port: 443
+  tls: false
+  type: vless
+  udp: true
   uuid: c7475750-f104-4c07-b63b-06a4a2b9c476
-  tls: true
+- flow: xtls-rprx-vision
+  name: 新加坡 — 腾讯云
   network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: jLx1Lb-doJBxM8wJUnIglx4t4pGrIW0EcLGfUnMK1TQ
-    short-id: a2261cc14b0f3d5a
-- name: 新加坡 — 腾讯云
-  type: vless
+  port: 443
   server: 43.153.215.3
-  port: 443
+  tls: false
+  type: vless
+  udp: true
   uuid: 29249aae-edc1-483f-98b3-f70dec2068e9
-  tls: true
+- flow: xtls-rprx-vision
+  name: SG-阿里云
   network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: o8Ne4dsatUimeCfmnHHBKv0rdfs6rWicF3ZDyQrjAnE
-    short-id: ''
-- name: SG-阿里云
-  type: vless
+  port: 443
   server: 43.106.16.116
-  port: 443
+  tls: false
+  type: vless
+  udp: true
   uuid: 7d8baaa8-5300-4678-80f7-c25be63e139f
-  tls: true
+- flow: xtls-rprx-vision
+  name: 新加坡 洛阳甘榜 -甲骨文云 Oracle
   network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: PPaNbUFtjpLOGzUAA9G9gc26c8HRKdevikUAvIdLnDs
-    short-id: a1b2c3d4
-- name: 新加坡 洛阳甘榜 -甲骨文云 Oracle
-  type: vless
+  port: 443
   server: 158.178.236.83
-  port: 443
+  tls: false
+  type: vless
+  udp: true
   uuid: 8477aa4b-8fb2-4b75-9e21-6b2a57f6f4cd
-  tls: true
-  network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: KsOXdJFQC-zahqfSmDcR4BrRK2R0o19T9SBgARXkHSU
-    short-id: c16b8a1f2b520040
 - name: VPS-Trojan
-  type: trojan
-  server: link.honghongai.top
-  port: 8443
   password: 8f3a2b1c9d4e5f6a7b8c9d0e1f2a3b4c
-  skip-cert-verify: true
+  port: 8443
+  server: link.honghongai.top
   sni: link.honghongai.top
-- name: kazakh-vps-vmess
-  type: vmess
+  tls: true
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: kazakh-vps-vmess
+  network: tcp
+  port: 8443
   server: 45.159.250.38
-  port: 8443
+  tls: false
+  type: vmess
   uuid: cd3250c0-7d9c-4ca2-bd9e-6a3f49ed255e
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
+  ws-opts: {}
+- flow: xtls-rprx-vision
+  name: 荷兰省 阿姆斯特丹
   network: tcp
-- name: 荷兰省 阿姆斯特丹
-  type: vless
-  server: 151.242.88.133
   port: 8443
+  server: 151.242.88.133
+  tls: false
+  type: vless
+  udp: true
   uuid: 0b2164d4-e0cb-49ad-b50c-f716e9068cac
-  tls: true
+- flow: xtls-rprx-vision
+  name: 日本 东京 — Vultr
   network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: uPWRm-4_ynGfbqu8mnuo8f1Nf16r0uIfwI-U0CTgd04
-    short-id: 20f111d77ed4aa6a
-- name: 日本 东京 — Vultr
-  type: vless
+  port: 443
   server: 104.238.161.74
-  port: 443
+  tls: false
+  type: vless
+  udp: true
   uuid: e9049e37-e115-4d33-83d6-8ebe462cffd7
-  tls: true
+- flow: xtls-rprx-vision
+  name: 美国加利福尼亚州洛杉矶NTT家宽
   network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: qu6AyU4NUXnczpTekVS5H--zseYS9QKjy-jncP4Qnic
-    short-id: cb37bfb89fc44d40
-- name: 美国加利福尼亚州洛杉矶NTT家宽
-  type: vless
+  port: 443
   server: 192.204.34.36
-  port: 443
+  tls: false
+  type: vless
+  udp: true
   uuid: c9a94f26-cef3-4728-bf49-1201b994841a
-  tls: true
+- alterId: 0
+  cipher: auto
+  name: 美國
   network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RQ9PEH2tbO673G0Kw0A8s0gD4GIqhMgoLR-2xe5-FCI
-    short-id: ''
-- name: 美國
-  type: vmess
+  port: 180
   server: 82.198.246.9
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
   tls: false
-  skip-cert-verify: true
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  ws-opts: {}
+- flow: xtls-rprx-vision
+  name: 美国 哥伦比亚特区 华盛顿
   network: tcp
-- name: 美国 哥伦比亚特区 华盛顿
-  type: vless
+  port: 443
   server: 209.166.46.195
-  port: 443
+  tls: false
+  type: vless
+  udp: true
   uuid: 73c16ed4-d111-4434-8b24-0dfe112a0813
-  tls: true
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸美国
   network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: wIFJUBk4GRYT8Oim0-cPDwlGaTHh3kUYP2tOlKz1xlc
-    short-id: 9f4380a6
-- name: 🇺🇸美国
-  type: vmess
+  port: 180
   server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
   tls: false
-  skip-cert-verify: true
-  network: tcp
-- name: 🇺🇸 美国 | USA
   type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  ws-opts: {}
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸 美国 | USA
+  network: tcp
+  port: 180
   server: 82.198.246.214
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
   tls: false
-  skip-cert-verify: true
-  network: tcp
-- name: US搬瓦工
-  type: vless
-  server: 38.175.216.7
-  port: 33381
-  uuid: 6cfe06cf-2059-4480-c8d1-38a9be043bf2
-  tls: true
-  network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9rx7JwMO-KRZZEM9TQBO19BOAmmGjJyjN86ll2J7uVc
-    short-id: ''
-- name: 🇫🇷 Париж
-  type: vless
-  server: 194.226.169.189
-  port: 443
-  uuid: 701bab46-9453-41e6-ad47-009aa3df47e9
-  tls: true
-  network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do
-    short-id: 3c6fc84d
-- name: vmr-yedz3onl
   type: vmess
-  server: ev.bione.store
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  ws-opts: {}
+- flow: xtls-rprx-vision
+  name: US搬瓦工
+  network: tcp
+  port: 33381
+  server: 38.175.216.7
+  tls: false
+  type: vless
+  udp: true
+  uuid: 6cfe06cf-2059-4480-c8d1-38a9be043bf2
+- flow: xtls-rprx-vision
+  name: 🇫🇷 Париж
+  network: tcp
   port: 443
-  uuid: 6bc5ff96-1bab-4d4a-ace5-5a83ff0694c1
-  alterId: 0
+  server: 194.226.169.189
+  tls: false
+  type: vless
+  udp: true
+  uuid: 701bab46-9453-41e6-ad47-009aa3df47e9
+- alterId: 0
   cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: ev.bione.store
+  name: vmr-yedz3onl
   network: ws
+  port: 443
+  server: ev.bione.store
+  tls: true
+  type: vmess
+  uuid: 6bc5ff96-1bab-4d4a-ace5-5a83ff0694c1
   ws-opts:
-    path: /dsg
     headers:
       Host: ev.bione.store
+    path: /dsg
 - name: 1-f8l5evzf
-  type: trojan
-  server: hkvps.510900.xyz
-  port: 443
   password: 06Wfpv6kAL
-  skip-cert-verify: true
+  port: 443
+  server: hkvps.510900.xyz
   sni: www.apple.com
-- name: 洛杉矶 — DMIT
-  type: vless
+  tls: true
+  type: trojan
+  udp: true
+- flow: xtls-rprx-vision
+  name: 洛杉矶 — DMIT
+  network: tcp
+  port: 443
   server: 154.21.84.172
-  port: 443
-  uuid: 58538b9e-2cc5-42bf-90c5-305439916b31
-  tls: true
-  network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ArPjAWK7xOPzpWSxJTgJ2TVqHuBclErU3uiLczPJZhM
-    short-id: abcd1234
-- name: 加拿大
+  tls: false
   type: vless
-  server: ai.nyxtrans.com
-  port: 443
-  uuid: 6bffe2e2-86f1-4778-b09d-299db8fe4c3e
-  tls: true
+  udp: true
+  uuid: 58538b9e-2cc5-42bf-90c5-305439916b31
+- flow: xtls-rprx-vision
+  name: 加拿大
   network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 7xYM_06zODv6DGn3c8OwI2U1ef_oJUFqqiEtHN8zTTM
-    short-id: fc8def901c4d789b
+  port: 443
+  server: ai.nyxtrans.com
+  tls: false
+  type: vless
+  udp: true
+  uuid: 6bffe2e2-86f1-4778-b09d-299db8fe4c3e
 proxy-groups:
 - name: Auto
+  proxies:
+  - Taiwan-HiNet  台湾省家宽
+  - 新加坡 — 腾讯云
+  - SG-阿里云
+  - 新加坡 洛阳甘榜 -甲骨文云 Oracle
+  - VPS-Trojan
+  - kazakh-vps-vmess
+  - 荷兰省 阿姆斯特丹
+  - 日本 东京 — Vultr
+  - 美国加利福尼亚州洛杉矶NTT家宽
+  - 美國
+  - 美国 哥伦比亚特区 华盛顿
+  - 🇺🇸美国
+  - 🇺🇸 美国 | USA
+  - US搬瓦工
+  - 🇫🇷 Париж
+  - vmr-yedz3onl
+  - 1-f8l5evzf
+  - 洛杉矶 — DMIT
+  - 加拿大
   type: select
+- interval: 300
+  name: LoadBalance
   proxies:
   - Taiwan-HiNet  台湾省家宽
   - 新加坡 — 腾讯云
@@ -246,31 +231,9 @@ proxy-groups:
   - 1-f8l5evzf
   - 洛杉矶 — DMIT
   - 加拿大
-- name: LoadBalance
-  type: load-balance
   strategy: consistent-hashing
-  proxies:
-  - Taiwan-HiNet  台湾省家宽
-  - 新加坡 — 腾讯云
-  - SG-阿里云
-  - 新加坡 洛阳甘榜 -甲骨文云 Oracle
-  - VPS-Trojan
-  - kazakh-vps-vmess
-  - 荷兰省 阿姆斯特丹
-  - 日本 东京 — Vultr
-  - 美国加利福尼亚州洛杉矶NTT家宽
-  - 美國
-  - 美国 哥伦比亚特区 华盛顿
-  - 🇺🇸美国
-  - 🇺🇸 美国 | USA
-  - US搬瓦工
-  - 🇫🇷 Париж
-  - vmr-yedz3onl
-  - 1-f8l5evzf
-  - 洛杉矶 — DMIT
-  - 加拿大
+  type: load-balance
   url: http://www.gstatic.com/generate_204
-  interval: 300
 rules:
 - DOMAIN-SUFFIX,google.com,Auto
 - DOMAIN-SUFFIX,youtube.com,Auto
