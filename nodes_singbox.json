@@ -23,7 +23,7 @@
     },
     {
       "type": "selector",
-      "tag": "node_1",
+      "tag": "node_4",
       "outbounds": [
         "direct"
       ]
@@ -37,14 +37,14 @@
     },
     {
       "type": "selector",
-      "tag": "node_6",
+      "tag": "node_7",
       "outbounds": [
         "direct"
       ]
     },
     {
       "type": "selector",
-      "tag": "node_7",
+      "tag": "node_8",
       "outbounds": [
         "direct"
       ]
@@ -79,7 +79,7 @@
     },
     {
       "type": "selector",
-      "tag": "node_13",
+      "tag": "node_14",
       "outbounds": [
         "direct"
       ]
